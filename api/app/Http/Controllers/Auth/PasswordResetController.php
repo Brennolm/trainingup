@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\ResetPasswordRequest;
+use App\Models\AdminAlert;
 use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\JsonResponse;
@@ -25,6 +26,7 @@ class PasswordResetController extends Controller
             $status = Password::sendResetLink($request->only('email'));
         } catch (Throwable $e) {
             Log::error('Password reset e-mail failed', ['error' => $e->getMessage()]);
+            AdminAlert::record(AdminAlert::MAIL_FAILED, 'Password reset e-mail: '.class_basename($e).': '.Str::limit($e->getMessage(), 300));
             $status = Password::RESET_LINK_SENT;
         }
 

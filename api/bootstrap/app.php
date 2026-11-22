@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Middleware\EnsureAdmin;
 use App\Http\Middleware\EnsureEmailIsVerified;
+use App\Http\Middleware\ImpersonationReadOnly;
+use App\Http\Middleware\TrackLastSeen;
+use App\Models\AdminAlert;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -18,9 +22,14 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // Sanctum SPA authentication: cookie session + CSRF for requests from the frontend.
         $middleware->statefulApi();
-        $middleware->alias(['verified.email' => EnsureEmailIsVerified::class]);
+        $middleware->alias(['verified.email' => EnsureEmailIsVerified::class, 'admin' => EnsureAdmin::class]);
+        // After the session starts (statefulApi): read-only support access and "último acesso".
+        $middleware->api(append: [ImpersonationReadOnly::class, TrackLastSeen::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+        // Every reported (unexpected) error also becomes an alert in the admin (SPEC 6.5).
+        $exceptions->report(fn (Throwable $e) => AdminAlert::recordException($e));
+
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
         );

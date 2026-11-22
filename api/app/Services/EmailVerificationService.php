@@ -3,9 +3,11 @@
 namespace App\Services;
 
 use App\Mail\VerificationCodeMail;
+use App\Models\AdminAlert;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use Throwable;
 
 /**
@@ -62,6 +64,7 @@ class EmailVerificationService
             return true;
         } catch (Throwable $e) {
             Log::error('Verification e-mail failed', ['user_id' => $user->id, 'error' => $e->getMessage()]);
+            AdminAlert::record(AdminAlert::MAIL_FAILED, 'Verification e-mail: '.class_basename($e).': '.Str::limit($e->getMessage(), 300));
 
             return false;
         }

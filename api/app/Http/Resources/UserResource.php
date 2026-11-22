@@ -27,6 +27,11 @@ class UserResource extends JsonResource
             // The Terms or Privacy Policy changed since the last acceptance: ask again.
             'needs_legal_consent' => LegalConsent::isOutdated($this->resource),
             'recovery_codes_left' => $this->hasTwoFactorEnabled() ? count($this->two_factor_recovery_codes ?? []) : null,
+            // An admin is viewing this account read-only ("Você está vendo como…" bar).
+            'impersonation' => $request->attributes->get('impersonator') ? [
+                'admin_name' => $request->attributes->get('impersonator')->name,
+                'expires_at' => date(DATE_ATOM, $request->attributes->get('impersonation_expires_at')),
+            ] : null,
             'preferences' => [
                 'theme' => $this->theme->value,
                 'weight_unit' => $this->weight_unit->value,

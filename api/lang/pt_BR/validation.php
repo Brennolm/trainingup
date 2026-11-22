@@ -87,5 +87,6 @@ return [
         'diet_restrictions.*' => 'a restrição',
         'meals_per_day' => 'o número de refeições',
         'diet_split' => 'o tipo de plano',
+        'reason' => 'o motivo',
     ],
 ];

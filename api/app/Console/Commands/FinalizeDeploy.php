@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Models\AdminAlert;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use Throwable;
 
 /**
@@ -50,6 +52,7 @@ class FinalizeDeploy extends Command
             }
         } catch (Throwable $e) {
             Log::error('Deploy finalize failed', ['version' => $version, 'error' => $e->getMessage()]);
+            AdminAlert::record(AdminAlert::DEPLOY_FAILED, "Deploy {$version}: ".Str::limit($e->getMessage(), 300));
             $this->error('Deploy finalize failed: '.$e->getMessage());
 
             return self::FAILURE;

@@ -37,7 +37,8 @@ return [
     |
     */
 
-    'guard' => ['web'],
+    // 'impersonation' wraps the session ('web') guard: see App\Services\Impersonation.
+    'guard' => ['impersonation'],
 
     /*
     |--------------------------------------------------------------------------
