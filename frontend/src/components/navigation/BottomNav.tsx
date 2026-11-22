@@ -17,9 +17,10 @@ export function BottomNav({ items, className }: Props) {
       )}
     >
       <ul className="mx-auto grid max-w-lg grid-cols-5">
-        {items.map(({ to, labelKey, icon: Icon }) => (
+        {items.map(({ to, labelKey, icon: Icon, end }) => (
           <li key={to}>
             <NavLink
+              end={end}
               to={to}
               className={({ isActive }) =>
                 cn(

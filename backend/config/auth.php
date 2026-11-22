@@ -42,6 +42,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        // The session user, or the user an admin is viewing (read-only). Used by Sanctum
+        // (config/sanctum.php → guard); driver registered in AppServiceProvider.
+        'impersonation' => [
+            'driver' => 'impersonation',
+            'provider' => 'users',
+        ],
     ],
 
     /*

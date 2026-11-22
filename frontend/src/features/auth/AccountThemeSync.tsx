@@ -14,7 +14,8 @@ export function AccountThemeSync() {
   const syncedForUser = useRef<number | null>(null)
 
   useEffect(() => {
-    if (!user) return
+    // Viewing someone else's account (read-only): neither theme follows the other.
+    if (!user || user.impersonation) return
     if (syncedForUser.current !== user.id) {
       syncedForUser.current = user.id
       if (user.preferences.theme !== theme) setTheme(user.preferences.theme)

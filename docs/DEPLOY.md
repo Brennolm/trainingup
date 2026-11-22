@@ -98,10 +98,11 @@ Após um deploy, as migrações rodam em até ~1 minuto (próximo `schedule:run`
 - **Rollback:** a branch `deploy` guarda o histórico de builds. Reverter o último commit dela (`git revert`) e dar push; a Hostinger puxa a versão anterior. Migrações não são desfeitas automaticamente.
 - **Rodar algo no servidor:** `ssh -p 65002 u501993331@195.200.3.73`, depois `cd ~/domains/trainingup.com.br/public_html/api`.
 - **Forçar pós-deploy:** `php artisan deploy:finalize --force`.
+- **Dar ou tirar o papel de admin:** `php artisan user:make-admin email@exemplo.com` (a conta precisa existir; `--revoke` volta para usuário comum).
 - **Logs:** `api/storage/logs/laravel-AAAA-MM-DD.log` (14 dias).
 - **Backups:** `api/storage/app/private/backups/`. Restaurar: `gunzip < arquivo.sql.gz | mysql -u USUARIO -p BANCO`.
 
 ## Pendências conhecidas
 
 - Ao editar o `.env` pelo Gerenciador de Arquivos, a permissão volta para 644. Não expõe nada (o `.htaccess` bloqueia), mas dá para restaurar com `chmod 600 .env` pelo SSH.
-- Falha de backup/deploy hoje só vai para o log. O alerta no painel admin entra na fase 7 (`admin_alerts`).
+- Falhas de backup, deploy e envio de e-mail, e erros inesperados, vão para o log e para Painel admin → Alertas (`admin_alerts`). Não há aviso por e-mail: é preciso abrir o painel (as Métricas mostram quantos alertas estão abertos).

@@ -1,6 +1,11 @@
 import { Navigate, type RouteObject } from 'react-router'
 import { GuestOnly, RequireAuth, RequireVerified } from './features/auth/guards'
+import { AdminLayout } from './layouts/AdminLayout'
 import { AppLayout } from './layouts/AppLayout'
+import { AdminAlertsPage } from './pages/admin/AdminAlertsPage'
+import { AdminMetricsPage } from './pages/admin/AdminMetricsPage'
+import { AdminSettingsPage } from './pages/admin/AdminSettingsPage'
+import { AdminUsersPage } from './pages/admin/AdminUsersPage'
 import { RootLayout } from './layouts/RootLayout'
 import { AppSoonPage } from './pages/app/AppSoonPage'
 import { ConsentsPage } from './pages/app/ConsentsPage'
@@ -59,6 +64,15 @@ export const routes: RouteObject[] = [
                   { path: ROUTES.questionnaire, element: <QuestionnairePage /> },
                   { path: ROUTES.myData, element: <MyDataPage /> },
                   { path: ROUTES.myDataSection, element: <MyDataSectionPage /> },
+                ],
+              },
+              {
+                element: <AdminLayout />,
+                children: [
+                  { path: ROUTES.admin, element: <AdminMetricsPage /> },
+                  { path: ROUTES.adminUsers, element: <AdminUsersPage /> },
+                  { path: ROUTES.adminAlerts, element: <AdminAlertsPage /> },
+                  { path: ROUTES.adminSettings, element: <AdminSettingsPage /> },
                 ],
               },
             ],

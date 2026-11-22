@@ -18,6 +18,8 @@ export type User = {
   recovery_codes_left: number | null
   /** The Terms or the Privacy Policy changed since the last acceptance. */
   needs_legal_consent: boolean
+  /** An admin is viewing this account read-only (SPEC 6.5); null otherwise. */
+  impersonation: { admin_name: string; expires_at: string } | null
   preferences: {
     theme: Theme
     weight_unit: WeightUnit

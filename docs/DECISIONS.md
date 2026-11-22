@@ -59,3 +59,22 @@ Registro de decisões tomadas durante a implementação que complementam ou ajus
 - **"Quer gerar um novo plano com isso?" (SPEC 5.10) fica para quando existirem planos gerados.** Por ora, salvar em "Meus dados" só confirma a alteração.
 - **Opções do questionário** (`QuestionnaireOptions.php` / `options.ts`, manter iguais): tempo por treino 30/45/60/75+ min (SPEC 5.5); local academia completa / de prédio / casa; 2 a 6 dias escolhidos na semana; cardio caminhada/corrida/bicicleta/elíptico/tanto faz; restrições vegetariano/vegano/sem lactose/sem glúten; 3 a 6 refeições; altura 120–230 cm e peso 30–300 kg. A unidade escolhida no passo 1 atualiza as preferências do Perfil; o banco guarda sempre cm e kg.
 - **Sair e excluir a conta limpam todo o cache do app** (não só o usuário), para que respostas de saúde nunca apareçam para outra conta no mesmo aparelho.
+- **Fase 7 — escolhas do Brenno:** admin inicial `brennoleitem@gmail.com`, promovido com `php artisan user:make-admin` pelo SSH (SPEC 9, item 7); o painel não exige 2FA; parâmetros de cálculo só de dieta (5.2) nesta fase, os de treino (5.5) entram na 8.2 junto dos moldes.
+- **Tabela do fator de atividade (SPEC 5.2 item 2)**, aprovada pelo Brenno e editável no admin (`activity.<rotina>.<faixa>`):
+
+  | Rotina \ treinos por semana | 2–3 | 4–5 | 6 |
+  |---|---|---|---|
+  | Sedentário | 1,375 | 1,55 | 1,725 |
+  | Em pé | 1,55 | 1,725 | 1,725 |
+  | Fisicamente ativo | 1,725 | 1,9 | 1,9 |
+
+  1,2 fica fora, porque o questionário exige de 2 a 6 treinos.
+- **Parâmetros em `App\Support\Settings`:** os padrões (com mínimo, máximo e unidade) ficam no código; `app_settings` guarda só o que o admin mudou, com quem mudou. Voltar ao padrão apaga a linha. Leitura com cache, limpo a cada alteração. As fases 10.3 e 8.2 leem com `Settings::get()`.
+- **"Ver como usuário" por um guard próprio (`impersonation`), usado pelo Sanctum no lugar do `web`:** o admin continua logado na sessão e, enquanto ela guardar uma impersonação válida, a API responde como a pessoa escolhida. Quem é a pessoa nunca vem do navegador: o guard só aceita a troca se o usuário da sessão for admin e for o mesmo que começou. Dura no máximo 60 minutos e depois volta sozinha para o admin, fechando o registro.
+- **Somente leitura no backend:** durante a impersonação, toda requisição que não seja GET recebe 403 (`impersonation_read_only`), menos "Sair" (`DELETE /api/admin/impersonation`). A exportação de dados também é bloqueada, para não baixar os dados da pessoa. O painel admin fica fechado (a API vê a outra pessoa) e o tema não sincroniza com nenhuma das duas contas.
+- **Não é possível ver como outro admin nem como a si mesmo.** O motivo é obrigatório (10 a 500 caracteres). O registro (`admin_impersonation_logs`) guarda admin, pessoa, motivo, início, fim e IP. A pessoa vê os acessos na exportação dos dados (`support_access`). Se a conta for excluída, o vínculo vira nulo e sobra só o motivo e as datas.
+- **Entrar e sair do "Ver como usuário" recarrega a página inteira**, para não sobrar na tela nada em cache da outra conta.
+- **Último acesso (`users.last_seen_at`):** gravado no máximo a cada 5 minutos, por qualquer chamada à API com sessão. Acessos de suporte não contam.
+- **Status na lista de usuários:** "ativo" ou "e-mail não confirmado" (ainda não há suspensão de contas).
+- **Alertas (`admin_alerts`):** erros inesperados (o que o Laravel reporta), falhas de backup, de deploy e de envio de e-mail. A mesma mensagem com alerta aberto só soma no contador; depois de resolvida, abre um alerta novo. A mensagem guarda só a classe do erro, um trecho de até 300 caracteres e o arquivo:linha. Erros de SQL guardam só o código, porque os valores da consulta podem ter dados de usuários. Gravar o alerta nunca derruba a requisição. Sem aviso por e-mail por enquanto.
+- **Métricas:** contas, e-mail confirmado, ativos em 7 dias (último acesso), cadastros em 7 e 30 dias, questionários concluídos e bloqueados pela triagem (versão mais recente de cada pessoa). "Planos gerados" e "sessões registradas" aparecem como "Em breve" até as fases 8 e 10.

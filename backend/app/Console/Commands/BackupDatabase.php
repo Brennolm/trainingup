@@ -2,10 +2,12 @@
 
 namespace App\Console\Commands;
 
+use App\Models\AdminAlert;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Process;
+use Illuminate\Support\Str;
 
 /**
  * Dumps the MySQL/MariaDB database to a gzip file and keeps only the newest N backups.
@@ -48,6 +50,7 @@ class BackupDatabase extends Command
         if ($result->failed()) {
             File::delete($file);
             Log::error('Database backup failed', ['error' => trim($result->errorOutput())]);
+            AdminAlert::record(AdminAlert::BACKUP_FAILED, 'Database backup failed: '.Str::limit(trim($result->errorOutput()), 300));
             $this->error('Database backup failed.');
 
             return self::FAILURE;

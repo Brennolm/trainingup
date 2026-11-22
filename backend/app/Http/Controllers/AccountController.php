@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminImpersonationLog;
 use App\Models\Consent;
 use App\Models\HealthScreeningRectification;
 use App\Models\Questionnaire;
@@ -50,6 +51,13 @@ class AccountController extends Controller
                 'ip_address' => $c->ip_address,
                 'user_agent' => $c->user_agent,
             ]),
+            // Read-only support accesses to this account (Política de Privacidade).
+            'support_access' => AdminImpersonationLog::where('user_id', $user->id)->orderBy('started_at')->get()
+                ->map(fn (AdminImpersonationLog $l) => [
+                    'reason' => $l->reason,
+                    'started_at' => $l->started_at->toIso8601String(),
+                    'ended_at' => $l->ended_at?->toIso8601String(),
+                ]),
             // Every version, with the health screening and its rectification history.
             'questionnaires' => $user->questionnaires()
                 ->with('healthScreening.rectifications')

@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Admin\AlertController;
+use App\Http\Controllers\Admin\MetricsController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\GoogleAccountController;
 use App\Http\Controllers\Auth\LoginController;
@@ -8,6 +12,7 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\TwoFactorChallengeController;
 use App\Http\Controllers\ConsentController;
+use App\Http\Controllers\ImpersonationController;
 use App\Http\Controllers\MeController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
@@ -50,6 +55,21 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/consents', [ConsentController::class, 'store']);
     Route::get('/profile/export', [AccountController::class, 'export'])->middleware('throttle:export');
     Route::delete('/profile', [AccountController::class, 'destroy'])->middleware('throttle:two-factor');
+
+    // Leave "Ver como usuário" (the only call allowed while impersonating).
+    Route::delete('/admin/impersonation', [ImpersonationController::class, 'destroy']);
+});
+
+// Admin panel (SPEC 6.5). Not reachable while impersonating (the request user is not the admin).
+Route::middleware(['auth:sanctum', 'verified.email', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/metrics', MetricsController::class);
+    Route::get('/users', [AdminUserController::class, 'index']);
+    Route::post('/users/{user}/impersonate', [AdminUserController::class, 'impersonate'])->middleware('throttle:two-factor');
+    Route::get('/impersonation-logs', [AdminUserController::class, 'logs']);
+    Route::get('/alerts', [AlertController::class, 'index']);
+    Route::post('/alerts/{alert}/resolve', [AlertController::class, 'resolve']);
+    Route::get('/settings', [SettingsController::class, 'index']);
+    Route::put('/settings', [SettingsController::class, 'update']);
 });
 
 // The app itself: signed in and e-mail confirmed.

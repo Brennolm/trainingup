@@ -336,7 +336,9 @@
       "toastTitle": "Série registrada",
       "toastBody": "60 kg × 10. Descanso de 90 s iniciado.",
       "headingSample": "Supino 60 kg",
-      "bodySample": "Ao atingir o topo da faixa de repetições em todas as séries, aumente a carga na próxima sessão."
+      "bodySample": "Ao atingir o topo da faixa de repetições em todas as séries, aumente a carga na próxima sessão.",
+      "noteLabel": "Observação",
+      "noteValue": "Última série com ajuda do parceiro."
     }
   },
   "validation": {
@@ -970,5 +972,177 @@
     "redo": "Refazer questionário",
     "back": "Voltar para Meus dados",
     "saved": "Alteração salva."
+  },
+  "admin": {
+    "title": "Painel admin",
+    "profileHint": "Usuários, métricas, alertas e parâmetros de cálculo.",
+    "nav": {
+      "metrics": "Métricas",
+      "users": "Usuários",
+      "alerts": "Alertas",
+      "settings": "Parâmetros",
+      "backToApp": "App"
+    },
+    "impersonation": {
+      "barLabel": "Acesso de suporte",
+      "viewingAs": "Você está vendo como {{name}}",
+      "readOnly": "Somente leitura.",
+      "leave": "Sair"
+    },
+    "metrics": {
+      "soon": "Em breve",
+      "users": "Usuários",
+      "usersTotal": "Contas",
+      "usersVerified": "E-mail confirmado",
+      "ofTotal": "de {{total}}",
+      "active7d": "Ativos nos últimos 7 dias",
+      "signups7d": "Cadastros em 7 dias",
+      "signups30d": "Cadastros em 30 dias",
+      "questionnaire": "Questionário",
+      "questionnairesCompleted": "Concluídos",
+      "screeningsBlocked": "Bloqueados pela triagem",
+      "usage": "Uso",
+      "plansGenerated": "Planos gerados",
+      "sessionsLogged": "Sessões registradas",
+      "noAlerts": "Nenhum alerta aberto.",
+      "openAlerts_one": "{{count}} alerta aberto",
+      "openAlerts_other": "{{count}} alertas abertos"
+    },
+    "users": {
+      "intro": "Para ajudar alguém, use \"Ver como usuário\": você vê o app como a pessoa, sem poder alterar nada. Cada acesso fica registrado com o motivo.",
+      "tabUsers": "Usuários",
+      "tabLogs": "Registro de acessos",
+      "search": "Buscar por nome ou e-mail",
+      "searchButton": "Buscar",
+      "total_one": "{{count}} conta",
+      "total_other": "{{count}} contas",
+      "empty": "Nenhuma conta encontrada.",
+      "admin": "Admin",
+      "unverified": "E-mail não confirmado",
+      "createdAt": "Cadastro em {{date}}",
+      "lastSeen": "último acesso em {{date}}",
+      "neverSeen": "nunca acessou",
+      "viewAs": "Ver como usuário",
+      "viewAsTitle": "Ver como {{name}}",
+      "viewAsText": "Você vai ver o app como essa pessoa, em modo somente leitura, por até 60 minutos. O acesso fica registrado e aparece na exportação de dados dela.",
+      "reason": "Motivo do acesso",
+      "reasonHint": "Obrigatório. Ex.: \"Usuária relatou erro ao salvar o questionário\".",
+      "reasonShort": "Descreva o motivo com pelo menos {{min}} caracteres.",
+      "enter": "Entrar em modo leitura",
+      "pages": "Páginas",
+      "previous": "Anterior",
+      "next": "Próxima",
+      "page": "Página {{page}} de {{last}}",
+      "logsEmpty": "Nenhum acesso de suporte registrado.",
+      "deletedAccount": "Conta excluída",
+      "logLine": "Por {{admin}} · de {{start}} até {{end}}",
+      "logOpen": "agora"
+    },
+    "alerts": {
+      "intro": "Erros da aplicação, falhas de backup, de envio de e-mail e de deploy. Repetições do mesmo problema somam no contador.",
+      "open": "Abertos",
+      "resolved": "Resolvidos",
+      "emptyOpen": "Nenhum alerta aberto.",
+      "emptyResolved": "Nenhum alerta resolvido ainda.",
+      "resolve": "Marcar como resolvido",
+      "resolvedToast": "Alerta marcado como resolvido.",
+      "occurrences_one": "{{count}} ocorrência",
+      "occurrences_other": "{{count}} ocorrências",
+      "last": "última em {{date}}",
+      "resolvedAt": "resolvido em {{date}}",
+      "types": {
+        "app_error": "Erro da aplicação",
+        "backup_failed": "Falha no backup",
+        "mail_failed": "Falha no envio de e-mail",
+        "deploy_failed": "Falha no deploy"
+      }
+    },
+    "settings": {
+      "intro": "Valores usados no cálculo da dieta (SPEC 5.2). Alterações valem só para os planos gerados depois. Os de treino entram com os moldes de treino.",
+      "save": "Salvar parâmetros",
+      "restore": "Restaurar padrões",
+      "default": "Padrão: {{value}}",
+      "range": "Entre {{min}} e {{max}}.",
+      "fixErrors": "Corrija os valores destacados.",
+      "units": {
+        "%": "%",
+        "kcal": "kcal",
+        "g/kg": "g/kg",
+        "bmi": "IMC"
+      },
+      "buckets": {
+        "low": "2–3 treinos/semana",
+        "mid": "4–5 treinos/semana",
+        "high": "6 treinos/semana"
+      },
+      "groups": {
+        "bmr": {
+          "title": "Taxa metabólica basal",
+          "text": "Mifflin-St Jeor: peso × fator + altura × fator − idade × fator + ajuste por sexo."
+        },
+        "activity": {
+          "title": "Fator de atividade",
+          "text": "Multiplica a TMB conforme a rotina de trabalho e os treinos por semana."
+        },
+        "goal": {
+          "title": "Ajuste por objetivo",
+          "text": "Percentual sobre o gasto total. Manter o peso é sempre 0%."
+        },
+        "limits": {
+          "title": "Travas",
+          "text": "As calorias nunca ficam abaixo da TMB nem destes mínimos, e o déficit nunca passa do máximo."
+        },
+        "protein": {
+          "title": "Proteína",
+          "text": "Gramas por kg. A partir do IMC limite, usa o peso correspondente ao IMC de referência."
+        },
+        "fat": {
+          "title": "Gordura",
+          "text": "Gramas por kg (mesmo peso de referência), com um mínimo das calorias."
+        },
+        "split": {
+          "title": "Treino e descanso",
+          "text": "Calorias a mais no dia de treino (via carboidrato); o dia de descanso compensa para manter a média."
+        }
+      },
+      "labels": {
+        "bmr": {
+          "weight_factor": "Fator do peso (kg)",
+          "height_factor": "Fator da altura (cm)",
+          "age_factor": "Fator da idade (anos)",
+          "male_offset": "Ajuste masculino",
+          "female_offset": "Ajuste feminino"
+        },
+        "goal": {
+          "lose_fat": {
+            "light": "Perder gordura · leve",
+            "moderate": "Perder gordura · moderado"
+          },
+          "gain_muscle": {
+            "light": "Ganhar massa · leve",
+            "moderate": "Ganhar massa · moderado"
+          }
+        },
+        "limits": {
+          "max_deficit_pct": "Déficit máximo",
+          "min_kcal_male": "Mínimo masculino",
+          "min_kcal_female": "Mínimo feminino"
+        },
+        "protein": {
+          "lose_fat": "Perder gordura",
+          "maintain": "Manter o peso",
+          "gain_muscle": "Ganhar massa",
+          "reference_bmi_threshold": "IMC a partir do qual usa peso de referência",
+          "reference_bmi": "IMC de referência"
+        },
+        "fat": {
+          "g_per_kg": "Gordura por kg",
+          "min_pct": "Mínimo das calorias"
+        },
+        "split": {
+          "training_day_extra_pct": "A mais no dia de treino"
+        }
+      }
+    }
   }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Services\Impersonation;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
@@ -21,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
         Password::defaults(fn () => Password::min(8)->letters()->numbers());
 
         $this->configureRateLimiting();
+
+        // Session user, swapped for the viewed user during "Ver como usuário" (SPEC 6.5).
+        Auth::viaRequest('impersonation', fn (Request $request) => app(Impersonation::class)
+            ->resolve($request, Auth::guard('web')->user()));
     }
 
     /** SPEC 2.5: rate limiting on login, sign-up, verification codes and password recovery. */

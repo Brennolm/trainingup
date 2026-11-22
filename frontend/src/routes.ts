@@ -21,4 +21,9 @@ export const ROUTES = {
   questionnaire: '/questionario',
   myData: '/perfil/meus-dados',
   myDataSection: '/perfil/meus-dados/:section',
+  // Admin panel (role admin)
+  admin: '/admin',
+  adminUsers: '/admin/usuarios',
+  adminAlerts: '/admin/alertas',
+  adminSettings: '/admin/parametros',
 } as const

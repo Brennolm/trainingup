@@ -1,8 +1,16 @@
 # Changelog
 
-**Fase atual:** 7 — Admin base (próxima). Fases 3 (LGPD), 4 (Google), 5 (2FA) e 6 (Questionário) publicadas em 2026-11-22.
+**Fase atual:** 7 — Admin base (pronta localmente, aguardando o teste do Brenno). Fases 3 (LGPD), 4 (Google), 5 (2FA) e 6 (Questionário) publicadas em 2026-11-22.
 
 ## 2026-11-22
+- Fase 7 — Admin base (testada pelo Brenno localmente; publicando):
+  - Painel em `/admin` (só `role = admin`, link no Perfil), com menu próprio: Métricas, Usuários, Alertas, Parâmetros.
+  - Usuários: busca, status, cadastro e último acesso. "Ver como usuário" pede o motivo, abre o app da pessoa em modo somente leitura (bloqueado no backend) com a faixa "Você está vendo como {nome} — Sair" e termina sozinho em 60 min. Aba "Registro de acessos"; os acessos aparecem na exportação de dados da pessoa.
+  - Métricas: contas, e-mail confirmado, ativos em 7 dias, cadastros em 7/30 dias, questionários concluídos e bloqueados; planos e sessões "Em breve".
+  - Alertas: erros inesperados, falhas de backup, deploy e e-mail; repetições agrupadas; marcar como resolvido.
+  - Parâmetros de cálculo da dieta (SPEC 5.2) editáveis, com padrão, limites e "Restaurar padrões"; tabela de fator de atividade aprovada.
+  - Comando `php artisan user:make-admin <email>`.
+  - Banco: `users.last_seen_at`, `admin_impersonation_logs`, `admin_alerts`, `app_settings`. Testes: 139 no backend, 148 no frontend.
 - Fase 6 — Questionário e triagem (publicada em 2026-11-22, commit cf56260; testada pelo Brenno localmente; textos do PAR-Q a revisar):
   - `/questionario`: consentimento de dados de saúde no início, 6 partes (Sobre você, Saúde, Rotina, Objetivo, Treino, Alimentação) e Resumo, com barra de progresso. Cada passo é salvo ao continuar e o questionário retoma de onde parou.
   - Saúde: PAR-Q (7 perguntas), gestante/lactante (só sexo feminino) e condições clínicas. Qualquer "sim" bloqueia os planos gerados, com mensagem respeitosa e caminho para os planos manuais. Respostas criptografadas no banco.

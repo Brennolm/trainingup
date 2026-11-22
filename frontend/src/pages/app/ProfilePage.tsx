@@ -88,6 +88,19 @@ export function ProfilePage() {
     <div className="mx-auto grid max-w-2xl gap-6">
       <h1 className="text-4xl font-extrabold uppercase italic">{t('profile.title')}</h1>
 
+      {user.role === 'admin' && !user.impersonation && (
+        <Link
+          to={ROUTES.admin}
+          className="bg-primary/10 ring-primary/30 flex min-h-11 items-center justify-between gap-3 rounded-2xl p-4 ring-1 ring-inset sm:p-5"
+        >
+          <span className="grid gap-1">
+            <CardTitle>{t('admin.title')}</CardTitle>
+            <span className="text-muted text-sm">{t('admin.profileHint')}</span>
+          </span>
+          <ChevronRight className="text-muted size-5 shrink-0" aria-hidden />
+        </Link>
+      )}
+
       <Card className="grid gap-5">
         <CardTitle>{t('profile.personal.title')}</CardTitle>
         <form onSubmit={onSubmit} noValidate className="grid gap-4">

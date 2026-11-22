@@ -22,9 +22,10 @@ export function Sidebar({ items, className }: Props) {
       </div>
       <nav aria-label={t('nav.main')} className="flex-1">
         <ul className="grid gap-1">
-          {items.map(({ to, labelKey, icon: Icon }) => (
+          {items.map(({ to, labelKey, icon: Icon, end }) => (
             <li key={to}>
               <NavLink
+                end={end}
                 to={to}
                 className={({ isActive }) =>
                   cn(

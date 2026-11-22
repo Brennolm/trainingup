@@ -9,6 +9,7 @@ import { ChoiceGroup, MultiChoice } from '../components/ui/ChoiceGroup'
 import { Input } from '../components/ui/Input'
 import { Modal } from '../components/ui/Modal'
 import { Tabs } from '../components/ui/Tabs'
+import { Textarea } from '../components/ui/Textarea'
 import { ThemeToggle } from '../components/ui/ThemeToggle'
 import { useToast } from '../components/ui/toastContext'
 import { AppShell } from '../layouts/AppShell'
@@ -120,6 +121,11 @@ export function DesignSystemPage() {
               error={t('design.sample.emailError')}
             />
             <Input label={t('design.sample.passwordLabel')} type="password" defaultValue="segredo123" />
+            <Textarea
+              label={t('design.sample.noteLabel')}
+              defaultValue={t('design.sample.noteValue')}
+              className="sm:col-span-2"
+            />
           </Card>
         </Section>
 

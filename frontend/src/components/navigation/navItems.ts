@@ -1,6 +1,11 @@
 import { CalendarCheck, Dumbbell, LineChart, Salad, User, type LucideIcon } from 'lucide-react'
 
-export type NavItem = { to: string; labelKey: string; icon: LucideIcon }
+export type NavItem = {
+  to: string
+  labelKey: string
+  icon: LucideIcon
+  /** Active only on this exact path. */ end?: boolean
+}
 
 // The five sections of the app (SPEC 6.4). Routes are wired in later phases.
 export const NAV_ITEMS: NavItem[] = [
