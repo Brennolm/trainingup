@@ -1,8 +1,12 @@
 # Changelog
 
-**Fase atual:** 3 — LGPD (próxima). Fases 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
+**Fase atual:** 3 — LGPD (pronta localmente, aguardando teste do Brenno). Fases 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
 
 ## 2026-11-22
+- Fase 3 — LGPD (em andamento):
+  - Páginas Termos de Uso, Política de Privacidade (com acesso de suporte em leitura) e Política de Cookies, versão `2026-11-22`, no lugar de "Em breve".
+  - Perfil → Privacidade: exportar meus dados (JSON), Meus consentimentos (versão, data e IP), links dos documentos e excluir conta (apaga tudo na hora; senha ou EXCLUIR + código do 2FA).
+  - Nova versão dos textos pede novo aceite antes de usar o app.
 - Fase 5 — Verificação em duas etapas (publicada em 2026-11-22, commit e513206; testada pelo Brenno localmente):
   - Perfil → Segurança: ativar (senha → QR code do app autenticador + chave manual → primeiro código), 8 códigos de recuperação de uso único (copiar/baixar, mostrados uma vez), gerar novos códigos, desativar (senha + código do app ou de recuperação).
   - Login com e-mail/senha pede o código em `/entrar/codigo` (ou um código de recuperação); expira em 10 min e após 5 erros. Login pelo Google não pede.

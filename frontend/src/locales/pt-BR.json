@@ -6,7 +6,15 @@
     "disclaimer": "Os planos são sugestões e estimativas e não substituem acompanhamento profissional.",
     "terms": "Termos de Uso",
     "privacy": "Política de Privacidade",
-    "cookies": "Política de Cookies"
+    "cookies": "Política de Cookies",
+    "owner": {
+      "name": "Brenno Leite",
+      "location": "São Paulo/SP"
+    },
+    "version": "Versão {{version}}, em vigor desde {{date}}.",
+    "otherDocs": "Outros documentos",
+    "back": "Voltar",
+    "reviewNote": "Texto em linguagem simples. Em caso de dúvida sobre qualquer ponto, escreva para {{email}}."
   },
   "contact": {
     "label": "Contato",
@@ -264,11 +272,6 @@
     "learnMore": "Saiba mais",
     "label": "Aviso de cookies"
   },
-  "comingSoon": {
-    "title": "Em breve",
-    "text": "Esta página ainda está sendo construída. Volte em alguns dias.",
-    "back": "Voltar para o início"
-  },
   "nav": {
     "today": "Hoje",
     "workout": "Treino",
@@ -440,6 +443,278 @@
       "disableHint": "Confirme sua senha e um código do app (ou um código de recuperação).",
       "disableCodeLabel": "Código do app ou de recuperação",
       "disabled": "Verificação em duas etapas desativada."
+    }
+  },
+  "legalDocs": {
+    "terms": {
+      "title": "Termos de Uso",
+      "version": "2026-11-22",
+      "date": "22/11/2026",
+      "intro": "Estes Termos explicam as regras para usar o Training Up. Ao criar uma conta, você declara que leu e concorda com eles e com a Política de Privacidade.",
+      "sections": [
+        {
+          "title": "1. Quem oferece o serviço",
+          "body": [
+            "O Training Up (trainingup.com.br) é oferecido por {{owner}}, pessoa física, de {{location}} (\"nós\"). Contato: {{email}}."
+          ]
+        },
+        {
+          "title": "2. O que é o Training Up",
+          "body": [
+            "Um aplicativo gratuito que monta sugestões de treino e de alimentação a partir das informações que você fornece, e permite registrar treinos, refeições e progresso.",
+            "Os planos são sugestões e estimativas geradas automaticamente. Eles não são prescrição médica, nutricional ou de educação física e não substituem o acompanhamento de profissionais de saúde."
+          ]
+        },
+        {
+          "title": "3. Quem pode usar",
+          "items": [
+            "Somente pessoas com 18 anos ou mais.",
+            "Você deve fornecer informações verdadeiras e mantê-las atualizadas, principalmente as de saúde, porque elas definem o que o app sugere.",
+            "Cada conta é pessoal e intransferível."
+          ]
+        },
+        {
+          "title": "4. Sua saúde vem primeiro",
+          "items": [
+            "Antes de começar qualquer programa de exercícios ou mudança na alimentação, consulte um médico, principalmente se você tiver alguma condição de saúde, lesão, gestação ou usar medicamentos.",
+            "Pare imediatamente e procure ajuda se sentir dor, tontura, falta de ar ou qualquer mal-estar.",
+            "Quando as suas respostas indicarem um risco, o app pode bloquear ou limitar sugestões e recomendar avaliação profissional.",
+            "Você é responsável por executar os exercícios com técnica, cargas e cuidados adequados ao seu corpo."
+          ]
+        },
+        {
+          "title": "5. Sua conta e segurança",
+          "items": [
+            "Guarde sua senha e, se ativar a verificação em duas etapas, seus códigos de recuperação. Não compartilhe esses dados.",
+            "Avise-nos em caso de suspeita de uso indevido da sua conta."
+          ]
+        },
+        {
+          "title": "6. O que não é permitido",
+          "items": [
+            "Usar o serviço para fins ilegais ou para prejudicar outras pessoas.",
+            "Tentar acessar contas ou dados de terceiros, ou burlar as proteções do sistema.",
+            "Automatizar acessos, copiar o conteúdo em massa ou sobrecarregar o serviço."
+          ]
+        },
+        {
+          "title": "7. Preço e mudanças no serviço",
+          "body": [
+            "O Training Up é gratuito. Se no futuro houver planos pagos, isso será informado com antecedência e nada será cobrado sem a sua concordância expressa.",
+            "Podemos melhorar, alterar ou encerrar funcionalidades. Se o serviço for encerrado, avisaremos com antecedência razoável para que você possa exportar seus dados."
+          ]
+        },
+        {
+          "title": "8. Propriedade intelectual",
+          "body": [
+            "A marca, o visual, os textos e o software do Training Up pertencem a nós. Os dados que você registra são seus, e você pode exportá-los a qualquer momento pelo Perfil."
+          ]
+        },
+        {
+          "title": "9. Suspensão e exclusão",
+          "body": [
+            "Você pode excluir sua conta quando quiser, em Perfil → Privacidade. Podemos suspender ou encerrar contas que violem estes Termos, com aviso sempre que possível."
+          ]
+        },
+        {
+          "title": "10. Limites da nossa responsabilidade",
+          "body": [
+            "Fazemos o possível para manter o serviço disponível, seguro e com informações corretas, mas ele é oferecido como está e pode ter falhas ou ficar fora do ar.",
+            "Na extensão permitida pela lei, não respondemos por danos decorrentes do uso das sugestões sem o acompanhamento profissional recomendado, de informações incorretas fornecidas por você ou de execução inadequada dos exercícios. Nada nestes Termos afasta os direitos garantidos pelo Código de Defesa do Consumidor."
+          ]
+        },
+        {
+          "title": "11. Mudanças nestes Termos",
+          "body": [
+            "Quando estes Termos mudarem, a versão e a data no topo da página serão atualizadas e, se você tiver conta, pediremos que aceite a nova versão no próximo acesso."
+          ]
+        },
+        {
+          "title": "12. Lei aplicável",
+          "body": [
+            "Estes Termos seguem as leis do Brasil. Eventuais conflitos podem ser resolvidos no foro do seu domicílio."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "version": "2026-11-22",
+      "date": "22/11/2026",
+      "intro": "Esta Política explica quais dados pessoais o Training Up coleta, por que, com quem compartilha e como você exerce seus direitos, conforme a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018).",
+      "sections": [
+        {
+          "title": "1. Quem cuida dos seus dados",
+          "body": [
+            "O controlador dos dados é {{owner}}, pessoa física, de {{location}}. O encarregado pelo tratamento de dados pessoais também é {{owner}}, pelo e-mail {{email}}."
+          ]
+        },
+        {
+          "title": "2. Quais dados coletamos",
+          "items": [
+            "Cadastro: nome, e-mail, senha (guardada apenas como hash irreversível) e data de nascimento.",
+            "Login com Google: nome, e-mail e o identificador da sua conta Google. Não recebemos a sua senha do Google.",
+            "Preferências: tema, unidades de medida e idioma.",
+            "Dados de saúde e de corpo (quando você preencher o questionário): por exemplo peso, altura, objetivos, lesões, condições de saúde e respostas de triagem. São dados pessoais sensíveis e só são coletados com o seu consentimento específico.",
+            "Uso do app: planos gerados, treinos, refeições e progresso que você registrar.",
+            "Dados técnicos: endereço IP e navegador nos registros de aceite e nas sessões de acesso, e registros de erro do sistema."
+          ]
+        },
+        {
+          "title": "3. Para que usamos e com qual base legal",
+          "items": [
+            "Criar e manter sua conta e oferecer o serviço (execução de contrato, LGPD art. 7º, V).",
+            "Gerar sugestões de treino e alimentação a partir dos seus dados de saúde (consentimento específico e destacado, LGPD art. 11, I). Você pode revogar esse consentimento a qualquer momento, mas sem esses dados não conseguimos gerar os planos.",
+            "Enviar e-mails essenciais, como código de verificação e redefinição de senha (execução de contrato).",
+            "Proteger contas e o serviço contra fraudes e acessos indevidos, e corrigir erros (legítimo interesse, LGPD art. 7º, IX).",
+            "Guardar o registro dos seus aceites com data, versão e IP (cumprimento de obrigação legal e exercício de direitos, LGPD art. 7º, II e VI)."
+          ]
+        },
+        {
+          "title": "4. O que não fazemos",
+          "items": [
+            "Não vendemos nem alugamos seus dados.",
+            "Não usamos seus dados para publicidade e não usamos cookies de rastreamento.",
+            "Não tomamos decisões sobre você com efeitos jurídicos. As sugestões do app são automáticas, e você pode revisar seus dados e pedir explicações a qualquer momento."
+          ]
+        },
+        {
+          "title": "5. Com quem compartilhamos",
+          "items": [
+            "Hostinger: hospedagem do site, do banco de dados e do e-mail.",
+            "Google: somente se você usar \"Continuar com Google\", para confirmar a sua identidade.",
+            "Autoridades: quando houver obrigação legal ou ordem judicial."
+          ],
+          "note": "Alguns desses fornecedores podem processar dados fora do Brasil. Nesses casos, a transferência segue as garantias previstas na LGPD (art. 33)."
+        },
+        {
+          "title": "6. Acesso de suporte",
+          "body": [
+            "Para resolver problemas que você relatar e manter o serviço funcionando, a administração do Training Up pode visualizar os dados da sua conta em modo somente leitura. Esse acesso é restrito, não permite alterar seus dados e cada visualização fica registrada com data e responsável."
+          ]
+        },
+        {
+          "title": "7. Como protegemos",
+          "items": [
+            "Conexão sempre criptografada (HTTPS).",
+            "Senhas guardadas como hash e verificação em duas etapas opcional.",
+            "Dados de saúde criptografados no banco de dados.",
+            "Limite de tentativas em login, códigos e recuperação de senha.",
+            "Backups diários protegidos."
+          ]
+        },
+        {
+          "title": "8. Por quanto tempo guardamos",
+          "items": [
+            "Enquanto sua conta existir.",
+            "Ao excluir a conta, todos os seus dados, incluindo os registros de consentimento, são apagados na hora. Cópias de segurança são substituídas automaticamente em até 7 dias.",
+            "Registros de erro do sistema são apagados automaticamente em até 14 dias."
+          ]
+        },
+        {
+          "title": "9. Seus direitos",
+          "body": ["Pela LGPD (art. 18), você pode, a qualquer momento:"],
+          "items": [
+            "Confirmar que tratamos seus dados e acessá-los: Perfil → Privacidade → Exportar meus dados.",
+            "Corrigir dados: pelo Perfil.",
+            "Excluir sua conta e seus dados: Perfil → Privacidade → Excluir conta.",
+            "Ver seus consentimentos: Perfil → Privacidade → Meus consentimentos. Revogar um consentimento ou pedir informações sobre compartilhamento: pelo e-mail abaixo.",
+            "Para qualquer outro pedido, escreva para {{email}}. Respondemos em até 15 dias. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD)."
+          ]
+        },
+        {
+          "title": "10. Menores de idade",
+          "body": [
+            "O Training Up é exclusivo para maiores de 18 anos. O cadastro é bloqueado para menores, e se identificarmos uma conta de menor ela será excluída."
+          ]
+        },
+        {
+          "title": "11. Cookies",
+          "body": ["Usamos apenas cookies essenciais. Os detalhes estão na Política de Cookies."]
+        },
+        {
+          "title": "12. Mudanças nesta Política",
+          "body": [
+            "Quando esta Política mudar, a versão e a data no topo serão atualizadas e, se você tiver conta, pediremos que aceite a nova versão no próximo acesso."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "version": "2026-11-22",
+      "date": "22/11/2026",
+      "intro": "Cookies são pequenos arquivos que o site guarda no seu navegador. O Training Up usa apenas os essenciais para funcionar. Não usamos cookies de publicidade, de análise nem de terceiros.",
+      "sections": [
+        {
+          "title": "1. Cookies que usamos",
+          "items": [
+            "Sessão (training-up-session): mantém você conectado enquanto usa o app. Expira após 2 horas sem uso.",
+            "Proteção contra falsificação de pedidos (XSRF-TOKEN): impede que outros sites façam ações em seu nome. Expira junto com a sessão.",
+            "Manter conectado (remember_web_…): só é criado quando a opção \"Manter conectado\" está marcada no login. Dura até 400 dias ou até você sair da conta."
+          ]
+        },
+        {
+          "title": "2. Outros dados guardados no navegador",
+          "items": [
+            "Tema escolhido (claro ou escuro), para abrir o site do jeito que você prefere.",
+            "Se você já viu o aviso de cookies, para não mostrá-lo de novo.",
+            "Arquivos do aplicativo instalado (PWA), para abrir mais rápido e funcionar sem internet."
+          ]
+        },
+        {
+          "title": "3. Por que não pedimos consentimento",
+          "body": [
+            "Como esses cookies são estritamente necessários para o site funcionar e para a sua segurança, eles não dependem de consentimento. Se um dia passarmos a usar cookies não essenciais, eles só serão ativados depois que você aceitar."
+          ]
+        },
+        {
+          "title": "4. Como controlar",
+          "body": [
+            "Você pode apagar ou bloquear cookies nas configurações do seu navegador. Sem os cookies essenciais, não é possível entrar na sua conta."
+          ]
+        }
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacidade",
+    "export": "Exportar meus dados",
+    "exportHint": "Baixe um arquivo com todos os dados da sua conta.",
+    "exported": "Arquivo baixado.",
+    "consents": "Meus consentimentos",
+    "consentsHint": "Veja o que você aceitou, quando e em qual versão.",
+    "documents": "Documentos",
+    "delete": "Excluir conta",
+    "deleteHint": "Apaga sua conta e todos os seus dados. Não dá para desfazer.",
+    "deleteTitle": "Excluir conta",
+    "deleteWarning": "Sua conta e todos os seus dados serão apagados na hora, sem possibilidade de recuperação. Se quiser uma cópia, exporte seus dados antes.",
+    "deletePassword": "Senha atual",
+    "deleteWord": "Digite EXCLUIR para confirmar",
+    "deleteCode": "Código do app ou de recuperação",
+    "deleteConfirm": "Excluir minha conta",
+    "deleted": "Sua conta foi excluída.",
+    "consentsPage": {
+      "title": "Meus consentimentos",
+      "subtitle": "Cada aceite fica registrado com a versão do documento, a data e o IP de onde foi feito.",
+      "empty": "Nenhum consentimento registrado.",
+      "version": "Versão {{version}}",
+      "acceptedAt": "Aceito em {{date}}",
+      "ip": "IP {{ip}}",
+      "revoke": "Para revogar um consentimento ou tirar dúvidas, escreva para {{email}}.",
+      "back": "Voltar para o Perfil",
+      "types": {
+        "terms": "Termos de Uso",
+        "privacy": "Política de Privacidade",
+        "health_data": "Dados de saúde",
+        "cookies": "Política de Cookies"
+      }
+    },
+    "update": {
+      "title": "Atualizamos nossos termos",
+      "subtitle": "Leia e aceite a nova versão dos Termos de Uso e da Política de Privacidade para continuar.",
+      "submit": "Aceitar e continuar",
+      "signOut": "Sair da conta"
     }
   }
 }

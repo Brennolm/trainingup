@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\GoogleAccountController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\TwoFactorChallengeController;
+use App\Http\Controllers\ConsentController;
 use App\Http\Controllers\MeController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
@@ -40,6 +42,14 @@ Route::prefix('auth')->group(function () {
 // Who is signed in (data: null for guests). Works before e-mail verification so the SPA knows
 // where to send the user.
 Route::get('/user', MeController::class);
+
+// LGPD rights: available as soon as signed in (even before confirming the e-mail).
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/consents', [ConsentController::class, 'index']);
+    Route::post('/consents', [ConsentController::class, 'store']);
+    Route::get('/profile/export', [AccountController::class, 'export'])->middleware('throttle:export');
+    Route::delete('/profile', [AccountController::class, 'destroy'])->middleware('throttle:two-factor');
+});
 
 // The app itself: signed in and e-mail confirmed.
 Route::middleware(['auth:sanctum', 'verified.email'])->group(function () {

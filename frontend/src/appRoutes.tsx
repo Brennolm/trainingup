@@ -3,6 +3,7 @@ import { GuestOnly, RequireAuth, RequireVerified } from './features/auth/guards'
 import { AppLayout } from './layouts/AppLayout'
 import { RootLayout } from './layouts/RootLayout'
 import { AppSoonPage } from './pages/app/AppSoonPage'
+import { ConsentsPage } from './pages/app/ConsentsPage'
 import { ProfilePage } from './pages/app/ProfilePage'
 import { TodayPage } from './pages/app/TodayPage'
 import { CompleteSignUpPage } from './pages/auth/CompleteSignUpPage'
@@ -12,9 +13,9 @@ import { SignInPage } from './pages/auth/SignInPage'
 import { SignUpPage } from './pages/auth/SignUpPage'
 import { TwoFactorChallengePage } from './pages/auth/TwoFactorChallengePage'
 import { VerifyEmailPage } from './pages/auth/VerifyEmailPage'
-import { ComingSoonPage } from './pages/ComingSoonPage'
 import { DesignSystemRoute } from './pages/DesignSystemRoute'
 import { LandingPage } from './pages/landing/LandingPage'
+import { LegalPage } from './pages/legal/LegalPage'
 import { ROUTES } from './routes'
 
 export const routes: RouteObject[] = [
@@ -52,6 +53,7 @@ export const routes: RouteObject[] = [
                   { path: ROUTES.diet, element: <AppSoonPage titleKey="nav.diet" /> },
                   { path: ROUTES.progress, element: <AppSoonPage titleKey="nav.progress" /> },
                   { path: ROUTES.profile, element: <ProfilePage /> },
+                  { path: ROUTES.consents, element: <ConsentsPage /> },
                 ],
               },
             ],
@@ -59,10 +61,10 @@ export const routes: RouteObject[] = [
         ],
       },
 
-      // Legal pages arrive in phase 3.
-      { path: ROUTES.terms, element: <ComingSoonPage /> },
-      { path: ROUTES.privacy, element: <ComingSoonPage /> },
-      { path: ROUTES.cookies, element: <ComingSoonPage /> },
+      // Legal documents (texts: locales/pt-BR.json → legalDocs).
+      { path: ROUTES.terms, element: <LegalPage doc="terms" /> },
+      { path: ROUTES.privacy, element: <LegalPage doc="privacy" /> },
+      { path: ROUTES.cookies, element: <LegalPage doc="cookies" /> },
       { path: '/design/*', element: <DesignSystemRoute /> },
       { path: '*', element: <Navigate to={ROUTES.home} replace /> },
     ],

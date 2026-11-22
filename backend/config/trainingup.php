@@ -14,10 +14,14 @@ return [
     ],
 
     // Version of each legal text the user accepts (recorded in `consents`).
-    // Bump when the text changes; final texts arrive in phase 3.
+    // Bump together with frontend/src/locales (legal.*.version) when the text changes:
+    // signed-in users are then asked to accept the new version.
     'legal_versions' => [
-        'terms' => env('LEGAL_TERMS_VERSION', '2026-11-draft'),
-        'privacy' => env('LEGAL_PRIVACY_VERSION', '2026-11-draft'),
+        'terms' => '2026-11-22',
+        'privacy' => '2026-11-22',
     ],
+
+    // SPEC 6.8: Google-only accounts type this word to confirm account deletion.
+    'delete_confirmation_word' => 'EXCLUIR',
 
 ];

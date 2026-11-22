@@ -1,5 +1,5 @@
 import { api, API_URL, ApiError } from '../../lib/api'
-import type { Preferences, RegisterInput, User } from './types'
+import type { Consent, Preferences, RegisterInput, User } from './types'
 
 type UserResponse = { data: User }
 type MessageResponse = { message: string; retry_after?: number }
@@ -88,6 +88,18 @@ export const authApi = {
   async googleUnlink() {
     return (await api.delete<UserResponse>('/api/auth/google')).data
   },
+
+  consents: async () => (await api.get<{ data: Consent[] }>('/api/consents')).data,
+
+  async acceptLegal() {
+    return (await api.post<UserResponse>('/api/consents', { accept_terms: true })).data
+  },
+
+  /** Everything the API stores about the user (LGPD), as a plain object. */
+  exportData: () => api.get<Record<string, unknown>>('/api/profile/export'),
+
+  deleteAccount: (input: { password?: string; confirmation?: string; code?: string }) =>
+    api.delete<MessageResponse>('/api/profile', input),
 
   async changePassword(input: {
     current_password?: string

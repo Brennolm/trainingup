@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Models\User;
+use App\Support\LegalConsent;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -23,6 +24,8 @@ class UserResource extends JsonResource
             'has_password' => $this->password !== null,
             'google_linked' => $this->google_id !== null,
             'two_factor_enabled' => $this->hasTwoFactorEnabled(),
+            // The Terms or Privacy Policy changed since the last acceptance: ask again.
+            'needs_legal_consent' => LegalConsent::isOutdated($this->resource),
             'recovery_codes_left' => $this->hasTwoFactorEnabled() ? count($this->two_factor_recovery_codes ?? []) : null,
             'preferences' => [
                 'theme' => $this->theme->value,

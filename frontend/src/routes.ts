@@ -17,4 +17,5 @@ export const ROUTES = {
   diet: '/dieta',
   progress: '/progresso',
   profile: '/perfil',
+  consents: '/perfil/consentimentos',
 } as const

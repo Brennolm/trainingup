@@ -1,6 +1,7 @@
 import { Loader2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Outlet, useLocation } from 'react-router'
+import { LegalUpdatePage } from '../../pages/auth/LegalUpdatePage'
 import { ROUTES } from '../../routes'
 import { useMe } from './useAuth'
 
@@ -23,10 +24,14 @@ export function RequireAuth() {
   return <Outlet />
 }
 
-/** The app requires a confirmed e-mail (SPEC 6.2). Use inside RequireAuth. */
+/**
+ * The app requires a confirmed e-mail (SPEC 6.2) and acceptance of the current Terms and
+ * Privacy Policy (asked again when they change). Use inside RequireAuth.
+ */
 export function RequireVerified() {
   const { data: user } = useMe()
   if (user && !user.email_verified) return <Navigate to={ROUTES.verifyEmail} replace />
+  if (user?.needs_legal_consent) return <LegalUpdatePage />
   return <Outlet />
 }
 

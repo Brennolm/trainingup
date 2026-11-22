@@ -9,14 +9,14 @@ describe('routes', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Treino e dieta')
   })
 
-  it.each(['/termos', '/privacidade', '/cookies'])(
-    'shows a "coming soon" placeholder at %s until phase 3',
-    (path) => {
-      renderRoute(path)
-      expect(screen.getByRole('heading', { level: 1, name: 'Em breve' })).toBeInTheDocument()
-      expect(screen.getByRole('link', { name: 'Voltar para o início' })).toHaveAttribute('href', '/')
-    },
-  )
+  it.each([
+    ['/termos', 'Termos de Uso'],
+    ['/privacidade', 'Política de Privacidade'],
+    ['/cookies', 'Política de Cookies'],
+  ])('serves the legal document at %s', (path, title) => {
+    renderRoute(path)
+    expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument()
+  })
 
   it.each([
     ['/entrar', 'Entrar'],

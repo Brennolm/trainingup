@@ -12,7 +12,7 @@ const COOKIE_NOTICE_VERSION = '1'
 
 /**
  * First-visit cookie notice. The site uses only essential cookies, so this informs rather than
- * asks for consent (see docs/DECISIONS.md). Consent records arrive in phase 3.
+ * asks for consent (see docs/DECISIONS.md and the Cookies policy).
  */
 export function CookieBanner() {
   const { t } = useTranslation()

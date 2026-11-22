@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Enums\ConsentType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Plan;
 use App\Models\User;
 use App\Services\EmailVerificationService;
+use App\Support\LegalConsent;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -23,15 +23,7 @@ class RegisterController extends Controller
             $user->save();
 
             // LGPD: record which version of each document was accepted, when and from where.
-            foreach ([ConsentType::Terms, ConsentType::Privacy] as $type) {
-                $user->consents()->create([
-                    'type' => $type,
-                    'version' => config("trainingup.legal_versions.{$type->value}"),
-                    'accepted_at' => now(),
-                    'ip_address' => $request->ip(),
-                    'user_agent' => substr((string) $request->userAgent(), 0, 500),
-                ]);
-            }
+            LegalConsent::record($user, $request);
 
             return $user;
         });

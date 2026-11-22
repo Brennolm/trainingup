@@ -16,12 +16,21 @@ export type User = {
   two_factor_enabled: boolean
   /** Unused recovery codes; null while 2FA is off. */
   recovery_codes_left: number | null
+  /** The Terms or the Privacy Policy changed since the last acceptance. */
+  needs_legal_consent: boolean
   preferences: {
     theme: Theme
     weight_unit: WeightUnit
     length_unit: LengthUnit
     locale: string
   }
+}
+
+export type Consent = {
+  type: 'terms' | 'privacy' | 'health_data' | 'cookies'
+  version: string
+  accepted_at: string
+  ip_address: string | null
 }
 
 export type RegisterInput = {
