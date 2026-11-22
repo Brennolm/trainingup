@@ -50,6 +50,13 @@ Conta compartilhada `u501993331` (mesmo usuário dos outros sites).
 - MariaDB 11.8 (compatível com MySQL), banco e usuário `u501993331_trainingup`, host `localhost`.
 - Senha só no `.env` do servidor (colada pelo Brenno via Gerenciador de Arquivos; nunca vai para o Git nem para o chat).
 
+## E-mail
+
+- Conta `noreply@trainingup.com.br` (Hostinger). No `api/.env`: `MAIL_MAILER=smtp`, `MAIL_SCHEME=smtps`, `MAIL_HOST=smtp.hostinger.com`, `MAIL_PORT=465`, `MAIL_USERNAME=noreply@trainingup.com.br`, `MAIL_PASSWORD` (colada pelo Brenno).
+- DNS (criado pela Hostinger): MX, SPF `include:_spf.mail.hostinger.com`, DKIM `hostingermail-a/b/c._domainkey`, DMARC `p=none` (endurecer para `quarantine` depois de algumas semanas sem problemas).
+- Localmente: o `.env` do Brenno envia de verdade pela mesma conta (escolha dele). Para testar sem enviar, use `MAIL_MAILER=log` e os e-mails (e os códigos) aparecem em `backend/storage/logs/laravel.log`. O `.env.example` continua com `log`.
+- Contato público: `contato@trainingup.com.br`.
+
 ## Agendador (cron)
 
 A hospedagem compartilhada não tem processo contínuo; tudo roda pelo `schedule:run` (ver `backend/routes/console.php`):

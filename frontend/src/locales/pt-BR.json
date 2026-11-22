@@ -14,7 +14,71 @@
   },
   "auth": {
     "signIn": "Entrar",
-    "signUp": "Criar conta"
+    "signUp": "Criar conta",
+    "backHome": "Voltar para o início",
+    "fields": {
+      "name": "Nome",
+      "email": "E-mail",
+      "password": "Senha",
+      "passwordConfirmation": "Confirme a senha",
+      "birthDate": "Data de nascimento",
+      "newPassword": "Nova senha"
+    },
+    "signInPage": {
+      "title": "Entrar",
+      "subtitle": "Que bom te ver de novo.",
+      "remember": "Manter conectado",
+      "forgot": "Esqueci minha senha",
+      "submit": "Entrar",
+      "noAccount": "Ainda não tem conta?",
+      "createAccount": "Criar conta"
+    },
+    "signUpPage": {
+      "title": "Criar conta",
+      "subtitle": "Grátis durante o beta. Leva menos de um minuto.",
+      "birthDateHint": "O Training Up é para maiores de 18 anos.",
+      "submit": "Criar conta",
+      "hasAccount": "Já tem conta?",
+      "signIn": "Entrar",
+      "acceptLabel": "Li e aceito os <terms>Termos de Uso</terms> e a <privacy>Política de Privacidade</privacy>"
+    },
+    "passwordRules": {
+      "title": "A senha precisa ter:",
+      "minLength": "Pelo menos 8 caracteres",
+      "letter": "Pelo menos uma letra",
+      "number": "Pelo menos um número",
+      "met": "atendido",
+      "unmet": "pendente"
+    },
+    "verify": {
+      "title": "Confirme seu e-mail",
+      "subtitle": "Enviamos um código de 6 dígitos para",
+      "codeLabel": "Código de verificação",
+      "submit": "Confirmar",
+      "resend": "Reenviar código",
+      "resendIn": "Reenviar em {{seconds}} s",
+      "resent": "Enviamos um novo código.",
+      "sendFailed": "Não conseguimos enviar o código. Toque em Reenviar código.",
+      "wrongEmail": "E-mail errado? Saia e crie a conta de novo.",
+      "spamHint": "Não chegou? Confira a caixa de spam.",
+      "signOut": "Sair"
+    },
+    "forgot": {
+      "title": "Esqueci minha senha",
+      "subtitle": "Informe o e-mail da sua conta e enviaremos um link para criar uma nova senha.",
+      "submit": "Enviar link",
+      "sentTitle": "Confira seu e-mail",
+      "backToSignIn": "Voltar para Entrar"
+    },
+    "reset": {
+      "title": "Criar nova senha",
+      "subtitle": "Escolha uma nova senha para a sua conta.",
+      "submit": "Salvar nova senha",
+      "doneTitle": "Senha redefinida",
+      "goToSignIn": "Entrar",
+      "invalidLink": "Este link está incompleto. Peça um novo link de redefinição.",
+      "requestNew": "Pedir novo link"
+    }
   },
   "landing": {
     "meta": {
@@ -243,5 +307,60 @@
       "headingSample": "Supino 60 kg",
       "bodySample": "Ao atingir o topo da faixa de repetições em todas as séries, aumente a carga na próxima sessão."
     }
+  },
+  "validation": {
+    "emailRequired": "Informe seu e-mail.",
+    "emailInvalid": "Informe um e-mail válido.",
+    "passwordRequired": "Informe a senha.",
+    "passwordWeak": "A senha não atende aos requisitos.",
+    "confirmRequired": "Confirme a senha.",
+    "passwordMismatch": "As senhas não conferem.",
+    "nameShort": "Informe seu nome.",
+    "nameLong": "O nome pode ter até 100 caracteres.",
+    "birthDateRequired": "Informe sua data de nascimento.",
+    "birthDateInvalid": "Informe uma data válida.",
+    "underage": "Você precisa ter 18 anos ou mais para usar o Training Up.",
+    "termsRequired": "Você precisa aceitar os Termos de Uso e a Política de Privacidade.",
+    "codeLength": "O código tem 6 dígitos."
+  },
+  "errors": {
+    "network": "Sem conexão com o servidor. Verifique sua internet e tente de novo.",
+    "generic": "Algo deu errado. Tente de novo em instantes.",
+    "tooMany": "Muitas tentativas. Tente novamente em {{seconds}} segundos."
+  },
+  "appPages": {
+    "loading": "Carregando…",
+    "today": {
+      "greetingMorning": "Bom dia, {{name}}!",
+      "greetingAfternoon": "Boa tarde, {{name}}!",
+      "greetingEvening": "Boa noite, {{name}}!",
+      "soonTitle": "Seu painel está chegando",
+      "soonText": "Em breve você vai responder o questionário e receber seus planos de treino e dieta por aqui."
+    },
+    "soon": {
+      "title": "Em breve",
+      "text": "Esta área ainda está sendo construída."
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "personal": {
+      "title": "Dados pessoais",
+      "emailHint": "A troca de e-mail chega em breve.",
+      "save": "Salvar",
+      "saved": "Dados salvos."
+    },
+    "preferences": {
+      "title": "Preferências",
+      "theme": "Tema",
+      "weight": "Unidade de peso",
+      "length": "Unidade de medida",
+      "kg": "Quilos (kg)",
+      "lb": "Libras (lb)",
+      "cm": "Centímetros (cm)",
+      "ftIn": "Pés e polegadas (ft/in)",
+      "saved": "Preferência salva."
+    },
+    "signOut": "Sair da conta"
   }
 }

@@ -1,20 +1,33 @@
-import { useId, useState, type InputHTMLAttributes, type ReactNode } from 'react'
+import { useId, useState, type InputHTMLAttributes, type ReactNode, type Ref } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { cn } from '../../lib/cn'
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string
-  hint?: string
+  hint?: ReactNode
   error?: string
   suffix?: ReactNode
+  /** React 19 passes ref as a prop; needed by React Hook Form's register(). */
+  ref?: Ref<HTMLInputElement>
 }
 
-export function Input({ label, hint, error, suffix, id, type = 'text', className, ...props }: InputProps) {
+export function Input({
+  label,
+  hint,
+  error,
+  suffix,
+  id,
+  type = 'text',
+  className,
+  'aria-describedby': extraDescribedBy,
+  ...props
+}: InputProps) {
   const { t } = useTranslation()
   const autoId = useId()
   const inputId = id ?? autoId
-  const describedBy = error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined
+  const own = error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined
+  const describedBy = [own, extraDescribedBy].filter(Boolean).join(' ') || undefined
   const [revealed, setRevealed] = useState(false)
   const isPassword = type === 'password'
 

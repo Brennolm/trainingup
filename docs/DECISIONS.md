@@ -26,5 +26,11 @@ Registro de decisões tomadas durante a implementação que complementam ou ajus
 - **Fontes em `public/fonts` com nomes fixos** (cópia do subset latin do `@fontsource`), para o `index.html` pré-carregar as usadas no topo da página. Sem isso, a troca de fonte deslocava o layout (CLS 0,145, desempenho 87). Pré-renderização (SSG) avaliada e descartada por ora: o resultado já passou de 90.
 - **No celular, o cabeçalho da landing mostra só logo + menu;** "Entrar" e "Criar conta" ficam no menu (o hero logo abaixo tem o CTA "Comece grátis"). Os três itens não cabem em 375 px.
 - **`tailwind-merge` no `cn()`:** classes passadas a um componente substituem as conflitantes do componente (ex.: `hidden` em um botão).
+- **Fase 2 — escolhas do Brenno:** manter conectado por padrão (caixa marcada no login); senha com 8+ caracteres, 1 letra e 1 número; e-mail só leitura no Perfil (troca entra com a seção Segurança); aceite de Termos/Privacidade registrado já no cadastro (tabela `consents`, versão `2026-11-draft` até os textos da fase 3).
+- **Autenticação própria em vez do Fortify:** a verificação da SPEC é por código de 6 dígitos (não link), com regras próprias; controllers simples e testados. O 2FA (fase 5) usa uma biblioteca TOTP.
+- **E-mails de autenticação enviados na hora (sem fila):** a fila só roda a cada minuto pelo Cron; o código precisa chegar em segundos. Se o envio falhar, a conta é criada e a tela oferece "Reenviar código" (erro vai para o log; alerta no admin na fase 7).
+- **Código de verificação guardado como HMAC** (com a APP_KEY), nunca em texto; o código vai no assunto do e-mail para aparecer na notificação do celular.
+- **`GET /api/user` responde `data: null` para visitantes** (em vez de 401), para não gerar erro no console a cada página aberta. As demais rotas protegidas continuam com 401.
+- **Ao sair, o usuário é removido do cache depois da navegação** (não definido como nulo): evita que a proteção de rota da tela anterior redirecione para "Entrar".
 - **Datas no banco em UTC**; conversão para o fuso do usuário na exibição.
 - **Rotas do app** usarão os caminhos em português da navegação (`/hoje`, `/treino`, `/dieta`, `/progresso`, `/perfil`), seguindo `/entrar` e `/criar-conta` da SPEC.
