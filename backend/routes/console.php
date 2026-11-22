@@ -1,8 +1,22 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+/*
+| Shared hosting has no long-running worker: the hPanel cron runs `schedule:run` every minute.
+| See docs/DEPLOY.md.
+*/
+
+// Post-deploy tasks (migrations, caches) once per published version.
+Schedule::command('deploy:finalize')->everyMinute()->withoutOverlapping();
+
+// Process queued jobs (e-mails etc.) without a permanent worker.
+Schedule::command('queue:work --stop-when-empty --max-time=50 --tries=3')
+    ->everyMinute()
+    ->withoutOverlapping();
+
+// Daily database backup, 7-day retention.
+Schedule::command('backup:database')
+    ->dailyAt('03:00')
+    ->timezone('America/Sao_Paulo')
+    ->withoutOverlapping();

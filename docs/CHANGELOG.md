@@ -1,8 +1,14 @@
 # Changelog
 
-**Fase atual:** 0.2 — Projeto (entregue, aguardando aceite do Brenno). Próxima: 0.3 — Deploy.
+**Fase atual:** 0.3 — Deploy (em andamento: falta plugar o Git e o Cron no hPanel). Fase 0.2 entregue.
 
 ## 2026-11-21
+- Fase 0.3 (em andamento):
+  - Servidor preparado: subdomínio `api`, SSL, banco MariaDB, `.env` de produção (senha colocada pelo Brenno).
+  - GitHub Actions: testes de frontend e backend em todo push/PR; na `main`, publica site + API prontos na branch `deploy`.
+  - `.htaccess` do site (HTTPS, sem www, SPA, cabeçalhos de segurança, cache) e da API (só `public/`, bloqueios, só no subdomínio).
+  - Comandos `deploy:finalize` (migrações/caches por versão) e `backup:database` (diário, 7 dias), agendados com a fila em `routes/console.php`, com testes.
+  - `docs/DEPLOY.md`.
 - Fase 0.2 entregue:
   - Monorepo com `/frontend` (React 19 + Vite 8 + TypeScript) e `/backend` (Laravel 13, API-only, Sanctum instalado).
   - Design system: tokens de cor (temas escuro/claro), tipografia Barlow/Barlow Condensed auto-hospedada, componentes Button, Input, Card, Modal, Tabs, Toast, BottomNav, Sidebar, ThemeToggle, Logo; vitrine em `/design`.

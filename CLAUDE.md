@@ -21,6 +21,8 @@
 /frontend   React + Vite + TS (PWA)
 /backend    Laravel API
 /docs       SPEC, DECISIONS, CHANGELOG, DEPLOY, data/ (seeds, TACO), brand/
+/deploy     arquivos usados pelo workflow de deploy (.htaccess da API, .gitignore da branch deploy)
+/.github    GitHub Actions: testes + publicação na branch `deploy` (ver docs/DEPLOY.md)
 ```
 
 ## Comandos

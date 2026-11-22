@@ -1,0 +1,129 @@
+# CI + deploy for Training Up (see docs/DEPLOY.md).
+# On every push/PR: tests for frontend and backend.
+# On push to main (after tests pass): builds the site + API and publishes the ready-to-serve
+# files to the `deploy` branch. Hostinger's Git deployment pulls that branch into public_html.
+name: CI / Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    name: Frontend (lint, test, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist
+          include-hidden-files: true
+          retention-days: 7
+
+  backend:
+    name: Backend (pint, test)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, pdo_sqlite, intl
+          coverage: none
+      - run: composer install --no-interaction --prefer-dist --no-progress
+      - run: cp .env.example .env && php artisan key:generate
+      - run: ./vendor/bin/pint --test
+      - run: php artisan test
+
+  deploy:
+    name: Publish deploy branch
+    needs: [frontend, backend]
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: deploy
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, intl
+          coverage: none
+
+      - name: Download site build
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-dist
+          path: out
+
+      - name: Assemble API (production dependencies only)
+        run: |
+          mkdir -p out/api
+          rsync -a backend/ out/api/ \
+            --exclude tests --exclude vendor --exclude node_modules \
+            --exclude '.env' --exclude '.env.*' --exclude phpunit.xml \
+            --exclude '.phpunit.result.cache' --exclude 'database/*.sqlite' \
+            --exclude README.md --exclude '.editorconfig'
+          composer install --working-dir=out/api --no-dev --optimize-autoloader \
+            --no-interaction --prefer-dist --no-progress
+          # The backend .gitignore ignores vendor/ and nested ones inside packages could hide
+          # required files: the deploy branch uses only deploy/deploy.gitignore + Laravel's
+          # storage/bootstrap ones.
+          rm -f out/api/.gitignore
+          find out/api/vendor -name .gitignore -delete
+          cp deploy/api.htaccess out/api/.htaccess
+          cp deploy/deploy.gitignore out/.gitignore
+          echo "${GITHUB_SHA}" > out/api/DEPLOY_VERSION
+
+      - name: Publish to deploy branch
+        working-directory: out
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          git init -q -b deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          # Keep the branch history (useful for rollbacks): stack this build on top of it.
+          if git fetch -q --depth 1 origin deploy; then
+            git reset -q --soft FETCH_HEAD
+          fi
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed; deploy branch is up to date."
+            exit 0
+          fi
+          git commit -q -m "Deploy ${GITHUB_SHA::7}: ${MESSAGE%%$'\n'*}"
+          git push -q origin HEAD:deploy
+          echo "Published ${GITHUB_SHA::7} to the deploy branch."
