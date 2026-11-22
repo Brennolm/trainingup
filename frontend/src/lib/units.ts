@@ -14,6 +14,18 @@ export function cmToFtIn(cm: number): { ft: number; in: number } {
 
 export const ftInToCm = (ft: number, inches: number) => (ft * 12 + inches) * CM_PER_INCH
 
+/** What the user typed in a number field: "72,5" or "72.5" → 72.5; empty or invalid → null. */
+export function parseDecimal(text: string): number | null {
+  const trimmed = text.trim()
+  const n = Number(trimmed.replace(',', '.'))
+  return trimmed === '' || !Number.isFinite(n) ? null : n
+}
+
+/** A number ready to show in a text field, with a decimal comma: 72.456 → "72,5". */
+export function toDecimalInput(n: number, digits = 1): string {
+  return String(Math.round(n * 10 ** digits) / 10 ** digits).replace('.', ',')
+}
+
 /** "78,4 kg" or "172,8 lb" (locale-aware decimals). */
 export function formatWeight(kg: number, unit: WeightUnit, locale = 'pt-BR'): string {
   const value = unit === 'lb' ? kgToLb(kg) : kg

@@ -303,6 +303,7 @@
     "typography": "Tipografia",
     "buttons": "Botões",
     "inputs": "Campos",
+    "choices": "Escolhas",
     "cards": "Cards",
     "tabs": "Abas",
     "feedback": "Modal e aviso",
@@ -364,8 +365,12 @@
       "greetingMorning": "Bom dia, {{name}}!",
       "greetingAfternoon": "Boa tarde, {{name}}!",
       "greetingEvening": "Boa noite, {{name}}!",
-      "soonTitle": "Seu painel está chegando",
-      "soonText": "Em breve você vai responder o questionário e receber seus planos de treino e dieta por aqui."
+      "startTitle": "Responda o questionário",
+      "startText": "Leva uns 5 minutos. Com suas respostas, montamos as sugestões de treino e dieta para você. Dá para parar e continuar depois.",
+      "resumeTitle": "Continue de onde parou",
+      "resumeText": "Você já respondeu {{filled}} de {{total}} partes do questionário.",
+      "plansSoonTitle": "Respostas salvas",
+      "plansSoonText": "Seus planos de treino e dieta estão chegando. Assim que estiverem prontos, eles aparecem aqui no Hoje."
     },
     "soon": {
       "title": "Em breve",
@@ -716,5 +721,254 @@
       "submit": "Aceitar e continuar",
       "signOut": "Sair da conta"
     }
+  },
+  "questionnaire": {
+    "title": "Questionário",
+    "progress": "Passo {{step}} de {{total}}",
+    "progressLabel": "Progresso do questionário",
+    "back": "Voltar",
+    "yes": "Sim",
+    "no": "Não",
+    "required": "Responda esta pergunta.",
+    "missing": "Responda todas as perguntas para continuar.",
+    "soon": "Em breve",
+    "rectifyNotice": "Você está alterando respostas de saúde que já tinha salvado. A alteração fica registrada (data, resposta anterior e nova).",
+    "confirmCorrect": "Confirmo que as informações estão corretas",
+    "confirmCorrectRequired": "Marque \"Confirmo que as informações estão corretas\" para salvar a alteração.",
+    "steps": {
+      "personal": "Sobre você",
+      "health": "Saúde",
+      "routine": "Rotina",
+      "goal": "Objetivo",
+      "training": "Treino",
+      "diet": "Alimentação",
+      "summary": "Resumo"
+    },
+    "stepIntro": {
+      "personal": "Usamos esses dados para estimar suas calorias e o seu ponto de partida.",
+      "health": "Algumas perguntas para saber se é seguro sugerir treino e dieta para você agora. Responda com sinceridade.",
+      "routine": "Como é o seu dia fora dos treinos.",
+      "goal": "O que você quer alcançar.",
+      "training": "Para montar um treino que caiba na sua semana.",
+      "diet": "Para montar um plano alimentar que faça sentido para você."
+    },
+    "intro": {
+      "text": "São 6 partes rápidas: sobre você, saúde, rotina, objetivo, treino e alimentação. Suas respostas ficam salvas a cada passo, então dá para parar e continuar depois.",
+      "redoTitle": "Refazer questionário",
+      "redoText": "Você já respondeu o questionário. Refazer cria uma nova versão, começando com as suas respostas atuais para você revisar.",
+      "redoHint": "Para mudar só um item, como objetivo ou dias de treino, use",
+      "start": "Começar",
+      "continue": "Continuar questionário",
+      "redo": "Refazer questionário completo"
+    },
+    "consent": {
+      "title": "Seus dados de saúde",
+      "points": [
+        "Vamos perguntar sobre seu corpo (peso, altura, sexo biológico), sua saúde (triagem de prontidão para atividade física, gestação e condições clínicas), sua rotina, seu objetivo, seu treino e sua alimentação.",
+        "Pela LGPD, esses são dados pessoais sensíveis. Eles servem só para gerar e acompanhar suas sugestões de treino e dieta.",
+        "As respostas de saúde ficam guardadas com criptografia. Você pode ver, corrigir, exportar ou excluir tudo quando quiser, no Perfil.",
+        "Sem esse consentimento não conseguimos gerar os planos, mas você continua podendo montar sua própria ficha de treino e seu plano alimentar."
+      ],
+      "accept": "Autorizo o Training Up a usar meus dados de saúde para gerar minhas sugestões de treino e alimentação, conforme a <privacy>Política de Privacidade</privacy>.",
+      "required": "Para continuar, marque a autorização de uso dos dados de saúde.",
+      "continue": "Aceitar e continuar"
+    },
+    "personal": {
+      "sex": "Sexo biológico",
+      "sexHint": "Usado só no cálculo das calorias, porque o gasto de energia do corpo muda entre os sexos biológicos.",
+      "height": "Altura",
+      "heightFt": "Altura (pés)",
+      "heightIn": "Polegadas",
+      "weight": "Peso atual",
+      "range": "Informe um valor entre {{min}} e {{max}} {{unit}}.",
+      "rangeFtIn": "Informe uma altura entre 3′ 11″ e 7′ 6″."
+    },
+    "health": {
+      "parQTitle": "Prontidão para atividade física (PAR-Q)",
+      "parQIntro": "Questionário padrão usado antes de começar exercícios.",
+      "parQ": [
+        "Algum médico já disse que você tem algum problema de coração e que só deveria fazer atividade física supervisionada por profissionais de saúde?",
+        "Você sente dor no peito quando pratica atividade física?",
+        "No último mês, você sentiu dor no peito quando não estava praticando atividade física?",
+        "Você perde o equilíbrio por causa de tontura ou já perdeu a consciência?",
+        "Você tem algum problema nos ossos ou nas articulações (por exemplo, nas costas, no joelho ou no quadril) que poderia piorar com atividade física?",
+        "Algum médico receita, atualmente, remédio para sua pressão arterial ou para o coração?",
+        "Você sabe de alguma outra razão pela qual não deveria praticar atividade física?"
+      ],
+      "pregnant": "Você está gestante ou amamentando?",
+      "conditions": "Você tem alguma destas condições diagnosticadas?",
+      "conditionsHint": "Marque todas que se aplicam.",
+      "none": "Nenhuma destas"
+    },
+    "routine": {
+      "work": "Como é o seu trabalho ou a sua rotina diária?"
+    },
+    "goal": {
+      "goal": "Qual é o seu objetivo?",
+      "pace": "Em que ritmo?"
+    },
+    "training": {
+      "experience": "Qual é a sua experiência com musculação?",
+      "days": "Em quais dias você pode treinar?",
+      "daysHint": "Escolha de 2 a 6 dias. Selecionados: {{selected}}.",
+      "daysError": "Escolha de 2 a 6 dias.",
+      "minutes": "Quanto tempo por treino?",
+      "minutesValue": "{{minutes}} min",
+      "minutesMax": "75 min ou mais",
+      "location": "Onde você vai treinar?",
+      "equipmentSoon": "Equipamentos e lesões",
+      "equipmentSoonText": "Em breve você vai poder informar os equipamentos que tem e lesões ou limitações, para o treino evitar exercícios que não servem para você.",
+      "cardio": "Quer incluir cardio?",
+      "cardioPreference": "Qual cardio você prefere?"
+    },
+    "diet": {
+      "restrictions": "Você segue alguma destas restrições?",
+      "restrictionsHint": "Opcional. Marque todas que se aplicam.",
+      "foodsSoon": "Alimentos que você não come",
+      "foodsSoonText": "Em breve você vai poder escolher, por grupo, os alimentos que não come, para eles ficarem fora do seu plano.",
+      "meals": "Quantas refeições por dia?",
+      "mealsHint": "Recomendamos 4 ou 5.",
+      "split": "Como prefere o plano?"
+    },
+    "options": {
+      "sex": {
+        "male": "Masculino",
+        "female": "Feminino"
+      },
+      "work": {
+        "sedentary": "Sedentário",
+        "standing": "Em pé",
+        "active": "Fisicamente ativo"
+      },
+      "workHint": {
+        "sedentary": "Passo a maior parte do dia sentado (escritório, home office, estudo).",
+        "standing": "Fico boa parte do dia em pé ou andando (comércio, professor, saúde).",
+        "active": "Faço esforço físico no trabalho (obras, entregas, carga)."
+      },
+      "goal": {
+        "lose_fat": "Perder gordura",
+        "maintain": "Manter o peso",
+        "gain_muscle": "Ganhar massa"
+      },
+      "pace": {
+        "light": "Leve",
+        "moderate": "Moderado"
+      },
+      "paceHint": {
+        "lose_fat": {
+          "light": "Mais tranquilo de seguir, resultado mais gradual.",
+          "moderate": "Resultado mais rápido, exige mais disciplina."
+        },
+        "gain_muscle": {
+          "light": "Ganho mais lento, com menos gordura junto.",
+          "moderate": "Ganho mais rápido, com um pouco mais de gordura junto."
+        }
+      },
+      "experience": {
+        "beginner": "Iniciante",
+        "intermediate": "Intermediário",
+        "advanced": "Avançado"
+      },
+      "experienceHint": {
+        "beginner": "Nunca treinei ou treinei menos de 6 meses.",
+        "intermediate": "Treino há mais de 6 meses, com alguma regularidade.",
+        "advanced": "Treino há mais de 2 anos e conheço bem os exercícios."
+      },
+      "weekday": {
+        "mon": "Segunda",
+        "tue": "Terça",
+        "wed": "Quarta",
+        "thu": "Quinta",
+        "fri": "Sexta",
+        "sat": "Sábado",
+        "sun": "Domingo"
+      },
+      "location": {
+        "gym": "Academia completa",
+        "building_gym": "Academia de prédio",
+        "home": "Em casa"
+      },
+      "locationHint": {
+        "gym": "Máquinas, barras, halteres e cabos.",
+        "building_gym": "Poucos aparelhos e halteres.",
+        "home": "Peso do corpo e o que você tiver em casa."
+      },
+      "cardio": {
+        "walking": "Caminhada",
+        "running": "Corrida",
+        "cycling": "Bicicleta",
+        "elliptical": "Elíptico",
+        "any": "Tanto faz"
+      },
+      "restriction": {
+        "vegetarian": "Vegetariano",
+        "vegan": "Vegano",
+        "lactose_free": "Sem lactose",
+        "gluten_free": "Sem glúten"
+      },
+      "split": {
+        "single": "Plano único",
+        "training_rest": "Treino e descanso"
+      },
+      "splitHint": {
+        "single": "O mesmo cardápio todos os dias.",
+        "training_rest": "Um pouco mais de comida nos dias de treino e um pouco menos nos de descanso, com a mesma média na semana."
+      },
+      "conditions": {
+        "diabetes": "Diabetes",
+        "hypertension": "Hipertensão (pressão alta)",
+        "heart_disease": "Doença cardíaca",
+        "kidney_disease": "Doença renal",
+        "liver_disease": "Doença hepática (fígado)",
+        "eating_disorder": "Transtorno alimentar",
+        "other": "Outra condição de saúde"
+      }
+    },
+    "summary": {
+      "intro": "Confira suas respostas. Se algo estiver errado, toque em Editar.",
+      "edit": "Editar",
+      "editSection": "Editar {{section}}",
+      "parQYes_one": "{{count}} resposta \"sim\"",
+      "parQYes_other": "{{count}} respostas \"sim\"",
+      "allNo": "Todas \"não\"",
+      "pregnant": "Gestante ou amamentando",
+      "conditions": "Condições de saúde",
+      "days": "Dias de treino",
+      "cardio": "Cardio",
+      "restrictions": "Restrições",
+      "noRestrictions": "Nenhuma",
+      "disclaimer": "Entendo que os planos são sugestões e estimativas geradas automaticamente e não substituem nutricionista, médico ou profissional de Educação Física.",
+      "disclaimerRequired": "Para gerar os planos, confirme que entendeu que eles são sugestões e estimativas.",
+      "generate": "Gerar meus planos",
+      "finishBlocked": "Concluir questionário"
+    },
+    "blocked": {
+      "title": "Por segurança, não vamos gerar planos automáticos",
+      "text": "Pelas suas respostas de saúde, o ideal é conversar com um médico antes de começar um treino ou mudar a alimentação. Isso não é um diagnóstico: é um cuidado para você treinar e comer com segurança.",
+      "manual": "Enquanto isso, você pode montar sua própria ficha de treino e seu plano alimentar, registrar treinos e acompanhar seu progresso.",
+      "workout": "Ficha de treino",
+      "diet": "Plano alimentar",
+      "rectify": "Corrigir minhas respostas"
+    },
+    "finished": {
+      "title": "Tudo certo!",
+      "text": "Suas respostas foram salvas. Seus planos de treino e dieta estarão disponíveis em breve e vão aparecer no Hoje.",
+      "savedTitle": "Respostas salvas",
+      "today": "Ir para o Hoje"
+    }
+  },
+  "myData": {
+    "title": "Meus dados",
+    "subtitle": "Suas respostas do questionário. Toque em uma parte para alterar só ela.",
+    "profileHint": "Objetivo, saúde, dias de treino, alimentação e mais.",
+    "empty": "Você ainda não respondeu o questionário.",
+    "draft": "Você começou o questionário, mas ainda não terminou. Termine para ver e editar suas respostas aqui.",
+    "editSection": "Alterar {{section}}",
+    "rectifiedAt": "Última alteração das respostas de saúde em {{date}}",
+    "redoTitle": "Reavaliação",
+    "redoText": "Refaça o questionário completo quando seu corpo ou sua rotina mudarem. Cada reavaliação vira uma nova versão.",
+    "redo": "Refazer questionário",
+    "back": "Voltar para Meus dados",
+    "saved": "Alteração salva."
   }
 }

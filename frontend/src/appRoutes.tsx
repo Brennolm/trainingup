@@ -4,7 +4,9 @@ import { AppLayout } from './layouts/AppLayout'
 import { RootLayout } from './layouts/RootLayout'
 import { AppSoonPage } from './pages/app/AppSoonPage'
 import { ConsentsPage } from './pages/app/ConsentsPage'
+import { MyDataPage, MyDataSectionPage } from './pages/app/MyDataPage'
 import { ProfilePage } from './pages/app/ProfilePage'
+import { QuestionnairePage } from './pages/app/QuestionnairePage'
 import { TodayPage } from './pages/app/TodayPage'
 import { CompleteSignUpPage } from './pages/auth/CompleteSignUpPage'
 import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage'
@@ -54,6 +56,9 @@ export const routes: RouteObject[] = [
                   { path: ROUTES.progress, element: <AppSoonPage titleKey="nav.progress" /> },
                   { path: ROUTES.profile, element: <ProfilePage /> },
                   { path: ROUTES.consents, element: <ConsentsPage /> },
+                  { path: ROUTES.questionnaire, element: <QuestionnairePage /> },
+                  { path: ROUTES.myData, element: <MyDataPage /> },
+                  { path: ROUTES.myDataSection, element: <MyDataSectionPage /> },
                 ],
               },
             ],

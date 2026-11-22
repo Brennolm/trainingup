@@ -12,7 +12,6 @@ import { useToast } from '../../components/ui/toastContext'
 import { authApi } from '../../features/auth/authApi'
 import { errorMessage } from '../../features/auth/errors'
 import type { User } from '../../features/auth/types'
-import { ME_QUERY_KEY } from '../../features/auth/useAuth'
 import { ApiError } from '../../lib/api'
 import { ROUTES } from '../../routes'
 
@@ -79,7 +78,7 @@ export function PrivacySection({ user }: { user: User }) {
       })
       toast({ title: t('privacy.deleted') })
       await navigate(ROUTES.home, { replace: true })
-      queryClient.removeQueries({ queryKey: ME_QUERY_KEY })
+      queryClient.removeQueries() // the user and every cached answer
     } catch (err) {
       const field =
         err instanceof ApiError

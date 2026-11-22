@@ -1,7 +1,25 @@
 import { describe, expect, it } from 'vitest'
-import { cmToFtIn, formatLength, formatWeight, ftInToCm, kgToLb, lbToKg } from './units'
+import {
+  cmToFtIn,
+  formatLength,
+  formatWeight,
+  ftInToCm,
+  kgToLb,
+  lbToKg,
+  parseDecimal,
+  toDecimalInput,
+} from './units'
 
 describe('units', () => {
+  it('reads numbers typed with comma or dot', () => {
+    expect(parseDecimal('72,5')).toBe(72.5)
+    expect(parseDecimal(' 72.5 ')).toBe(72.5)
+    expect(parseDecimal('')).toBeNull()
+    expect(parseDecimal('abc')).toBeNull()
+    expect(toDecimalInput(72.456)).toBe('72,5')
+    expect(toDecimalInput(150, 0)).toBe('150')
+  })
+
   it('converts kg ⇄ lb without drift', () => {
     expect(kgToLb(100)).toBeCloseTo(220.462, 3)
     expect(lbToKg(kgToLb(78.4))).toBeCloseTo(78.4, 10)

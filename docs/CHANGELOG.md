@@ -1,8 +1,16 @@
 # Changelog
 
-**Fase atual:** 6 — Questionário e triagem (próxima). Fases 3 (LGPD), 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
+**Fase atual:** 6 — Questionário e triagem (pronta localmente, aguardando o teste do Brenno). Fases 3 (LGPD), 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
 
 ## 2026-11-22
+- Fase 6 — Questionário e triagem (pronta localmente; falta o teste do Brenno e publicar):
+  - `/questionario`: consentimento de dados de saúde no início, 6 partes (Sobre você, Saúde, Rotina, Objetivo, Treino, Alimentação) e Resumo, com barra de progresso. Cada passo é salvo ao continuar e o questionário retoma de onde parou.
+  - Saúde: PAR-Q (7 perguntas), gestante/lactante (só sexo feminino) e condições clínicas. Qualquer "sim" bloqueia os planos gerados, com mensagem respeitosa e caminho para os planos manuais. Respostas criptografadas no banco.
+  - Resumo com "Editar" por parte, aceite de "sugestão e estimativa" e "Gerar meus planos" (os planos chegam nas fases 8 e 10). Equipamentos/lesões e alimentos que não come aparecem como "Em breve".
+  - Perfil → Meus dados: respostas por parte, edição de uma parte por vez, retificação da saúde com confirmação explícita e histórico, "Refazer questionário" (nova versão já preenchida).
+  - Hoje: convite para responder, progresso do rascunho, "planos chegando" ou aviso de bloqueio.
+  - Exportar dados inclui todas as versões, a triagem e as retificações; excluir conta apaga tudo.
+  - Banco: `questionnaires` (versionado), `health_screenings`, `health_screening_rectifications`. Testes: 124 no backend, 138 no frontend.
 - Fase 3 — LGPD (publicada em 2026-11-22, commit 4f2ef2e; testada pelo Brenno localmente; textos são rascunho, revisar com advogado antes de cobrar):
   - Páginas Termos de Uso, Política de Privacidade (com acesso de suporte em leitura) e Política de Cookies, versão `2026-11-22`, no lugar de "Em breve".
   - Perfil → Privacidade: exportar meus dados (JSON), Meus consentimentos (versão, data e IP), links dos documentos e excluir conta (apaga tudo na hora; senha ou EXCLUIR + código do 2FA).

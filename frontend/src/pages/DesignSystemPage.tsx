@@ -5,6 +5,7 @@ import { Logo } from '../components/brand/Logo'
 import { NAV_ITEMS } from '../components/navigation/navItems'
 import { Button } from '../components/ui/Button'
 import { Card, CardTitle } from '../components/ui/Card'
+import { ChoiceGroup, MultiChoice } from '../components/ui/ChoiceGroup'
 import { Input } from '../components/ui/Input'
 import { Modal } from '../components/ui/Modal'
 import { Tabs } from '../components/ui/Tabs'
@@ -43,6 +44,8 @@ export function DesignSystemPage() {
   const toast = useToast()
   const [modalOpen, setModalOpen] = useState(false)
   const [done, setDone] = useState(false)
+  const [goal, setGoal] = useState<string | null>('lose_fat')
+  const [days, setDays] = useState<string[]>(['mon', 'wed', 'fri'])
   const nf = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 })
 
   return (
@@ -117,6 +120,40 @@ export function DesignSystemPage() {
               error={t('design.sample.emailError')}
             />
             <Input label={t('design.sample.passwordLabel')} type="password" defaultValue="segredo123" />
+          </Card>
+        </Section>
+
+        <Section title={t('design.choices')}>
+          <Card className="grid gap-6">
+            <ChoiceGroup<string>
+              label={t('questionnaire.goal.goal')}
+              value={goal}
+              onChange={setGoal}
+              options={['lose_fat', 'maintain', 'gain_muscle'].map((v) => ({
+                value: v,
+                label: t(`questionnaire.options.goal.${v}`),
+              }))}
+            />
+            <ChoiceGroup<boolean>
+              label={t('questionnaire.training.cardio')}
+              layout="row"
+              value={null}
+              onChange={() => undefined}
+              error={t('questionnaire.required')}
+              options={[
+                { value: true, label: t('questionnaire.yes') },
+                { value: false, label: t('questionnaire.no') },
+              ]}
+            />
+            <MultiChoice<string>
+              label={t('questionnaire.training.days')}
+              values={days}
+              onChange={setDays}
+              options={['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'].map((v) => ({
+                value: v,
+                label: t(`questionnaire.options.weekday.${v}`),
+              }))}
+            />
           </Card>
         </Section>
 

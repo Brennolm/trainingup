@@ -31,6 +31,26 @@ class LegalConsent
         }
     }
 
+    /** LGPD art. 11: specific consent for health data, required before any questionnaire answer is saved. */
+    public static function hasHealthConsent(User $user): bool
+    {
+        return $user->consents()
+            ->where('type', ConsentType::HealthData)
+            ->where('version', self::currentVersion(ConsentType::HealthData))
+            ->exists();
+    }
+
+    public static function recordHealth(User $user, Request $request): void
+    {
+        $user->consents()->create([
+            'type' => ConsentType::HealthData,
+            'version' => self::currentVersion(ConsentType::HealthData),
+            'accepted_at' => now(),
+            'ip_address' => $request->ip(),
+            'user_agent' => substr((string) $request->userAgent(), 0, 500),
+        ]);
+    }
+
     /** True when the user hasn't accepted the current version of some document yet. */
     public static function isOutdated(User $user): bool
     {

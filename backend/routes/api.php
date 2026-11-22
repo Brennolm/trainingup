@@ -11,6 +11,7 @@ use App\Http\Controllers\ConsentController;
 use App\Http\Controllers\MeController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuestionnaireController;
 use App\Http\Controllers\TwoFactorController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,13 @@ Route::middleware(['auth:sanctum', 'verified.email'])->group(function () {
     Route::patch('/profile/preferences', [ProfileController::class, 'preferences']);
     Route::put('/profile/password', [PasswordController::class, 'update'])->middleware('throttle:password-reset');
     Route::delete('/auth/google', [GoogleAccountController::class, 'unlink']);
+
+    // Questionnaire and health screening (SPEC 6.3, 5.1).
+    Route::get('/questionnaire', [QuestionnaireController::class, 'show']);
+    Route::post('/questionnaire/consent', [QuestionnaireController::class, 'consent']);
+    Route::post('/questionnaire', [QuestionnaireController::class, 'store']);
+    Route::put('/questionnaire/sections/{section}', [QuestionnaireController::class, 'update']);
+    Route::post('/questionnaire/complete', [QuestionnaireController::class, 'complete']);
 
     Route::middleware('throttle:two-factor')->group(function () {
         Route::post('/profile/two-factor', [TwoFactorController::class, 'store']);

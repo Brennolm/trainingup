@@ -18,4 +18,7 @@ export const ROUTES = {
   progress: '/progresso',
   profile: '/perfil',
   consents: '/perfil/consentimentos',
+  questionnaire: '/questionario',
+  myData: '/perfil/meus-dados',
+  myDataSection: '/perfil/meus-dados/:section',
 } as const

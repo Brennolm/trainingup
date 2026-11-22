@@ -1,10 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useQueryClient } from '@tanstack/react-query'
-import { LogOut } from 'lucide-react'
+import { ChevronRight, LogOut } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { Alert } from '../../components/ui/Alert'
 import { Button } from '../../components/ui/Button'
 import { Card, CardTitle } from '../../components/ui/Card'
@@ -15,7 +15,7 @@ import { authApi } from '../../features/auth/authApi'
 import { applyFieldErrors, errorMessage } from '../../features/auth/errors'
 import { profileSchema, type ProfileValues } from '../../features/auth/schemas'
 import type { LengthUnit, Preferences, WeightUnit } from '../../features/auth/types'
-import { ME_QUERY_KEY, useMe, useSetMe } from '../../features/auth/useAuth'
+import { useMe, useSetMe } from '../../features/auth/useAuth'
 import { ROUTES } from '../../routes'
 import { useTheme, type Theme } from '../../theme/themeContext'
 import { PrivacySection } from './PrivacySection'
@@ -78,8 +78,10 @@ export function ProfilePage() {
     await authApi.logout().catch(() => undefined)
     // Remove (not null) the cached user: screens still mounted during the transition keep their
     // data, so the auth guard does not redirect to sign-in; the next protected page asks the API.
+    // Everything else cached (questionnaire = health data) goes too, so the next account on this
+    // device never sees it.
     await navigate(ROUTES.home, { replace: true })
-    queryClient.removeQueries({ queryKey: ME_QUERY_KEY })
+    queryClient.removeQueries()
   }
 
   return (
@@ -115,6 +117,17 @@ export function ProfilePage() {
           </Button>
         </form>
       </Card>
+
+      <Link
+        to={ROUTES.myData}
+        className="bg-surface ring-border hover:ring-muted flex min-h-11 items-center justify-between gap-3 rounded-2xl p-4 ring-1 transition-shadow ring-inset sm:p-5"
+      >
+        <span className="grid gap-1">
+          <CardTitle>{t('myData.title')}</CardTitle>
+          <span className="text-muted text-sm">{t('myData.profileHint')}</span>
+        </span>
+        <ChevronRight className="text-muted size-5 shrink-0" aria-hidden />
+      </Link>
 
       <Card className="grid gap-5">
         <CardTitle>{t('profile.preferences.title')}</CardTitle>

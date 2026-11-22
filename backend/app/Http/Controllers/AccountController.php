@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Consent;
+use App\Models\HealthScreeningRectification;
+use App\Models\Questionnaire;
 use App\Services\TwoFactorService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -48,6 +50,31 @@ class AccountController extends Controller
                 'ip_address' => $c->ip_address,
                 'user_agent' => $c->user_agent,
             ]),
+            // Every version, with the health screening and its rectification history.
+            'questionnaires' => $user->questionnaires()
+                ->with('healthScreening.rectifications')
+                ->orderBy('version')
+                ->get()
+                ->map(fn (Questionnaire $q) => [
+                    'version' => $q->version,
+                    ...$q->only(Questionnaire::ANSWER_FIELDS),
+                    'health_screening' => $q->healthScreening ? [
+                        'answers' => $q->healthScreening->answers,
+                        'result' => $q->healthScreening->result,
+                        'rectifications' => $q->healthScreening->rectifications->map(fn (HealthScreeningRectification $r) => [
+                            'confirmed_at' => $r->confirmed_at->toIso8601String(),
+                            'previous_answers' => $r->previous_answers,
+                            'new_answers' => $r->new_answers,
+                            'previous_result' => $r->previous_result,
+                            'new_result' => $r->new_result,
+                            'ip_address' => $r->ip_address,
+                        ]),
+                    ] : null,
+                    'disclaimer_accepted_at' => $q->disclaimer_accepted_at?->toIso8601String(),
+                    'completed_at' => $q->completed_at?->toIso8601String(),
+                    'created_at' => $q->created_at?->toIso8601String(),
+                    'updated_at' => $q->updated_at?->toIso8601String(),
+                ]),
         ];
 
         $filename = 'training-up-meus-dados-'.now()->format('Y-m-d').'.json';
@@ -85,7 +112,8 @@ class AccountController extends Controller
         $request->session()->regenerateToken();
 
         DB::transaction(function () use ($user) {
-            // Other devices' sessions and API tokens; consents and codes go by ON DELETE CASCADE.
+            // Other devices' sessions and API tokens; consents, codes and questionnaires (with the
+            // health screenings and rectifications) go by ON DELETE CASCADE.
             DB::table('sessions')->where('user_id', $user->id)->delete();
             DB::table('password_reset_tokens')->where('email', $user->email)->delete();
             $user->tokens()->delete();
