@@ -4,6 +4,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import opentype from 'opentype.js'
+import sharp from 'sharp'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const fontPath = resolve(
@@ -14,7 +15,7 @@ const buf = readFileSync(fontPath)
 const font = opentype.parse(buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength))
 
 const COLORS = {
-  dark: { primary: '#FF5A1F', secondary: '#FFB020', text: '#F4F2EF' },
+  dark: { primary: '#FF5A1F', secondary: '#FFB020', text: '#F4F2EF', bg: '#121316', muted: '#9C9EA5' },
   light: { primary: '#C93D08', secondary: '#B56E00', text: '#17181C' },
 }
 
@@ -108,4 +109,27 @@ writeFileSync(
 </svg>
 `,
 )
+// Social share image (Open Graph), 1200x630. All text outlined so it renders anywhere.
+function loadFont(file) {
+  const b = readFileSync(resolve(root, 'node_modules/@fontsource', file))
+  return opentype.parse(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength))
+}
+const barlow600 = loadFont('barlow/files/barlow-latin-600-normal.woff')
+const d = COLORS.dark
+const textPath = (f, text, x, y, size, fill) =>
+  `<path fill="${fill}" d="${pathData(f.getPath(text, x, y, size))}"/>`
+const ogWord = wordmark(d)
+const og = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="${COLORS.dark.bg}"/>
+  <svg x="700" y="40" width="620" height="620" viewBox="0 0 64 64" opacity="0.08">${symbol(d)}</svg>
+  <g transform="translate(80 70) scale(1.25)">
+    <svg x="0" y="4" width="64" height="64" viewBox="0 0 64 64">${symbol(d)}</svg>
+    ${ogWord.svg}
+  </g>
+  ${textPath(font, 'TREINO E DIETA', 80, 350, 128, d.text)}
+  ${textPath(font, 'NO MESMO PLANO', 80, 470, 128, d.primary)}
+  ${textPath(barlow600, 'Gratuito durante o beta · trainingup.com.br', 84, 560, 36, d.muted)}
+</svg>`
+await sharp(Buffer.from(og)).png().toFile(resolve(root, 'public/og-image.png'))
+
 console.log('Brand assets generated.')

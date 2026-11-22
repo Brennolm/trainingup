@@ -1,12 +1,7 @@
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
-import { DesignSystemPage } from './pages/DesignSystemPage'
-import { PlaceholderPage } from './pages/PlaceholderPage'
+import { createBrowserRouter, RouterProvider } from 'react-router'
+import { routes } from './appRoutes'
 
-const router = createBrowserRouter([
-  { path: '/', element: <PlaceholderPage /> },
-  { path: '/design/*', element: <DesignSystemPage /> },
-  { path: '*', element: <Navigate to="/" replace /> },
-])
+const router = createBrowserRouter(routes)
 
 export default function App() {
   return <RouterProvider router={router} />

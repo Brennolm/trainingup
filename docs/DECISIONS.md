@@ -20,5 +20,11 @@ Registro de decisões tomadas durante a implementação que complementam ou ajus
 - **Pós-deploy pelo agendador:** como a Hostinger só puxa arquivos, `deploy:finalize` roda a cada minuto e executa migrações e caches quando `DEPLOY_VERSION` muda (até ~1 min de atraso após o pull).
 - **Backups em `api/storage/app/private/backups`** (bloqueado pelo `.htaccess`), `mysqldump` com senha via `MYSQL_PWD` (não aparece na lista de processos). Alerta de falha no admin fica para a fase 7; até lá, vai para o log.
 - **Repositório público no GitHub** (escolha do Brenno, para o Claude conseguir ler o resultado do Actions). Nenhum segredo fica no repositório; a documentação (incluindo host/usuário SSH em `docs/DEPLOY.md`) fica visível.
+- **E-mail de contato: `contato@trainingup.com.br`** (escolha do Brenno; caixa ou encaminhamento a criar na Hostinger).
+- **Aviso de cookies informativo ("Entendi"), sem aceitar/recusar:** o site usa só cookies essenciais (sessão/login) e localStorage para preferências; não há analytics nem publicidade. A dispensa fica no localStorage com versão do texto; o registro formal de consentimentos entra na fase 3. Se um dia houver cookies não essenciais, o aviso vira escolha.
+- **Meta tags de SEO fixas no `index.html`** (não passam pelo i18n): são lidas por robôs antes do JavaScript e o site só tem pt-BR.
+- **Fontes em `public/fonts` com nomes fixos** (cópia do subset latin do `@fontsource`), para o `index.html` pré-carregar as usadas no topo da página. Sem isso, a troca de fonte deslocava o layout (CLS 0,145, desempenho 87). Pré-renderização (SSG) avaliada e descartada por ora: o resultado já passou de 90.
+- **No celular, o cabeçalho da landing mostra só logo + menu;** "Entrar" e "Criar conta" ficam no menu (o hero logo abaixo tem o CTA "Comece grátis"). Os três itens não cabem em 375 px.
+- **`tailwind-merge` no `cn()`:** classes passadas a um componente substituem as conflitantes do componente (ex.: `hidden` em um botão).
 - **Datas no banco em UTC**; conversão para o fuso do usuário na exibição.
 - **Rotas do app** usarão os caminhos em português da navegação (`/hoje`, `/treino`, `/dieta`, `/progresso`, `/perfil`), seguindo `/entrar` e `/criar-conta` da SPEC.

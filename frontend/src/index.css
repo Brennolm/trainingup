@@ -1,10 +1,49 @@
 @import 'tailwindcss';
-@import '@fontsource/barlow/latin-400.css';
-@import '@fontsource/barlow/latin-500.css';
-@import '@fontsource/barlow/latin-600.css';
-@import '@fontsource/barlow-condensed/latin-600.css';
-@import '@fontsource/barlow-condensed/latin-800.css';
-@import '@fontsource/barlow-condensed/latin-800-italic.css';
+
+/* Self-hosted fonts (latin subset, covers pt-BR). Served from /fonts with stable URLs so
+   index.html can preload the ones used above the fold (avoids layout shift on the landing). */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/barlow-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/barlow-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/barlow-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/barlow-condensed-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/barlow-condensed-latin-800-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/barlow-condensed-latin-800-italic.woff2') format('woff2');
+}
 
 /* Design tokens — Training Up, concept A "Brasa". See docs/brand/README.md.
    Dark is the default theme; light is applied with data-theme="light" on <html>. */
@@ -83,6 +122,12 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+  }
+  /* Smooth scrolling for in-page anchors (landing menu), off for users who prefer less motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
   body {
     @apply bg-bg text-text font-sans antialiased;
