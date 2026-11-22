@@ -12,17 +12,34 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    public function store(LoginRequest $request): UserResource
+    /** Signs in, or answers two_factor: true when the account asks for an app code first. */
+    public function store(LoginRequest $request): UserResource|JsonResponse
     {
-        $credentials = $request->only('email', 'password');
+        $guard = Auth::guard('web');
+        $remember = $request->boolean('remember', true);
 
-        if (! Auth::guard('web')->attempt($credentials, $request->boolean('remember', true))) {
+        if (! $guard->validate($request->only('email', 'password'))) {
             throw ValidationException::withMessages(['email' => __('auth.failed')]);
         }
 
+        $user = $guard->getLastAttempted();
+
+        if ($user->hasTwoFactorEnabled()) {
+            $request->session()->regenerate();
+            $request->session()->put(TwoFactorChallengeController::SESSION_KEY, [
+                'id' => $user->id,
+                'remember' => $remember,
+                'attempts' => 0,
+                'expires_at' => now()->addMinutes(TwoFactorChallengeController::TTL_MINUTES)->timestamp,
+            ]);
+
+            return response()->json(['two_factor' => true]);
+        }
+
+        $guard->login($user, $remember);
         $request->session()->regenerate();
 
-        return new UserResource($request->user()->load('plan'));
+        return new UserResource($user->load('plan'));
     }
 
     public function destroy(Request $request): JsonResponse

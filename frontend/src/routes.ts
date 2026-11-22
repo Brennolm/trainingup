@@ -2,6 +2,7 @@
 export const ROUTES = {
   home: '/',
   signIn: '/entrar',
+  twoFactor: '/entrar/codigo',
   signUp: '/criar-conta',
   verifyEmail: '/verificar-email',
   completeSignUp: '/completar-cadastro',

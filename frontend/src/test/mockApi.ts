@@ -52,6 +52,8 @@ export function makeUser(overrides: Partial<User> = {}): User {
     plan: 'free',
     has_password: true,
     google_linked: false,
+    two_factor_enabled: false,
+    recovery_codes_left: null,
     preferences: { theme: 'dark', weight_unit: 'kg', length_unit: 'cm', locale: 'pt_BR' },
     ...overrides,
   }

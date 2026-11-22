@@ -3,6 +3,8 @@ import type { Preferences, RegisterInput, User } from './types'
 
 type UserResponse = { data: User }
 type MessageResponse = { message: string; retry_after?: number }
+type UserWithCodes = UserResponse & { recovery_codes: string[] }
+export type TwoFactorSetup = { secret: string; otpauth_url: string; qr_svg: string }
 
 export const authApi = {
   /** Current user, or null when signed out (the API answers data: null for guests). */
@@ -22,9 +24,32 @@ export const authApi = {
     )
   },
 
-  async login(input: { email: string; password: string; remember: boolean }) {
-    return (await api.post<UserResponse>('/api/auth/login', input)).data
+  /** Signs in, or reports that the account asks for a 2FA code first. */
+  async login(input: {
+    email: string
+    password: string
+    remember: boolean
+  }): Promise<{ user: User } | { twoFactor: true }> {
+    const res = await api.post<UserResponse | { two_factor: true }>('/api/auth/login', input)
+    return 'two_factor' in res ? { twoFactor: true } : { user: res.data }
   },
+
+  /** Second step of the sign-in: app code or recovery code. */
+  async twoFactorChallenge(code: string) {
+    return (await api.post<UserResponse>('/api/auth/two-factor-challenge', { code })).data
+  },
+
+  twoFactorStart: async (password: string) =>
+    (await api.post<{ data: TwoFactorSetup }>('/api/profile/two-factor', { password })).data,
+
+  twoFactorConfirm: (code: string) => api.post<UserWithCodes>('/api/profile/two-factor/confirm', { code }),
+
+  async twoFactorDisable(input: { password: string; code: string }) {
+    return (await api.delete<UserResponse>('/api/profile/two-factor', input)).data
+  },
+
+  newRecoveryCodes: (password: string) =>
+    api.post<UserWithCodes>('/api/profile/two-factor/recovery-codes', { password }),
 
   logout: () => api.post<MessageResponse>('/api/auth/logout'),
 

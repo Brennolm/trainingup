@@ -13,6 +13,9 @@ export type User = {
   plan: string | null
   has_password: boolean
   google_linked: boolean
+  two_factor_enabled: boolean
+  /** Unused recovery codes; null while 2FA is off. */
+  recovery_codes_left: number | null
   preferences: {
     theme: Theme
     weight_unit: WeightUnit

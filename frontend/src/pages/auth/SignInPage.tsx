@@ -42,9 +42,13 @@ export function SignInPage() {
   const onSubmit = handleSubmit(async (values) => {
     setFormError(null)
     try {
-      const user = await authApi.login(values)
-      setMe(user)
-      navigate(user.email_verified ? (from ?? ROUTES.today) : ROUTES.verifyEmail, { replace: true })
+      const result = await authApi.login(values)
+      if ('twoFactor' in result) {
+        navigate(ROUTES.twoFactor, { state: { from } })
+        return
+      }
+      setMe(result.user)
+      navigate(result.user.email_verified ? (from ?? ROUTES.today) : ROUTES.verifyEmail, { replace: true })
     } catch (error) {
       // Wrong credentials come back as a validation error on "email": show it as one message.
       setFormError(

@@ -16,6 +16,7 @@ import { applyFieldErrors, errorMessage } from '../../features/auth/errors'
 import { PASSWORD_RULES } from '../../features/auth/schemas'
 import type { User } from '../../features/auth/types'
 import { useSetMe } from '../../features/auth/useAuth'
+import { TwoFactorSection } from './TwoFactorSection'
 
 const GOOGLE_RESULT: Record<string, { tone: 'success' | 'error'; key: string }> = {
   vinculado: { tone: 'success', key: 'profile.security.linkedOk' },
@@ -40,7 +41,7 @@ function passwordSchema(hasPassword: boolean) {
 }
 type PasswordValues = z.infer<ReturnType<typeof passwordSchema>>
 
-/** Profile → Segurança: Google link/unlink and create/change password (2FA arrives in phase 5). */
+/** Profile → Segurança: Google link/unlink, 2FA and create/change password. */
 export function SecuritySection({ user }: { user: User }) {
   const { t } = useTranslation()
   const toast = useToast()
@@ -143,6 +144,8 @@ export function SecuritySection({ user }: { user: User }) {
           </a>
         )}
       </section>
+
+      <TwoFactorSection user={user} />
 
       <section className="grid gap-4" aria-labelledby="security-password">
         <h3 id="security-password" className="font-semibold">

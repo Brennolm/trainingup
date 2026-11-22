@@ -48,6 +48,18 @@ class GoogleAuthTest extends TestCase
         $this->assertAuthenticatedAs($user, 'web');
     }
 
+    public function test_google_sign_in_skips_the_two_factor_code(): void
+    {
+        // SPEC: 2FA applies to e-mail/password; Google already protects this sign-in.
+        $this->fakeGoogle();
+        $user = User::factory()->create(['google_id' => 'g-123']);
+        $user->forceFill(['two_factor_secret' => 'JBSWY3DPEHPK3PXPJBSWY3DPEHPK3PXP', 'two_factor_confirmed_at' => now()])->save();
+
+        $this->get('/auth/google/callback')->assertRedirect($this->frontend('/hoje'));
+
+        $this->assertAuthenticatedAs($user, 'web');
+    }
+
     public function test_an_existing_email_is_linked_automatically_and_verified(): void
     {
         $this->fakeGoogle();

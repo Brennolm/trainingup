@@ -25,4 +25,14 @@ return [
         'already_registered' => 'Já existe uma conta com este e-mail. Entre com Google ou com a sua senha.',
         'needs_password' => 'Crie uma senha antes de desvincular o Google, para não perder o acesso à conta.',
     ],
+
+    'two_factor' => [
+        'invalid' => 'Código incorreto. Confira no app autenticador e tente de novo.',
+        'expired' => 'O tempo para digitar o código acabou. Entre com e-mail e senha de novo.',
+        'too_many_attempts' => 'Você errou o código muitas vezes. Entre com e-mail e senha de novo.',
+        'needs_password' => 'Crie uma senha antes de ativar a verificação em duas etapas.',
+        'already_enabled' => 'A verificação em duas etapas já está ativa.',
+        'not_enabled' => 'A verificação em duas etapas não está ativa.',
+        'not_started' => 'Comece a ativação de novo.',
+    ],
 ];

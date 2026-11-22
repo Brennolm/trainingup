@@ -10,6 +10,7 @@ import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage'
 import { ResetPasswordPage } from './pages/auth/ResetPasswordPage'
 import { SignInPage } from './pages/auth/SignInPage'
 import { SignUpPage } from './pages/auth/SignUpPage'
+import { TwoFactorChallengePage } from './pages/auth/TwoFactorChallengePage'
 import { VerifyEmailPage } from './pages/auth/VerifyEmailPage'
 import { ComingSoonPage } from './pages/ComingSoonPage'
 import { DesignSystemRoute } from './pages/DesignSystemRoute'
@@ -27,6 +28,7 @@ export const routes: RouteObject[] = [
         element: <GuestOnly />,
         children: [
           { path: ROUTES.signIn, element: <SignInPage /> },
+          { path: ROUTES.twoFactor, element: <TwoFactorChallengePage /> },
           { path: ROUTES.signUp, element: <SignUpPage /> },
           { path: ROUTES.forgotPassword, element: <ForgotPasswordPage /> },
           { path: ROUTES.completeSignUp, element: <CompleteSignUpPage /> },

@@ -39,3 +39,9 @@ Registro de decisões tomadas durante a implementação que complementam ou ajus
 - **Contas só-Google não têm senha;** para desvincular o Google é preciso criar uma senha antes (Perfil → Segurança), senão a pessoa perderia o acesso. "Criar/alterar senha" entrou junto, por ser pré-requisito.
 - **Datas no banco em UTC**; conversão para o fuso do usuário na exibição.
 - **Rotas do app** usarão os caminhos em português da navegação (`/hoje`, `/treino`, `/dieta`, `/progresso`, `/perfil`), seguindo `/entrar` e `/criar-conta` da SPEC.
+- **2FA com `pragmarx/google2fa` + `bacon/bacon-qr-code`** (em vez do Fortify, como no resto da autenticação). QR code gerado no backend em SVG.
+- **2FA vale só para login com e-mail/senha** (SPEC 6.2/fase 5): o login pelo Google não pede o código, porque o Google já protege essa entrada.
+- **Ativar o 2FA exige ter senha** (desativar pede senha + código); contas só-Google criam uma senha antes. Ativar e gerar novos códigos também pedem a senha atual.
+- **Segredo TOTP criptografado com a APP_KEY**; o 2FA só conta como ativo após o primeiro código confirmado. Janela de ±30 s e o mesmo código não é aceito duas vezes (último passo usado fica no cache).
+- **8 códigos de recuperação de uso único**, no formato `XXXXX-XXXXX` sem letras/números parecidos, guardados só como HMAC; mostrados uma vez (copiar/baixar). Aviso no Perfil quando restam 2 ou menos.
+- **Desafio no login:** após a senha, a sessão guarda o usuário pendente por 10 min; 5 códigos errados descartam a tentativa (volta para e-mail e senha). Tela em `/entrar/codigo`.

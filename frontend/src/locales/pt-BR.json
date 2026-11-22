@@ -93,6 +93,17 @@
       "account": "Conta Google",
       "submit": "Concluir cadastro",
       "expired": "O tempo para concluir o cadastro acabou. Comece de novo pelo botão Continuar com Google."
+    },
+    "twoFactor": {
+      "title": "Verificação em duas etapas",
+      "subtitle": "Digite o código de 6 dígitos do seu app autenticador.",
+      "recoverySubtitle": "Digite um dos seus códigos de recuperação. Cada código vale uma vez.",
+      "codeLabel": "Código do app",
+      "recoveryLabel": "Código de recuperação",
+      "submit": "Entrar",
+      "useRecovery": "Usar um código de recuperação",
+      "useApp": "Usar o código do app",
+      "backToSignIn": "Voltar para Entrar"
     }
   },
   "landing": {
@@ -279,7 +290,8 @@
     "save": "Salvar",
     "loading": "Carregando…",
     "showPassword": "Mostrar senha",
-    "hidePassword": "Ocultar senha"
+    "hidePassword": "Ocultar senha",
+    "continue": "Continuar"
   },
   "design": {
     "title": "Design system",
@@ -397,6 +409,37 @@
       "newPassword": "Nova senha",
       "savePassword": "Salvar senha",
       "passwordSaved": "Senha salva."
+    },
+    "twoFactor": {
+      "title": "Verificação em duas etapas",
+      "off": "Desativada. Ative para pedir um código do app autenticador (Google Authenticator, Authy etc.) ao entrar com e-mail e senha.",
+      "on_one": "Ativa. Resta {{count}} código de recuperação.",
+      "on_other": "Ativa. Restam {{count}} códigos de recuperação.",
+      "fewCodes": "Poucos códigos de recuperação restantes. Gere novos códigos para não ficar sem acesso se perder o celular.",
+      "needsPassword": "Crie uma senha abaixo para poder ativar a verificação em duas etapas.",
+      "enable": "Ativar",
+      "enableTitle": "Ativar verificação",
+      "enablePasswordHint": "Confirme sua senha para continuar.",
+      "scanHint": "Escaneie o QR code com o app autenticador e digite o código que aparecer.",
+      "qrAlt": "QR code para configurar o app autenticador",
+      "manualKey": "Ou digite esta chave no app:",
+      "confirmLabel": "Código do app",
+      "confirm": "Ativar verificação",
+      "enabled": "Verificação em duas etapas ativada.",
+      "codesTitle": "Códigos de recuperação",
+      "codesHint": "Guarde estes códigos em um lugar seguro. Se perder o celular, cada um permite entrar uma vez. Eles não serão mostrados de novo.",
+      "copy": "Copiar",
+      "download": "Baixar",
+      "copied": "Códigos copiados.",
+      "saved": "Já guardei os códigos",
+      "fileHeader": "Training Up: códigos de recuperação. Cada código vale uma vez.",
+      "newCodes": "Gerar novos códigos",
+      "newCodesHint": "Os códigos antigos param de funcionar. Confirme sua senha para continuar.",
+      "disable": "Desativar",
+      "disableTitle": "Desativar verificação",
+      "disableHint": "Confirme sua senha e um código do app (ou um código de recuperação).",
+      "disableCodeLabel": "Código do app ou de recuperação",
+      "disabled": "Verificação em duas etapas desativada."
     }
   }
 }
