@@ -57,6 +57,21 @@ class FinalizeDeployTest extends TestCase
         $this->assertFalse(Schema::hasTable('users'));
     }
 
+    public function test_first_deploy_works_with_database_cache_on_an_empty_database(): void
+    {
+        // Regression: clearing the database cache before migrating failed with "table cache not found".
+        config(['deploy.cache' => true, 'cache.default' => 'database']);
+        file_put_contents(config('deploy.version_file'), 'first');
+
+        try {
+            $this->artisan('deploy:finalize')->assertSuccessful();
+            $this->assertTrue(Schema::hasTable('cache'));
+        } finally {
+            // optimize writes bootstrap cache files; never leave them behind in the working copy.
+            $this->artisan('optimize:clear');
+        }
+    }
+
     public function test_force_runs_again_for_the_same_version(): void
     {
         file_put_contents(config('deploy.version_file'), 'abc123');
