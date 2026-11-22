@@ -1,9 +1,9 @@
 # Changelog
 
-**Fase atual:** 3 — LGPD (pronta localmente, aguardando teste do Brenno). Fases 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
+**Fase atual:** 6 — Questionário e triagem (próxima). Fases 3 (LGPD), 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
 
 ## 2026-11-22
-- Fase 3 — LGPD (em andamento):
+- Fase 3 — LGPD (publicada em 2026-11-22, commit 4f2ef2e; testada pelo Brenno localmente; textos são rascunho, revisar com advogado antes de cobrar):
   - Páginas Termos de Uso, Política de Privacidade (com acesso de suporte em leitura) e Política de Cookies, versão `2026-11-22`, no lugar de "Em breve".
   - Perfil → Privacidade: exportar meus dados (JSON), Meus consentimentos (versão, data e IP), links dos documentos e excluir conta (apaga tudo na hora; senha ou EXCLUIR + código do 2FA).
   - Nova versão dos textos pede novo aceite antes de usar o app.
