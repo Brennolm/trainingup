@@ -1,6 +1,6 @@
 # Changelog
 
-**Fase atual:** 2 — Cadastro e login por e-mail (pronta localmente; falta a senha do noreply no servidor e o teste em produção). Fase 1 aceita.
+**Fase atual:** 2 — Cadastro e login por e-mail (publicada, aguardando aceite do Brenno). Próxima: fase 3 — LGPD.
 
 ## 2026-11-22
 - Fase 2 — Cadastro e login (e-mail):
@@ -9,7 +9,7 @@
   - Limite de tentativas em login, cadastro, códigos e recuperação de senha; mensagens da API em pt-BR; e-mails com a identidade da marca (HTML + texto).
   - App: telas Entrar, Criar conta (requisitos de senha ao vivo), Verificar e-mail (envio automático no 6º dígito, contagem para reenviar), Esqueci/Redefinir senha, "Hoje" provisória, Perfil; proteção de rotas; tema sincronizado com a conta.
   - E-mail: `noreply@trainingup.com.br` via SMTP da Hostinger; DNS com SPF, DKIM e DMARC confirmados.
-  - Testes: 50 no backend, 87 no frontend; fluxo completo validado no navegador (cadastro → código → Hoje → perfil → sair → entrar).
+  - Testes: 50 no backend, 87 no frontend; fluxo completo validado no navegador (cadastro → código → Hoje → perfil → sair → entrar) e em produção (cadastro, envio do código, sessão entre `trainingup.com.br` e `api.trainingup.com.br`, cookie seguro).
 - Fase 1 — Landing page:
   - Página única conforme SPEC 6.1: cabeçalho fixo (menu no celular), hero com mockup do app, dois produtos, como funciona, 6 recursos, instalação (iPhone/Android + botão "Instalar agora" quando o navegador permite), FAQ, chamada final e rodapé com links legais, contato e aviso de "sugestão e estimativa".
   - Aviso de cookies na primeira visita; páginas provisórias "Em breve" para `/entrar`, `/criar-conta`, `/termos`, `/privacidade`, `/cookies`.
