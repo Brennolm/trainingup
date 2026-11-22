@@ -73,8 +73,9 @@ Após um deploy, as migrações rodam em até ~1 minuto (próximo `schedule:run`
 1. Subdomínio `api` → pasta `public_html/api`. ✅
 2. SSL nos dois domínios + forçar HTTPS. ✅
 3. Banco MySQL + usuário; senha no `api/.env`. ✅
-4. **Git:** repositório `https://github.com/Brennolm/trainingup.git`, branch **`deploy`**, diretório `public_html` (raiz do site), implantação automática ativada.
-5. **Cron:** comando acima, a cada minuto.
+4. **PHP 8.4** na configuração do site (*Avançado → Configuração do PHP*). ✅ O PHP do site é separado do PHP do SSH: o site estava em 8.3 e a API falhava (dependências exigem ≥ 8.4.1).
+5. **Git:** repositório `https://github.com/Brennolm/trainingup.git`, branch **`deploy`** (nunca a `main`), raiz do site, implantação automática ativada. ✅
+6. **Cron:** comando acima, a cada minuto. ✅
 
 ## Operação
 
@@ -88,4 +89,5 @@ Após um deploy, as migrações rodam em até ~1 minuto (próximo `schedule:run`
 
 ## Pendências conhecidas
 
+- Ao editar o `.env` pelo Gerenciador de Arquivos, a permissão volta para 644. Não expõe nada (o `.htaccess` bloqueia), mas dá para restaurar com `chmod 600 .env` pelo SSH.
 - Falha de backup/deploy hoje só vai para o log. O alerta no painel admin entra na fase 7 (`admin_alerts`).

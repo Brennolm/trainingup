@@ -1,9 +1,11 @@
 # Changelog
 
-**Fase atual:** 0.3 — Deploy (em andamento: falta plugar o Git e o Cron no hPanel). Fase 0.2 entregue.
+**Fase atual:** 0.3 — Deploy (entregue, aguardando aceite do Brenno). Próxima: fase 1 — Landing page.
 
 ## 2026-11-21
-- Fase 0.3 (em andamento):
+- Fase 0.3 entregue — produção no ar (trainingup.com.br e api.trainingup.com.br):
+  - Git da Hostinger plugado na branch `deploy`, PHP 8.4 no site, Cron do agendador ativo; fluxo push → testes → deploy → pós-deploy validado de ponta a ponta.
+  - Correções: ordem do pós-deploy no primeiro deploy (migrar antes de limpar o cache do banco) e pasta `resources/views` versionada.
   - Servidor preparado: subdomínio `api`, SSL, banco MariaDB, `.env` de produção (senha colocada pelo Brenno).
   - GitHub Actions: testes de frontend e backend em todo push/PR; na `main`, publica site + API prontos na branch `deploy`.
   - `.htaccess` do site (HTTPS, sem www, SPA, cabeçalhos de segurança, cache) e da API (só `public/`, bloqueios, só no subdomínio).
