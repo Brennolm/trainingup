@@ -1,13 +1,14 @@
 # Changelog
 
-**Fase atual:** 1 — Landing page (entregue localmente, aguardando aceite e publicação). Fase 0 aceita.
+**Fase atual:** 1 — Landing page (publicada, aguardando aceite do Brenno). Próxima: fase 2 — Cadastro e login (e-mail).
 
 ## 2026-11-22
 - Fase 1 — Landing page:
   - Página única conforme SPEC 6.1: cabeçalho fixo (menu no celular), hero com mockup do app, dois produtos, como funciona, 6 recursos, instalação (iPhone/Android + botão "Instalar agora" quando o navegador permite), FAQ, chamada final e rodapé com links legais, contato e aviso de "sugestão e estimativa".
   - Aviso de cookies na primeira visita; páginas provisórias "Em breve" para `/entrar`, `/criar-conta`, `/termos`, `/privacidade`, `/cookies`.
   - SEO: título, descrição, canonical, Open Graph/Twitter com imagem 1200×630 gerada da marca, `robots.txt`, `sitemap.xml`.
-  - Desempenho: fontes com URL fixa e pré-carregadas; vitrine `/design` carregada sob demanda. Lighthouse mobile (build local): desempenho 95, acessibilidade 100, boas práticas 100, SEO 100.
+  - Desempenho: fontes com URL fixa e pré-carregadas; vitrine `/design` carregada sob demanda. Lighthouse mobile em produção: desempenho 99, acessibilidade 100, boas práticas 100, SEO 100.
+  - Rolagem suave nas âncoras (desligada com "reduzir movimento").
   - `tailwind-merge` no `cn()` (corrige conflitos de classes em botões); variante de botão `inverse`.
   - Testes: landing, rotas, aviso de cookies, instalação, `cn` (43 no frontend).
 
