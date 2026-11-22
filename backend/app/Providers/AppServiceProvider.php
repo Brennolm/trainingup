@@ -43,6 +43,8 @@ class AppServiceProvider extends ServiceProvider
             Limit::perHour(20)->by('pwd-email-ip:'.$r->ip()),
         ]);
 
+        RateLimiter::for('google', fn (Request $r) => Limit::perMinute(20)->by('google:'.$r->ip()));
+
         RateLimiter::for('password-reset', fn (Request $r) => Limit::perMinute(10)->by('pwd-reset:'.$r->ip()));
 
         // The code itself allows 5 attempts; this only stops scripted hammering.

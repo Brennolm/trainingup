@@ -19,4 +19,10 @@ return [
         'no_code' => 'Peça um código para confirmar seu e-mail.',
         'wait' => 'Aguarde :seconds segundos para pedir um novo código.',
     ],
+
+    'google' => [
+        'no_pending' => 'Comece de novo pelo botão Continuar com Google.',
+        'already_registered' => 'Já existe uma conta com este e-mail. Entre com Google ou com a sua senha.',
+        'needs_password' => 'Crie uma senha antes de desvincular o Google, para não perder o acesso à conta.',
+    ],
 ];

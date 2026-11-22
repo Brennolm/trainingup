@@ -50,6 +50,8 @@ export function makeUser(overrides: Partial<User> = {}): User {
     birth_date: '1995-03-10',
     role: 'user',
     plan: 'free',
+    has_password: true,
+    google_linked: false,
     preferences: { theme: 'dark', weight_unit: 'kg', length_unit: 'cm', locale: 'pt_BR' },
     ...overrides,
   }

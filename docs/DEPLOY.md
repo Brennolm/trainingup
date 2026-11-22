@@ -57,6 +57,13 @@ Conta compartilhada `u501993331` (mesmo usuário dos outros sites).
 - Localmente: o `.env` do Brenno envia de verdade pela mesma conta (escolha dele). Para testar sem enviar, use `MAIL_MAILER=log` e os e-mails (e os códigos) aparecem em `backend/storage/logs/laravel.log`. O `.env.example` continua com `log`.
 - Contato público: `contato@trainingup.com.br`.
 
+## Login com Google
+
+- Google Cloud: projeto "Training Up", tela de consentimento externa (escopos `openid`, `email`, `profile`), credencial "Aplicativo da Web".
+- URIs de redirecionamento: `https://api.trainingup.com.br/auth/google/callback` e `http://localhost:8010/auth/google/callback`.
+- `.env`: `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET` (o redirect sai de `APP_URL` + `/auth/google/callback`).
+- Enquanto o app estiver "Em teste" no Google, só os usuários de teste cadastrados lá conseguem entrar; publicar o app libera para todos.
+
 ## Agendador (cron)
 
 A hospedagem compartilhada não tem processo contínuo; tudo roda pelo `schedule:run` (ver `backend/routes/console.php`):

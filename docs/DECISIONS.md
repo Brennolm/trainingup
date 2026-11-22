@@ -32,5 +32,10 @@ Registro de decisões tomadas durante a implementação que complementam ou ajus
 - **Código de verificação guardado como HMAC** (com a APP_KEY), nunca em texto; o código vai no assunto do e-mail para aparecer na notificação do celular.
 - **`GET /api/user` responde `data: null` para visitantes** (em vez de 401), para não gerar erro no console a cada página aberta. As demais rotas protegidas continuam com 401.
 - **Ao sair, o usuário é removido do cache depois da navegação** (não definido como nulo): evita que a proteção de rota da tela anterior redirecione para "Entrar".
+- **Ordem alterada (escolha do Brenno): fases 4 (Google) e 5 (2FA) antes da 3 (LGPD)**, para fechar a autenticação. Até a fase 3, as páginas de Termos/Privacidade seguem "Em breve": não divulgar o site.
+- **Google vincula automaticamente** uma conta existente com o mesmo e-mail (escolha do Brenno): o Google confirma que a pessoa é dona do e-mail; e-mail não confirmado pelo Google é recusado.
+- **Cadastro pelo Google só cria a conta depois de "Completar cadastro"** (nascimento + aceite): os dados do Google ficam 30 min na sessão. Assim, menores de 18 nunca chegam a ter conta.
+- **Fluxo do Google por redirecionamento no domínio da API** (`/auth/google/redirect` e `/callback`, rotas web com sessão); a sessão é compartilhada com o app pelo cookie `.trainingup.com.br`.
+- **Contas só-Google não têm senha;** para desvincular o Google é preciso criar uma senha antes (Perfil → Segurança), senão a pessoa perderia o acesso. "Criar/alterar senha" entrou junto, por ser pré-requisito.
 - **Datas no banco em UTC**; conversão para o fuso do usuário na exibição.
 - **Rotas do app** usarão os caminhos em português da navegação (`/hoje`, `/treino`, `/dieta`, `/progresso`, `/perfil`), seguindo `/entrar` e `/criar-conta` da SPEC.

@@ -8,6 +8,7 @@ import { Button } from '../../components/ui/Button'
 import { Checkbox } from '../../components/ui/Checkbox'
 import { Input } from '../../components/ui/Input'
 import { authApi } from '../../features/auth/authApi'
+import { AuthDivider, GoogleButton } from '../../features/auth/components/GoogleButton'
 import { PasswordRules } from '../../features/auth/components/PasswordRules'
 import { applyFieldErrors, errorMessage } from '../../features/auth/errors'
 import { signUpSchema, type SignUpValues } from '../../features/auth/schemas'
@@ -70,6 +71,8 @@ export function SignUpPage() {
         </>
       }
     >
+      <GoogleButton />
+      <AuthDivider />
       <form onSubmit={onSubmit} noValidate className="grid gap-5">
         {formError && <Alert tone="error">{formError}</Alert>}
         <Input

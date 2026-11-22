@@ -78,6 +78,21 @@
       "goToSignIn": "Entrar",
       "invalidLink": "Este link está incompleto. Peça um novo link de redefinição.",
       "requestNew": "Pedir novo link"
+    },
+    "google": {
+      "continue": "Continuar com Google",
+      "or": "ou",
+      "errors": {
+        "google": "Não foi possível entrar com o Google. Tente de novo.",
+        "google_email": "O Google não confirmou este e-mail. Use outra conta Google ou crie a conta com e-mail e senha."
+      }
+    },
+    "complete": {
+      "title": "Quase lá",
+      "subtitle": "Falta só confirmar sua data de nascimento e aceitar os termos.",
+      "account": "Conta Google",
+      "submit": "Concluir cadastro",
+      "expired": "O tempo para concluir o cadastro acabou. Comece de novo pelo botão Continuar com Google."
     }
   },
   "landing": {
@@ -361,6 +376,27 @@
       "ftIn": "Pés e polegadas (ft/in)",
       "saved": "Preferência salva."
     },
-    "signOut": "Sair da conta"
+    "signOut": "Sair da conta",
+    "security": {
+      "title": "Segurança",
+      "google": "Conta Google",
+      "googleLinked": "Vinculada. Você pode entrar com o Google.",
+      "googleNotLinked": "Não vinculada.",
+      "link": "Vincular Google",
+      "unlink": "Desvincular",
+      "unlinked": "Google desvinculado.",
+      "linkedOk": "Google vinculado à sua conta.",
+      "inUse": "Esta conta Google já está ligada a outro usuário do Training Up.",
+      "linkError": "Não foi possível vincular o Google. Tente de novo.",
+      "needsPassword": "Crie uma senha abaixo antes de desvincular o Google.",
+      "password": "Senha",
+      "createPassword": "Criar senha",
+      "changePassword": "Alterar senha",
+      "createHint": "Sua conta usa só o Google. Crie uma senha para também entrar com e-mail.",
+      "currentPassword": "Senha atual",
+      "newPassword": "Nova senha",
+      "savePassword": "Salvar senha",
+      "passwordSaved": "Senha salva."
+    }
   }
 }

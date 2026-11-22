@@ -5,6 +5,7 @@ import { RootLayout } from './layouts/RootLayout'
 import { AppSoonPage } from './pages/app/AppSoonPage'
 import { ProfilePage } from './pages/app/ProfilePage'
 import { TodayPage } from './pages/app/TodayPage'
+import { CompleteSignUpPage } from './pages/auth/CompleteSignUpPage'
 import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage'
 import { ResetPasswordPage } from './pages/auth/ResetPasswordPage'
 import { SignInPage } from './pages/auth/SignInPage'
@@ -28,6 +29,7 @@ export const routes: RouteObject[] = [
           { path: ROUTES.signIn, element: <SignInPage /> },
           { path: ROUTES.signUp, element: <SignUpPage /> },
           { path: ROUTES.forgotPassword, element: <ForgotPasswordPage /> },
+          { path: ROUTES.completeSignUp, element: <CompleteSignUpPage /> },
         ],
       },
       { path: ROUTES.resetPassword, element: <ResetPasswordPage /> },

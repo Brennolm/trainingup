@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Auth\EmailVerificationController;
+use App\Http\Controllers\Auth\GoogleAccountController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MeController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,10 @@ Route::prefix('auth')->group(function () {
     Route::post('forgot-password', [PasswordResetController::class, 'sendLink'])->middleware('throttle:password-email');
     Route::post('reset-password', [PasswordResetController::class, 'reset'])->middleware('throttle:password-reset');
 
+    // Finish a Google sign-up (Google data waits in the session).
+    Route::get('google/pending', [GoogleAccountController::class, 'pending']);
+    Route::post('google/complete', [GoogleAccountController::class, 'complete'])->middleware('throttle:register');
+
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('logout', [LoginController::class, 'destroy']);
         Route::post('email/verify', [EmailVerificationController::class, 'verify'])->middleware('throttle:verify-code');
@@ -36,4 +42,6 @@ Route::get('/user', MeController::class);
 Route::middleware(['auth:sanctum', 'verified.email'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update']);
     Route::patch('/profile/preferences', [ProfileController::class, 'preferences']);
+    Route::put('/profile/password', [PasswordController::class, 'update'])->middleware('throttle:password-reset');
+    Route::delete('/auth/google', [GoogleAccountController::class, 'unlink']);
 });

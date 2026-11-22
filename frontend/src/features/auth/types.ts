@@ -11,6 +11,8 @@ export type User = {
   birth_date: string | null
   role: 'user' | 'admin'
   plan: string | null
+  has_password: boolean
+  google_linked: boolean
   preferences: {
     theme: Theme
     weight_unit: WeightUnit

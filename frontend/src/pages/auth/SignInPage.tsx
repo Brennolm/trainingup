@@ -2,12 +2,13 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { Link, useLocation, useNavigate } from 'react-router'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router'
 import { Alert } from '../../components/ui/Alert'
 import { Button } from '../../components/ui/Button'
 import { Checkbox } from '../../components/ui/Checkbox'
 import { Input } from '../../components/ui/Input'
 import { authApi } from '../../features/auth/authApi'
+import { AuthDivider, GoogleButton } from '../../features/auth/components/GoogleButton'
 import { errorMessage } from '../../features/auth/errors'
 import { signInSchema, type SignInValues } from '../../features/auth/schemas'
 import { useSetMe } from '../../features/auth/useAuth'
@@ -24,6 +25,10 @@ export function SignInPage() {
   const setMe = useSetMe()
   const [formError, setFormError] = useState<string | null>(null)
   const from = (location.state as { from?: string } | null)?.from
+  // Errors coming back from the Google flow (?erro=google | google_email).
+  const [params] = useSearchParams()
+  const googleError = params.get('erro')
+  const googleErrorKey = googleError === 'google_email' ? 'google_email' : googleError ? 'google' : null
 
   const {
     register,
@@ -61,6 +66,11 @@ export function SignInPage() {
         </>
       }
     >
+      {googleErrorKey && !formError && (
+        <Alert tone="error">{t(`auth.google.errors.${googleErrorKey}`)}</Alert>
+      )}
+      <GoogleButton />
+      <AuthDivider />
       <form onSubmit={onSubmit} noValidate className="grid gap-5">
         {formError && <Alert tone="error">{formError}</Alert>}
         <Input

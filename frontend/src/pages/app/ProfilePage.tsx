@@ -18,6 +18,7 @@ import type { LengthUnit, Preferences, WeightUnit } from '../../features/auth/ty
 import { ME_QUERY_KEY, useMe, useSetMe } from '../../features/auth/useAuth'
 import { ROUTES } from '../../routes'
 import { useTheme, type Theme } from '../../theme/themeContext'
+import { SecuritySection } from './SecuritySection'
 
 export function ProfilePage() {
   const { t } = useTranslation()
@@ -144,6 +145,8 @@ export function ProfilePage() {
           ]}
         />
       </Card>
+
+      <SecuritySection user={user} />
 
       <Button variant="danger" size="lg" onClick={signOut} loading={signingOut} className="w-full sm:w-fit">
         <LogOut className="size-5" aria-hidden />

@@ -1,8 +1,12 @@
 # Changelog
 
-**Fase atual:** 2 — Cadastro e login por e-mail (publicada, aguardando aceite do Brenno). Próxima: fase 3 — LGPD.
+**Fase atual:** 4 — Login com Google (pronta localmente; falta o Brenno criar as credenciais no Google Cloud). Depois: 5 — 2FA; em seguida 3 — LGPD. Fase 2 aceita.
 
 ## 2026-11-22
+- Fase 4 — Login com Google (em andamento):
+  - "Continuar com Google" em Entrar e Criar conta; conta existente com o mesmo e-mail é vinculada automaticamente; e-mail novo vai para "Completar cadastro" (nascimento + aceite, bloqueio de menor de 18) e só então a conta é criada.
+  - Perfil → Segurança: vincular/desvincular Google (exige senha para desvincular) e criar/alterar senha.
+  - Banco: `users.google_id`, senha opcional. Testes: 69 no backend, 101 no frontend.
 - Fase 2 — Cadastro e login (e-mail):
   - API (Sanctum SPA, cookie): cadastro, login (manter conectado por padrão), sair, verificação por código de 6 dígitos (15 min, 5 tentativas, reenvio após 60 s, guardado só como hash), esqueci/redefinir senha (link para o app), bloqueio de menores de 18, perfil (nome, nascimento) e preferências (tema, kg/lb, cm/ft-in).
   - Banco: tabela `plans` com `free`, campos de perfil em `users`, `email_verification_codes`, `consents` (aceite de Termos e Privacidade com versão, data e IP).
