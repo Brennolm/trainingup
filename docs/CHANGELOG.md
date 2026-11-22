@@ -1,9 +1,9 @@
 # Changelog
 
-**Fase atual:** 4 — Login com Google (pronta localmente; falta o Brenno criar as credenciais no Google Cloud). Depois: 5 — 2FA; em seguida 3 — LGPD. Fase 2 aceita.
+**Fase atual:** 5 — 2FA (próxima). Depois: 3 — LGPD. Fase 4 publicada e testada em produção (2026-11-22).
 
 ## 2026-11-22
-- Fase 4 — Login com Google (em andamento):
+- Fase 4 — Login com Google (publicada em 2026-11-22, commit f8778ce; credenciais do Google Cloud no `.env` local e do servidor; app em modo "Em teste" no Google):
   - "Continuar com Google" em Entrar e Criar conta; conta existente com o mesmo e-mail é vinculada automaticamente; e-mail novo vai para "Completar cadastro" (nascimento + aceite, bloqueio de menor de 18) e só então a conta é criada.
   - Perfil → Segurança: vincular/desvincular Google (exige senha para desvincular) e criar/alterar senha.
   - Banco: `users.google_id`, senha opcional. Testes: 69 no backend, 101 no frontend.
