@@ -1,9 +1,9 @@
 # Changelog
 
-**Fase atual:** 6 — Questionário e triagem (pronta localmente, aguardando o teste do Brenno). Fases 3 (LGPD), 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
+**Fase atual:** 7 — Admin base (próxima). Fases 3 (LGPD), 4 (Google), 5 (2FA) e 6 (Questionário) publicadas em 2026-11-22.
 
 ## 2026-11-22
-- Fase 6 — Questionário e triagem (pronta localmente; falta o teste do Brenno e publicar):
+- Fase 6 — Questionário e triagem (publicada em 2026-11-22, commit cf56260; testada pelo Brenno localmente; textos do PAR-Q a revisar):
   - `/questionario`: consentimento de dados de saúde no início, 6 partes (Sobre você, Saúde, Rotina, Objetivo, Treino, Alimentação) e Resumo, com barra de progresso. Cada passo é salvo ao continuar e o questionário retoma de onde parou.
   - Saúde: PAR-Q (7 perguntas), gestante/lactante (só sexo feminino) e condições clínicas. Qualquer "sim" bloqueia os planos gerados, com mensagem respeitosa e caminho para os planos manuais. Respostas criptografadas no banco.
   - Resumo com "Editar" por parte, aceite de "sugestão e estimativa" e "Gerar meus planos" (os planos chegam nas fases 8 e 10). Equipamentos/lesões e alimentos que não come aparecem como "Em breve".
