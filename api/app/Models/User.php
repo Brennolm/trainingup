@@ -78,6 +78,18 @@ class User extends Authenticatable
         return $this->hasMany(Consent::class);
     }
 
+    /** @return HasMany<Questionnaire, $this> */
+    public function questionnaires(): HasMany
+    {
+        return $this->hasMany(Questionnaire::class);
+    }
+
+    /** The latest version of the questionnaire (draft or completed), if any. */
+    public function currentQuestionnaire(): ?Questionnaire
+    {
+        return $this->questionnaires()->with('healthScreening')->orderByDesc('version')->first();
+    }
+
     /** @return HasOne<EmailVerificationCode, $this> */
     public function emailVerificationCode(): HasOne
     {

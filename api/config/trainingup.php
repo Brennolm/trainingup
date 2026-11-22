@@ -19,6 +19,9 @@ return [
     'legal_versions' => [
         'terms' => '2026-11-22',
         'privacy' => '2026-11-22',
+        // Specific consent for health data (LGPD art. 11), asked when the questionnaire starts.
+        // Text: frontend/src/locales (questionnaire.consent).
+        'health_data' => '2026-11-22',
     ],
 
     // SPEC 6.8: Google-only accounts type this word to confirm account deletion.
