@@ -1,0 +1,25 @@
+# Training Up — API (Laravel) at api.trainingup.com.br
+# Copied to public_html/api/.htaccess by the deploy workflow. Laravel lives in this folder;
+# only public/ is served (same layout as the other sites on this hosting account).
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# The API answers only on its own subdomain (blocks trainingup.com.br/api/...)
+RewriteCond %{HTTP_HOST} !^api\.trainingup\.com\.br$ [NC]
+RewriteRule ^ - [R=404,L]
+
+# Never serve hidden files (.env, .git...) or Laravel internals directly
+RewriteRule (^|/)\.(?!well-known/) - [F,L]
+RewriteRule ^(app|bootstrap|config|database|lang|resources|routes|storage|tests|vendor)(/|$) - [F,L]
+RewriteRule ^(artisan|composer\.(json|lock)|phpunit\.xml|DEPLOY_VERSION)$ - [F,L]
+
+# Everything else goes to Laravel's public/
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
