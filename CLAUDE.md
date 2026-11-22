@@ -13,10 +13,24 @@
 4. Ambiguidade → pergunte antes de implementar.
 5. Atualize `docs/CHANGELOG.md` e `docs/DECISIONS.md` a cada fase/decisão.
 6. Código, tabelas e variáveis em **inglês**; textos de interface em **pt-BR** via arquivos de tradução (nada hardcoded).
+7. **Testes junto com o código, sempre.** Toda funcionalidade ou mudança entra com seus testes no mesmo passo, no frontend (Vitest + Testing Library, arquivos `*.test.tsx` ao lado do componente) e no backend (PHPUnit em `backend/tests`). Nada de deixar teste para depois.
+8. Comandos locais (composer, npm, build, testes, artisan, servidores de dev) podem ser rodados sem pedir. Commit, push e qualquer coisa em produção: confirmar antes.
 
 ## Estrutura
 ```
 /frontend   React + Vite + TS (PWA)
 /backend    Laravel API
-/docs       SPEC, DECISIONS, CHANGELOG, DEPLOY, data/ (seeds, TACO)
+/docs       SPEC, DECISIONS, CHANGELOG, DEPLOY, data/ (seeds, TACO), brand/
 ```
+
+## Comandos
+- Frontend (`/frontend`): `npm run dev` (**http://localhost:5180**), `npm test`, `npm run build`, `npm run lint` (oxlint), `npm run format` (Prettier).
+- Backend (`/backend`): `php artisan serve --port=8010` (**http://localhost:8010**), `php artisan test`, `./vendor/bin/pint`.
+- Portas fixas 5180/8010 porque 5173/8000 já são usadas por outros projetos do Brenno.
+- Antes de encerrar uma tarefa: testes + build + lint do frontend e testes + Pint do backend passando.
+
+## Convenções do frontend
+- Cores só por tokens (`bg`, `surface`, `surface-2`, `border`, `text`, `muted`, `primary`, `on-primary`, `secondary`, `success`, `warning`, `danger`) definidos em `src/index.css`. Nunca usar cor literal em componente.
+- Componentes base em `src/components/ui`; vitrine em `/design`.
+- Toda string de UI em `src/locales/pt-BR.json`.
+- Áreas de toque ≥ 44px (`h-11`); botões de uso na academia `size="lg"`.

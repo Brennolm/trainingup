@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+@import '@fontsource/barlow/latin-400.css';
+@import '@fontsource/barlow/latin-500.css';
+@import '@fontsource/barlow/latin-600.css';
+@import '@fontsource/barlow-condensed/latin-600.css';
+@import '@fontsource/barlow-condensed/latin-800.css';
+@import '@fontsource/barlow-condensed/latin-800-italic.css';
+
+/* Design tokens — Training Up, concept A "Brasa". See docs/brand/README.md.
+   Dark is the default theme; light is applied with data-theme="light" on <html>. */
+:root,
+[data-theme='dark'] {
+  --bg: #121316;
+  --surface: #1d1f24;
+  --surface-2: #262930;
+  --border: #2e3138;
+  --text: #f4f2ef;
+  --muted: #9c9ea5;
+  --primary: #ff5a1f;
+  --primary-hover: #ff7340;
+  --on-primary: #121316;
+  --secondary: #ffb020;
+  --success: #3dd68c;
+  --warning: #ffb020;
+  --danger: #ff6b6b;
+  --overlay: rgb(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f7f6f4;
+  --surface: #ffffff;
+  --surface-2: #f0eeeb;
+  --border: #e2dfda;
+  --text: #17181c;
+  --muted: #5e6168;
+  --primary: #c93d08;
+  --primary-hover: #b03506;
+  --on-primary: #ffffff;
+  --secondary: #b56e00;
+  --success: #18794e;
+  --warning: #9a5b00;
+  --danger: #c62828;
+  --overlay: rgb(23 24 28 / 0.45);
+  color-scheme: light;
+}
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-secondary: var(--secondary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-overlay: var(--overlay);
+
+  --font-sans: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Barlow Condensed', 'Arial Narrow', system-ui, sans-serif;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    @apply outline-primary outline-2 outline-offset-2;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+import { NavLink } from 'react-router'
+import { useTranslation } from 'react-i18next'
+import { cn } from '../../lib/cn'
+import type { NavItem } from './navItems'
+
+type Props = { items: NavItem[]; className?: string }
+
+// Mobile navigation: fixed to the bottom, five large touch targets.
+export function BottomNav({ items, className }: Props) {
+  const { t } = useTranslation()
+  return (
+    <nav
+      aria-label={t('nav.main')}
+      className={cn(
+        'border-border bg-surface/95 fixed inset-x-0 bottom-0 z-30 border-t pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden',
+        className,
+      )}
+    >
+      <ul className="mx-auto grid max-w-lg grid-cols-5">
+        {items.map(({ to, labelKey, icon: Icon }) => (
+          <li key={to}>
+            <NavLink
+              to={to}
+              className={({ isActive }) =>
+                cn(
+                  'flex h-16 flex-col items-center justify-center gap-1 text-[11px] font-semibold transition-colors',
+                  isActive ? 'text-primary' : 'text-muted hover:text-text',
+                )
+              }
+            >
+              <Icon className="size-6" aria-hidden />
+              {t(labelKey)}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}

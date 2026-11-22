@@ -1,0 +1,76 @@
+{
+  "app": {
+    "name": "Training Up"
+  },
+  "placeholder": {
+    "title": "Treino e dieta em um só app",
+    "subtitle": "Estamos construindo o Training Up. Em breve você vai poder montar seu treino, seu plano alimentar e acompanhar sua evolução por aqui.",
+    "beta": "Gratuito durante o beta",
+    "disclaimer": "Os planos são sugestões e estimativas e não substituem acompanhamento profissional."
+  },
+  "nav": {
+    "today": "Hoje",
+    "workout": "Treino",
+    "diet": "Dieta",
+    "progress": "Progresso",
+    "profile": "Perfil",
+    "main": "Navegação principal"
+  },
+  "theme": {
+    "label": "Tema",
+    "dark": "Escuro",
+    "light": "Claro",
+    "toggle": "Alternar tema"
+  },
+  "common": {
+    "close": "Fechar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Salvar",
+    "loading": "Carregando…",
+    "showPassword": "Mostrar senha",
+    "hidePassword": "Ocultar senha"
+  },
+  "design": {
+    "title": "Design system",
+    "intro": "Componentes base do Training Up. Use esta página para conferir os dois temas.",
+    "colors": "Cores",
+    "typography": "Tipografia",
+    "buttons": "Botões",
+    "inputs": "Campos",
+    "cards": "Cards",
+    "tabs": "Abas",
+    "feedback": "Modal e aviso",
+    "navigation": "Navegação",
+    "sample": {
+      "exercise": "Supino reto",
+      "setInfo": "Série 2 de 3",
+      "lastTime": "Última vez: {{load}} × {{reps}}",
+      "start": "Iniciar treino",
+      "secondary": "Ver histórico",
+      "ghost": "Trocar exercício",
+      "danger": "Excluir",
+      "loadLabel": "Carga",
+      "repsLabel": "Repetições",
+      "loadHint": "Pré-preenchido com a última sessão",
+      "emailLabel": "E-mail",
+      "emailError": "Informe um e-mail válido.",
+      "passwordLabel": "Senha",
+      "tabPlan": "Meu plano",
+      "tabHistory": "Histórico",
+      "tabLibrary": "Exercícios",
+      "tabPlanBody": "Treino A · Peito, ombro e tríceps · 6 exercícios",
+      "tabHistoryBody": "Último treino: terça-feira, 52 min, volume 8.420 kg",
+      "tabLibraryBody": "Busque por nome, grupo muscular ou equipamento.",
+      "openModal": "Abrir modal",
+      "showToast": "Mostrar aviso",
+      "modalTitle": "Finalizar treino?",
+      "modalBody": "Você concluiu 16 de 18 séries. As séries não marcadas não entram no volume.",
+      "modalConfirm": "Finalizar",
+      "toastTitle": "Série registrada",
+      "toastBody": "60 kg × 10. Descanso de 90 s iniciado.",
+      "headingSample": "Supino 60 kg",
+      "bodySample": "Ao atingir o topo da faixa de repetições em todas as séries, aumente a carga na próxima sessão."
+    }
+  }
+}

@@ -13,7 +13,7 @@ Duas setas subindo, inclinadas para dar movimento: progressão de carga, série 
 | `logo-light.svg` | Símbolo + nome, fundo claro |
 | `app-icon.svg` | Base dos ícones PWA (512, fundo cheio, símbolo dentro da área segura para ícone *maskable*) |
 
-> O nome nos arquivos `logo-*.svg` ainda é `<text>` (depende da fonte instalada). Na fase 0.2 ele será convertido em contornos (paths), para renderizar igual em qualquer lugar.
+> O nome nos arquivos `logo-*.svg` está em contornos (paths): renderiza igual em qualquer lugar, sem depender da fonte. Para regenerar: `npm run brand` em `/frontend`.
 
 Nome: **TRAINING UP** em maiúsculas, Barlow Condensed 800 itálico; "UP" na cor principal.
 
