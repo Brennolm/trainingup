@@ -1,9 +1,9 @@
 # Changelog
 
-**Fase atual:** 5 — 2FA (pronta localmente, aguardando teste do Brenno). Depois: 3 — LGPD. Fase 4 publicada e testada em produção (2026-11-22).
+**Fase atual:** 3 — LGPD (próxima). Fases 4 (Google) e 5 (2FA) publicadas em 2026-11-22.
 
 ## 2026-11-22
-- Fase 5 — Verificação em duas etapas (em andamento):
+- Fase 5 — Verificação em duas etapas (publicada em 2026-11-22, commit e513206; testada pelo Brenno localmente):
   - Perfil → Segurança: ativar (senha → QR code do app autenticador + chave manual → primeiro código), 8 códigos de recuperação de uso único (copiar/baixar, mostrados uma vez), gerar novos códigos, desativar (senha + código do app ou de recuperação).
   - Login com e-mail/senha pede o código em `/entrar/codigo` (ou um código de recuperação); expira em 10 min e após 5 erros. Login pelo Google não pede.
   - Banco: `two_factor_secret` (criptografado), `two_factor_recovery_codes` (hashes), `two_factor_confirmed_at` em `users`.
