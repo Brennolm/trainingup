@@ -40,12 +40,12 @@ class FinalizeDeploy extends Command
         $useCache = (bool) config('deploy.cache');
 
         try {
-            if ($useCache) {
-                $this->call('optimize:clear');
-            }
+            // File caches only: the cache store may live in a table that migrations create.
+            $this->call('config:clear');
             $this->call('package:discover');
             $this->call('migrate', ['--force' => true]);
             if ($useCache) {
+                $this->call('optimize:clear');
                 $this->call('optimize');
             }
         } catch (Throwable $e) {
