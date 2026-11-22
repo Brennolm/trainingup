@@ -20,6 +20,8 @@ class UserResource extends JsonResource
             'birth_date' => $this->birth_date?->toDateString(),
             'role' => $this->role->value,
             'plan' => $this->plan?->slug,
+            'has_password' => $this->password !== null,
+            'google_linked' => $this->google_id !== null,
             'preferences' => [
                 'theme' => $this->theme->value,
                 'weight_unit' => $this->weight_unit->value,
