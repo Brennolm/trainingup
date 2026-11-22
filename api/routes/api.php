@@ -5,9 +5,11 @@ use App\Http\Controllers\Auth\GoogleAccountController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\TwoFactorChallengeController;
 use App\Http\Controllers\MeController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TwoFactorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/health', fn () => response()->json([
@@ -20,6 +22,7 @@ Route::get('/health', fn () => response()->json([
 Route::prefix('auth')->group(function () {
     Route::post('register', RegisterController::class)->middleware('throttle:register');
     Route::post('login', [LoginController::class, 'store'])->middleware('throttle:login');
+    Route::post('two-factor-challenge', TwoFactorChallengeController::class)->middleware('throttle:two-factor');
     Route::post('forgot-password', [PasswordResetController::class, 'sendLink'])->middleware('throttle:password-email');
     Route::post('reset-password', [PasswordResetController::class, 'reset'])->middleware('throttle:password-reset');
 
@@ -44,4 +47,11 @@ Route::middleware(['auth:sanctum', 'verified.email'])->group(function () {
     Route::patch('/profile/preferences', [ProfileController::class, 'preferences']);
     Route::put('/profile/password', [PasswordController::class, 'update'])->middleware('throttle:password-reset');
     Route::delete('/auth/google', [GoogleAccountController::class, 'unlink']);
+
+    Route::middleware('throttle:two-factor')->group(function () {
+        Route::post('/profile/two-factor', [TwoFactorController::class, 'store']);
+        Route::post('/profile/two-factor/confirm', [TwoFactorController::class, 'confirm']);
+        Route::delete('/profile/two-factor', [TwoFactorController::class, 'destroy']);
+        Route::post('/profile/two-factor/recovery-codes', [TwoFactorController::class, 'recoveryCodes']);
+    });
 });

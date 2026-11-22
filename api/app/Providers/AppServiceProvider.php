@@ -50,6 +50,9 @@ class AppServiceProvider extends ServiceProvider
         // The code itself allows 5 attempts; this only stops scripted hammering.
         RateLimiter::for('verify-code', fn (Request $r) => Limit::perMinute(10)->by('verify:'.($r->user()?->id ?? $r->ip())));
 
+        // 2FA codes: the challenge also drops the pending sign-in after 5 wrong codes.
+        RateLimiter::for('two-factor', fn (Request $r) => Limit::perMinute(10)->by('2fa:'.($r->user()?->id ?? ($r->hasSession() ? $r->session()->getId() : $r->ip()))));
+
         // The 60-second cooldown is enforced by EmailVerificationService; this caps daily volume.
         RateLimiter::for('resend-code', fn (Request $r) => Limit::perHour(10)->by('resend:'.($r->user()?->id ?? $r->ip())));
     }
