@@ -1,9 +1,9 @@
 # Changelog
 
-**Fase atual:** 7 — Admin base (pronta localmente, aguardando o teste do Brenno). Fases 3 (LGPD), 4 (Google), 5 (2FA) e 6 (Questionário) publicadas em 2026-11-22.
+**Fase atual:** 7 — Admin base (publicada em 2026-11-22; falta o Brenno virar admin em produção). Fases 3 (LGPD), 4 (Google), 5 (2FA), 6 (Questionário) e 7 (Admin) publicadas em 2026-11-22.
 
 ## 2026-11-22
-- Fase 7 — Admin base (testada pelo Brenno localmente; publicando):
+- Fase 7 — Admin base (publicada em 2026-11-22, commit 9b67314; testada pelo Brenno localmente):
   - Painel em `/admin` (só `role = admin`, link no Perfil), com menu próprio: Métricas, Usuários, Alertas, Parâmetros.
   - Usuários: busca, status, cadastro e último acesso. "Ver como usuário" pede o motivo, abre o app da pessoa em modo somente leitura (bloqueado no backend) com a faixa "Você está vendo como {nome} — Sair" e termina sozinho em 60 min. Aba "Registro de acessos"; os acessos aparecem na exportação de dados da pessoa.
   - Métricas: contas, e-mail confirmado, ativos em 7 dias, cadastros em 7/30 dias, questionários concluídos e bloqueados; planos e sessões "Em breve".
