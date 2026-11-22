@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Enums\ConsentType;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\Plan;
 use App\Models\User;
 use App\Support\AgeRule;
+use App\Support\LegalConsent;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,15 +57,7 @@ class GoogleAccountController extends Controller
             $user->plan()->associate(Plan::free());
             $user->save();
 
-            foreach ([ConsentType::Terms, ConsentType::Privacy] as $type) {
-                $user->consents()->create([
-                    'type' => $type,
-                    'version' => config("trainingup.legal_versions.{$type->value}"),
-                    'accepted_at' => now(),
-                    'ip_address' => $request->ip(),
-                    'user_agent' => substr((string) $request->userAgent(), 0, 500),
-                ]);
-            }
+            LegalConsent::record($user, $request);
 
             return $user;
         });
