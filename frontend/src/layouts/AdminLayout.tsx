@@ -1,4 +1,4 @@
-import { ArrowLeft, BarChart3, BellRing, SlidersHorizontal, Users } from 'lucide-react'
+import { ArrowLeft, BarChart3, BellRing, Dumbbell, SlidersHorizontal, Users } from 'lucide-react'
 import { Navigate, Outlet } from 'react-router'
 import type { NavItem } from '../components/navigation/navItems'
 import { AccountThemeSync } from '../features/auth/AccountThemeSync'
@@ -10,6 +10,7 @@ const ADMIN_NAV_ITEMS: NavItem[] = [
   { to: ROUTES.admin, labelKey: 'admin.nav.metrics', icon: BarChart3, end: true },
   { to: ROUTES.adminUsers, labelKey: 'admin.nav.users', icon: Users },
   { to: ROUTES.adminAlerts, labelKey: 'admin.nav.alerts', icon: BellRing },
+  { to: ROUTES.adminExercises, labelKey: 'admin.nav.exercises', icon: Dumbbell },
   { to: ROUTES.adminSettings, labelKey: 'admin.nav.settings', icon: SlidersHorizontal },
   { to: ROUTES.today, labelKey: 'admin.nav.backToApp', icon: ArrowLeft },
 ]

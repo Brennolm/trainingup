@@ -24,7 +24,12 @@ export function mockApi(handlers: Record<string, Handler>) {
       document.cookie = 'XSRF-TOKEN=test-xsrf-token; path=/'
       return new Response(null, { status: 204 })
     }
-    const body = init.body ? (JSON.parse(init.body as string) as Record<string, unknown>) : undefined
+    const body =
+      init.body instanceof FormData
+        ? Object.fromEntries(init.body.entries())
+        : init.body
+          ? (JSON.parse(init.body as string) as Record<string, unknown>)
+          : undefined
     calls.push({ method, path: pathname, body, headers: (init.headers ?? {}) as Record<string, string> })
 
     const handler = handlers[`${method} ${pathname}`]

@@ -3,6 +3,7 @@ import { GuestOnly, RequireAuth, RequireVerified } from './features/auth/guards'
 import { AdminLayout } from './layouts/AdminLayout'
 import { AppLayout } from './layouts/AppLayout'
 import { AdminAlertsPage } from './pages/admin/AdminAlertsPage'
+import { AdminExercisesPage } from './pages/admin/AdminExercisesPage'
 import { AdminMetricsPage } from './pages/admin/AdminMetricsPage'
 import { AdminSettingsPage } from './pages/admin/AdminSettingsPage'
 import { AdminUsersPage } from './pages/admin/AdminUsersPage'
@@ -13,6 +14,7 @@ import { MyDataPage, MyDataSectionPage } from './pages/app/MyDataPage'
 import { ProfilePage } from './pages/app/ProfilePage'
 import { QuestionnairePage } from './pages/app/QuestionnairePage'
 import { TodayPage } from './pages/app/TodayPage'
+import { WorkoutPage } from './pages/app/WorkoutPage'
 import { CompleteSignUpPage } from './pages/auth/CompleteSignUpPage'
 import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage'
 import { ResetPasswordPage } from './pages/auth/ResetPasswordPage'
@@ -56,7 +58,7 @@ export const routes: RouteObject[] = [
                 element: <AppLayout />,
                 children: [
                   { path: ROUTES.today, element: <TodayPage /> },
-                  { path: ROUTES.workout, element: <AppSoonPage titleKey="nav.workout" /> },
+                  { path: ROUTES.workout, element: <WorkoutPage /> },
                   { path: ROUTES.diet, element: <AppSoonPage titleKey="nav.diet" /> },
                   { path: ROUTES.progress, element: <AppSoonPage titleKey="nav.progress" /> },
                   { path: ROUTES.profile, element: <ProfilePage /> },
@@ -72,6 +74,7 @@ export const routes: RouteObject[] = [
                   { path: ROUTES.admin, element: <AdminMetricsPage /> },
                   { path: ROUTES.adminUsers, element: <AdminUsersPage /> },
                   { path: ROUTES.adminAlerts, element: <AdminAlertsPage /> },
+                  { path: ROUTES.adminExercises, element: <AdminExercisesPage /> },
                   { path: ROUTES.adminSettings, element: <AdminSettingsPage /> },
                 ],
               },

@@ -58,7 +58,9 @@ async function request<T>(method: Method, path: string, body?: unknown, retried 
   }
 
   const headers: Record<string, string> = { Accept: 'application/json' }
-  if (body !== undefined) headers['Content-Type'] = 'application/json'
+  // FormData (file uploads) sets its own multipart Content-Type with the boundary.
+  const isForm = body instanceof FormData
+  if (body !== undefined && !isForm) headers['Content-Type'] = 'application/json'
   const xsrf = readCookie('XSRF-TOKEN')
   if (mutating && xsrf) headers['X-XSRF-TOKEN'] = xsrf
 
@@ -68,7 +70,7 @@ async function request<T>(method: Method, path: string, body?: unknown, retried 
       method,
       headers,
       credentials: 'include',
-      body: body === undefined ? undefined : JSON.stringify(body),
+      body: body === undefined ? undefined : isForm ? body : JSON.stringify(body),
     })
   } catch {
     throw new ApiError(0, 'network')
@@ -95,6 +97,12 @@ export const api = {
   patch: <T>(path: string, body?: unknown) => request<T>('PATCH', path, body),
   put: <T>(path: string, body?: unknown) => request<T>('PUT', path, body),
   delete: <T>(path: string, body?: unknown) => request<T>('DELETE', path, body),
+  /** Sends one file as multipart/form-data under `field`. */
+  upload: <T>(path: string, file: File, field = 'file') => {
+    const form = new FormData()
+    form.append(field, file)
+    return request<T>('POST', path, form)
+  },
 }
 
 /** Test helper: forget the cached CSRF state. */

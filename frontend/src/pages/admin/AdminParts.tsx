@@ -38,3 +38,18 @@ export function Loading() {
     </div>
   )
 }
+
+/** Small status label (admin, e-mail not confirmed, inactive…). */
+export function Badge({ children, muted = false }: { children: string; muted?: boolean }) {
+  return (
+    <span
+      className={
+        muted
+          ? 'bg-surface-2 text-muted rounded-md px-2 py-0.5 text-xs font-semibold'
+          : 'bg-primary/12 text-primary rounded-md px-2 py-0.5 text-xs font-semibold'
+      }
+    >
+      {children}
+    </span>
+  )
+}

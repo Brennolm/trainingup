@@ -7,13 +7,14 @@ import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
 import { Input } from '../../components/ui/Input'
 import { Modal } from '../../components/ui/Modal'
+import { Pagination } from '../../components/ui/Pagination'
 import { Tabs } from '../../components/ui/Tabs'
 import { Textarea } from '../../components/ui/Textarea'
 import { adminApi, pageLoad, type AdminUser } from '../../features/admin/adminApi'
 import { errorMessage } from '../../features/auth/errors'
 import { ApiError } from '../../lib/api'
 import { ROUTES } from '../../routes'
-import { AdminPage, Loading } from './AdminParts'
+import { AdminPage, Badge, Loading } from './AdminParts'
 
 const MIN_REASON = 10
 const date = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' })
@@ -104,42 +105,12 @@ function UserList() {
               ))}
             </ul>
           )}
-          {query.data.meta.last_page > 1 && (
-            <nav className="flex items-center justify-between gap-3" aria-label={t('admin.users.pages')}>
-              <Button variant="ghost" disabled={page <= 1} onClick={() => setPage((p) => p - 1)}>
-                {t('admin.users.previous')}
-              </Button>
-              <span className="text-muted text-sm">
-                {t('admin.users.page', { page, last: query.data.meta.last_page })}
-              </span>
-              <Button
-                variant="ghost"
-                disabled={page >= query.data.meta.last_page}
-                onClick={() => setPage((p) => p + 1)}
-              >
-                {t('admin.users.next')}
-              </Button>
-            </nav>
-          )}
+          <Pagination page={page} last={query.data.meta.last_page} onChange={setPage} />
         </>
       )}
 
       <ViewAsModal user={viewing} onClose={() => setViewing(null)} />
     </div>
-  )
-}
-
-function Badge({ children, muted = false }: { children: string; muted?: boolean }) {
-  return (
-    <span
-      className={
-        muted
-          ? 'bg-surface-2 text-muted rounded-md px-2 py-0.5 text-xs font-semibold'
-          : 'bg-primary/12 text-primary rounded-md px-2 py-0.5 text-xs font-semibold'
-      }
-    >
-      {children}
-    </span>
   )
 }
 

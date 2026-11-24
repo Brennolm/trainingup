@@ -306,6 +306,7 @@
     "choices": "Escolhas",
     "cards": "Cards",
     "tabs": "Abas",
+    "pagination": "Paginação",
     "feedback": "Modal e aviso",
     "navigation": "Navegação",
     "sample": {
@@ -981,7 +982,8 @@
       "users": "Usuários",
       "alerts": "Alertas",
       "settings": "Parâmetros",
-      "backToApp": "App"
+      "backToApp": "App",
+      "exercises": "Exercícios"
     },
     "impersonation": {
       "barLabel": "Acesso de suporte",
@@ -1029,10 +1031,6 @@
       "reasonHint": "Obrigatório. Ex.: \"Usuária relatou erro ao salvar o questionário\".",
       "reasonShort": "Descreva o motivo com pelo menos {{min}} caracteres.",
       "enter": "Entrar em modo leitura",
-      "pages": "Páginas",
-      "previous": "Anterior",
-      "next": "Próxima",
-      "page": "Página {{page}} de {{last}}",
       "logsEmpty": "Nenhum acesso de suporte registrado.",
       "deletedAccount": "Conta excluída",
       "logLine": "Por {{admin}} · de {{start}} até {{end}}",
@@ -1143,6 +1141,130 @@
           "training_day_extra_pct": "A mais no dia de treino"
         }
       }
+    },
+    "exercises": {
+      "intro": "Base de exercícios usada na biblioteca e nos planos gerados. Exercícios não são excluídos: desative para tirar da biblioteca e dos próximos planos.",
+      "search": "Buscar por nome",
+      "new": "Novo exercício",
+      "newTitle": "Novo exercício",
+      "editTitle": "Editar exercício",
+      "edit": "Editar",
+      "editNamed": "Editar {{name}}",
+      "count_one": "{{count}} exercício ({{inactive}} desativados)",
+      "count_other": "{{count}} exercícios ({{inactive}} desativados)",
+      "inactive": "Desativado",
+      "active": "Ativo (aparece na biblioteca e nos planos)",
+      "choose": "Escolha…",
+      "required": "Campo obrigatório.",
+      "equipmentHint": "Tudo o que o exercício precisa. Nenhum marcado = peso do corpo.",
+      "levelHint": "Nível mínimo de experiência indicado.",
+      "contraindicationsHint": "O exercício sai dos planos de quem informar essas lesões ou limitações.",
+      "media": {
+        "title": "Imagem de exemplo",
+        "hint": "Posição inicial e final lado a lado. É enviada na hora, sem precisar salvar.",
+        "afterCreate": "Depois de salvar o exercício, você envia a imagem aqui mesmo.",
+        "imageAlt": "Imagem de {{name}}",
+        "noImage": "Sem imagem",
+        "pickImage": "Escolher imagem",
+        "sendImage": "Enviar imagem",
+        "replaceImage": "Trocar imagem",
+        "removeImage": "Remover imagem",
+        "imageLimits": "JPG, PNG ou WebP. O app reduz a imagem antes de enviar. Ideal: quadrada (1:1).",
+        "imageType": "Envie uma imagem JPG, PNG ou WebP.",
+        "unreadable": "Não foi possível ler esta imagem. Tente outro arquivo.",
+        "imageSaved": "Imagem enviada.",
+        "imageRemoved": "Imagem removida."
+      }
     }
+  },
+  "exercise": {
+    "bodyweight": "Peso do corpo",
+    "fields": {
+      "name": "Nome",
+      "primary": "Grupo muscular principal",
+      "secondary": "Grupos secundários",
+      "pattern": "Padrão de movimento",
+      "equipment": "Equipamentos",
+      "level": "Nível",
+      "contraindications": "Contraindicações"
+    },
+    "muscles": {
+      "chest": "Peito",
+      "back": "Costas",
+      "shoulders": "Ombros",
+      "biceps": "Bíceps",
+      "triceps": "Tríceps",
+      "forearms": "Antebraço",
+      "abs": "Abdômen",
+      "lower_back": "Lombar",
+      "quadriceps": "Quadríceps",
+      "hamstrings": "Posteriores da coxa",
+      "glutes": "Glúteos",
+      "adductors": "Adutores",
+      "calves": "Panturrilha"
+    },
+    "patterns": {
+      "squat": "Agachar",
+      "hinge": "Dobrar o quadril",
+      "horizontal_push": "Empurrar na horizontal",
+      "vertical_push": "Empurrar na vertical",
+      "horizontal_pull": "Puxar na horizontal",
+      "vertical_pull": "Puxar na vertical",
+      "isolation": "Isolado",
+      "core": "Core"
+    },
+    "equipment": {
+      "barbell": "Barra",
+      "dumbbell": "Halteres",
+      "machine": "Máquina",
+      "cable": "Polia",
+      "bench": "Banco",
+      "pull_up_bar": "Barra fixa",
+      "parallel_bars": "Paralelas",
+      "kettlebell": "Kettlebell",
+      "band": "Elástico"
+    },
+    "levels": {
+      "beginner": "Iniciante",
+      "intermediate": "Intermediário",
+      "advanced": "Avançado"
+    },
+    "injuries": {
+      "shoulder": "Ombro",
+      "elbow": "Cotovelo",
+      "wrist": "Punho",
+      "lower_back": "Lombar",
+      "neck": "Pescoço",
+      "hip": "Quadril",
+      "knee": "Joelho",
+      "ankle": "Tornozelo"
+    }
+  },
+  "workout": {
+    "tabs": {
+      "plan": "Meu plano",
+      "history": "Histórico",
+      "library": "Exercícios"
+    },
+    "soon": "Seu plano de treino e o histórico das sessões chegam nas próximas etapas. Enquanto isso, conheça os exercícios.",
+    "library": {
+      "search": "Buscar exercício",
+      "muscle": "Grupo muscular",
+      "equipment": "Equipamento",
+      "allMuscles": "Todos os grupos",
+      "allEquipment": "Todos os equipamentos",
+      "count_one": "{{count}} exercício",
+      "count_other": "{{count}} exercícios",
+      "perPage": "Por página",
+      "empty": "Nenhum exercício encontrado com esses filtros.",
+      "caution": "Evite ou fale com um profissional se tiver dor ou lesão em: {{list}}.",
+      "imageAlt": "Imagem de exemplo: {{name}}"
+    }
+  },
+  "pagination": {
+    "label": "Páginas",
+    "previous": "Anterior",
+    "next": "Próxima",
+    "page": "Página {{page}} de {{last}}"
   }
 }

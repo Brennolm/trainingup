@@ -1,8 +1,18 @@
 # Changelog
 
-**Fase atual:** 7 — Admin base (publicada em 2026-11-22; falta o Brenno virar admin em produção). Fases 3 (LGPD), 4 (Google), 5 (2FA), 6 (Questionário) e 7 (Admin) publicadas em 2026-11-22.
+**Fase atual:** 8 — Treino, etapa 8.1 (base de exercícios) pronta localmente, aguardando a revisão e o teste do Brenno. Fases 3 a 7 publicadas em 2026-11-22.
 
 ## 2026-11-22
+- Fase 8.1 — Base de exercícios (pronta localmente; falta a revisão do Brenno e publicar):
+  - 163 exercícios para revisão (121 iniciais + 42 lacunas achadas comparando com o catálogo do RepCount) em `backend/database/data/exercises.csv` (guia em `docs/data/README.md`), importados uma vez por ambiente; comando `php artisan exercises:import`.
+  - Painel admin → Exercícios: busca, criar, editar e desativar (grupo principal e secundários, padrão de movimento, equipamentos, nível, contraindicações).
+  - Treino → Exercícios: biblioteca com busca e filtros por grupo muscular e equipamento, detalhes e aviso de lesões, 4, 10, 20 ou 50 exercícios por página à escolha da pessoa (padrão 4, lembrado no aparelho; busca e filtros voltam para a página 1; componente `Pagination` também usado no admin de usuários). "Meu plano" e "Histórico" aparecem como "Em breve".
+  - Imagem de exemplo por exercício (posição inicial e final lado a lado): envio, troca e remoção no admin, com redução no navegador antes do envio; aparece na lista e nos detalhes. Arquivos no servidor da API (sem S3).
+  - Imagens que vão junto com o código em `backend/database/data/exercise-images/`, ligadas aos exercícios por `php artisan exercises:images` (roda no `deploy:finalize`, sem sobrescrever imagens enviadas no admin).
+  - Gerador local `php artisan exercises:generate-images` (API da OpenAI, qualidade média por padrão): monta o prompt de cada exercício a partir de `backend/database/data/exercise-image-specs.json` (posição inicial, movimento até a posição final, equipamento, ângulo e regra de técnica dos 163 exercícios), gera só as que faltam (`--force` refaz, `--dry-run` só mostra os prompts) e já liga as imagens.
+  - Fundo da academia, modelo oficial e foto base de mãos vazias em `docs/brand/academia/`.
+  - Componente `Select`; a barra inferior aceita 6 itens (menu do admin).
+  - Banco: `exercises` (com `image_path`). Testes: 160 no backend, 161 no frontend.
 - Fase 7 — Admin base (publicada em 2026-11-22, commit 9b67314; testada pelo Brenno localmente):
   - Painel em `/admin` (só `role = admin`, link no Perfil), com menu próprio: Métricas, Usuários, Alertas, Parâmetros.
   - Usuários: busca, status, cadastro e último acesso. "Ver como usuário" pede o motivo, abre o app da pessoa em modo somente leitura (bloqueado no backend) com a faixa "Você está vendo como {nome} — Sair" e termina sozinho em 60 min. Aba "Registro de acessos"; os acessos aparecem na exportação de dados da pessoa.

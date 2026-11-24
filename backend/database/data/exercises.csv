@@ -1,0 +1,164 @@
+﻿slug;name;primary_muscle;secondary_muscles;movement_pattern;equipment;level;contraindications
+supino-reto-barra;Supino reto com barra;chest;triceps|shoulders;horizontal_push;barbell|bench;beginner;shoulder|elbow|wrist
+supino-inclinado-barra;Supino inclinado com barra;chest;shoulders|triceps;horizontal_push;barbell|bench;intermediate;shoulder|elbow|wrist
+supino-declinado-barra;Supino declinado com barra;chest;triceps;horizontal_push;barbell|bench;intermediate;shoulder|wrist
+supino-reto-halteres;Supino reto com halteres;chest;triceps|shoulders;horizontal_push;dumbbell|bench;beginner;shoulder
+supino-inclinado-halteres;Supino inclinado com halteres;chest;shoulders|triceps;horizontal_push;dumbbell|bench;beginner;shoulder
+supino-maquina;Supino na máquina;chest;triceps|shoulders;horizontal_push;machine;beginner;shoulder
+supino-elastico;Supino com elástico;chest;triceps|shoulders;horizontal_push;band;beginner;shoulder
+flexao;Flexão de braços;chest;triceps|shoulders|abs;horizontal_push;;beginner;shoulder|wrist
+flexao-joelhos;Flexão com joelhos apoiados;chest;triceps|shoulders;horizontal_push;;beginner;wrist
+flexao-inclinada;Flexão inclinada (mãos no banco);chest;triceps|shoulders;horizontal_push;bench;beginner;wrist
+flexao-declinada;Flexão declinada (pés no banco);chest;shoulders|triceps;horizontal_push;bench;intermediate;shoulder|wrist
+mergulho-paralelas;Mergulho nas paralelas;chest;triceps|shoulders;horizontal_push;parallel_bars;advanced;shoulder|elbow|wrist
+crucifixo-halteres;Crucifixo reto com halteres;chest;shoulders;isolation;dumbbell|bench;beginner;shoulder|elbow
+crucifixo-inclinado-halteres;Crucifixo inclinado com halteres;chest;shoulders;isolation;dumbbell|bench;beginner;shoulder|elbow
+voador;Voador (peck deck);chest;shoulders;isolation;machine;beginner;shoulder
+crossover-polia;Crossover na polia;chest;shoulders;isolation;cable;intermediate;shoulder
+supino-inclinado-maquina;Supino inclinado na máquina;chest;shoulders|triceps;horizontal_push;machine;beginner;shoulder
+supino-smith;Supino reto no Smith;chest;triceps|shoulders;horizontal_push;machine|bench;beginner;shoulder|elbow|wrist
+supino-chao-halteres;Supino no chão com halteres;chest;triceps;horizontal_push;dumbbell;beginner;elbow|wrist
+mergulho-assistido;Mergulho assistido na máquina;chest;triceps|shoulders;horizontal_push;machine;beginner;shoulder|elbow
+puxada-frontal;Puxada frontal na polia;back;biceps;vertical_pull;cable;beginner;shoulder
+puxada-supinada;Puxada supinada na polia;back;biceps;vertical_pull;cable;beginner;shoulder|elbow
+puxada-triangulo;Puxada com triângulo;back;biceps;vertical_pull;cable;beginner;shoulder
+puxada-elastico;Puxada alta com elástico;back;biceps;vertical_pull;band;beginner;shoulder
+barra-fixa;Barra fixa pronada;back;biceps|forearms;vertical_pull;pull_up_bar;intermediate;shoulder|elbow
+barra-fixa-supinada;Barra fixa supinada;back;biceps;vertical_pull;pull_up_bar;intermediate;shoulder|elbow
+barra-fixa-negativa;Barra fixa negativa (só a descida);back;biceps;vertical_pull;pull_up_bar;beginner;shoulder|elbow
+remada-curvada-barra;Remada curvada com barra;back;biceps|lower_back;horizontal_pull;barbell;intermediate;lower_back
+remada-cavalinho;Remada cavalinho;back;biceps|lower_back;horizontal_pull;barbell;intermediate;lower_back
+remada-unilateral-halter;Remada unilateral com halter (serrote);back;biceps;horizontal_pull;dumbbell|bench;beginner;
+remada-halteres-banco-inclinado;Remada com halteres no banco inclinado;back;biceps|shoulders;horizontal_pull;dumbbell|bench;beginner;
+remada-baixa-polia;Remada baixa na polia;back;biceps;horizontal_pull;cable;beginner;lower_back
+remada-maquina;Remada na máquina com apoio no peito;back;biceps;horizontal_pull;machine;beginner;
+remada-elastico;Remada com elástico;back;biceps;horizontal_pull;band;beginner;
+remada-kettlebell;Remada com kettlebell;back;biceps;horizontal_pull;kettlebell;beginner;lower_back
+remada-invertida;Remada invertida na barra;back;biceps|abs;horizontal_pull;barbell;intermediate;shoulder
+pulldown-bracos-estendidos;Pulldown com braços estendidos;back;triceps;isolation;cable;intermediate;shoulder
+pullover-halter;Pullover com halter;back;chest|triceps;isolation;dumbbell|bench;intermediate;shoulder
+encolhimento-halteres;Encolhimento com halteres;back;forearms;isolation;dumbbell;beginner;neck
+barra-fixa-assistida;Barra fixa assistida na máquina;back;biceps;vertical_pull;machine;beginner;shoulder
+puxada-unilateral-polia;Puxada unilateral na polia;back;biceps;vertical_pull;cable;beginner;shoulder
+remada-unilateral-polia;Remada unilateral na polia;back;biceps;horizontal_pull;cable;beginner;
+encolhimento-barra;Encolhimento com barra;back;forearms;isolation;barbell;beginner;neck
+desenvolvimento-halteres;Desenvolvimento com halteres;shoulders;triceps;vertical_push;dumbbell|bench;beginner;shoulder|neck
+desenvolvimento-barra;Desenvolvimento militar com barra (em pé);shoulders;triceps|abs;vertical_push;barbell;intermediate;shoulder|lower_back|neck
+desenvolvimento-maquina;Desenvolvimento na máquina;shoulders;triceps;vertical_push;machine;beginner;shoulder
+desenvolvimento-arnold;Desenvolvimento Arnold;shoulders;triceps;vertical_push;dumbbell|bench;intermediate;shoulder
+desenvolvimento-elastico;Desenvolvimento com elástico;shoulders;triceps;vertical_push;band;beginner;shoulder
+desenvolvimento-kettlebell;Desenvolvimento com kettlebell;shoulders;triceps|abs;vertical_push;kettlebell;intermediate;shoulder
+flexao-pike;Flexão pike;shoulders;triceps;vertical_push;;intermediate;shoulder|wrist|neck
+elevacao-lateral-halteres;Elevação lateral com halteres;shoulders;;isolation;dumbbell;beginner;shoulder
+elevacao-lateral-polia;Elevação lateral na polia;shoulders;;isolation;cable;intermediate;shoulder
+elevacao-lateral-elastico;Elevação lateral com elástico;shoulders;;isolation;band;beginner;shoulder
+elevacao-frontal-halteres;Elevação frontal com halteres;shoulders;chest;isolation;dumbbell;beginner;shoulder
+crucifixo-invertido-halteres;Crucifixo invertido com halteres;shoulders;back;isolation;dumbbell;beginner;lower_back
+crucifixo-invertido-maquina;Crucifixo invertido na máquina;shoulders;back;isolation;machine;beginner;
+face-pull;Face pull na polia;shoulders;back;isolation;cable;intermediate;
+face-pull-elastico;Face pull com elástico;shoulders;back;isolation;band;beginner;
+elevacao-lateral-maquina;Elevação lateral na máquina;shoulders;;isolation;machine;beginner;shoulder
+crucifixo-invertido-polia;Crucifixo invertido na polia;shoulders;back;isolation;cable;beginner;
+abertura-elastico;Abertura com elástico (pull-apart);shoulders;back;isolation;band;beginner;
+rotacao-externa-polia;Rotação externa de ombro na polia;shoulders;;isolation;cable;beginner;
+remada-alta-barra;Remada alta com barra;shoulders;back|biceps;isolation;barbell;intermediate;shoulder|wrist
+desenvolvimento-landmine;Desenvolvimento landmine (unilateral);shoulders;chest|triceps|abs;vertical_push;barbell;intermediate;shoulder|wrist
+rosca-direta-barra;Rosca direta com barra;biceps;forearms;isolation;barbell;beginner;elbow|wrist
+rosca-alternada-halteres;Rosca alternada com halteres;biceps;forearms;isolation;dumbbell;beginner;elbow
+rosca-martelo;Rosca martelo com halteres;biceps;forearms;isolation;dumbbell;beginner;elbow
+rosca-scott;Rosca Scott na máquina;biceps;;isolation;machine;beginner;elbow
+rosca-polia;Rosca na polia;biceps;forearms;isolation;cable;beginner;elbow
+rosca-concentrada;Rosca concentrada;biceps;;isolation;dumbbell|bench;beginner;elbow
+rosca-inclinada-halteres;Rosca no banco inclinado;biceps;;isolation;dumbbell|bench;intermediate;shoulder|elbow
+rosca-elastico;Rosca com elástico;biceps;forearms;isolation;band;beginner;elbow
+rosca-kettlebell;Rosca com kettlebell;biceps;forearms;isolation;kettlebell;beginner;elbow|wrist
+rosca-direta-halteres;Rosca direta com halteres;biceps;forearms;isolation;dumbbell;beginner;elbow
+rosca-barra-w;Rosca com barra W;biceps;forearms;isolation;barbell;beginner;elbow
+rosca-scott-barra;Rosca Scott com barra W;biceps;;isolation;barbell|bench;beginner;elbow
+triceps-polia-barra;Tríceps na polia com barra;triceps;;isolation;cable;beginner;elbow
+triceps-corda;Tríceps na polia com corda;triceps;;isolation;cable;beginner;elbow
+triceps-testa;Tríceps testa com barra;triceps;;isolation;barbell|bench;intermediate;elbow|shoulder
+triceps-frances-halter;Tríceps francês com halter;triceps;;isolation;dumbbell;beginner;elbow|shoulder
+triceps-coice;Tríceps coice com halter;triceps;;isolation;dumbbell|bench;beginner;elbow
+triceps-elastico;Tríceps com elástico;triceps;;isolation;band;beginner;elbow
+mergulho-banco;Mergulho no banco;triceps;chest|shoulders;horizontal_push;bench;beginner;shoulder|elbow|wrist
+supino-fechado;Supino fechado com barra;triceps;chest|shoulders;horizontal_push;barbell|bench;intermediate;shoulder|elbow|wrist
+flexao-diamante;Flexão diamante;triceps;chest|shoulders;horizontal_push;;intermediate;shoulder|elbow|wrist
+triceps-unilateral-polia;Tríceps unilateral na polia;triceps;;isolation;cable;beginner;elbow
+triceps-frances-polia;Tríceps francês na polia com corda;triceps;;isolation;cable;beginner;elbow|shoulder
+mergulho-maquina;Mergulho na máquina (tríceps);triceps;chest|shoulders;horizontal_push;machine;beginner;shoulder|elbow
+rosca-punho;Rosca de punho com halter;forearms;;isolation;dumbbell|bench;beginner;wrist
+caminhada-fazendeiro;Caminhada do fazendeiro;forearms;back|abs;core;dumbbell;beginner;lower_back
+rosca-inversa;Rosca inversa com barra;forearms;biceps;isolation;barbell;beginner;elbow|wrist
+suspensao-barra;Suspensão na barra (dead hang);forearms;back|shoulders;isolation;pull_up_bar;beginner;shoulder
+agachamento-livre;Agachamento livre com barra;quadriceps;glutes|hamstrings|lower_back;squat;barbell;intermediate;knee|hip|lower_back
+agachamento-frontal;Agachamento frontal com barra;quadriceps;glutes|abs;squat;barbell;advanced;knee|wrist|lower_back
+agachamento-smith;Agachamento no Smith;quadriceps;glutes;squat;machine;beginner;knee|lower_back
+agachamento-goblet;Agachamento goblet com halter;quadriceps;glutes;squat;dumbbell;beginner;knee
+agachamento-goblet-kettlebell;Agachamento goblet com kettlebell;quadriceps;glutes;squat;kettlebell;beginner;knee
+agachamento-peso-corpo;Agachamento com peso do corpo;quadriceps;glutes;squat;;beginner;knee
+agachamento-elastico;Agachamento com elástico;quadriceps;glutes;squat;band;beginner;knee
+agachamento-sumo-halter;Agachamento sumô com halter;quadriceps;glutes|adductors;squat;dumbbell;beginner;knee|hip
+leg-press;Leg press 45°;quadriceps;glutes|hamstrings;squat;machine;beginner;knee|lower_back
+agachamento-hack;Agachamento hack na máquina;quadriceps;glutes;squat;machine;intermediate;knee
+afundo-halteres;Afundo com halteres;quadriceps;glutes;squat;dumbbell;beginner;knee|ankle
+afundo-peso-corpo;Afundo com peso do corpo;quadriceps;glutes;squat;;beginner;knee|ankle
+avanco-caminhando;Avanço caminhando com halteres;quadriceps;glutes|hamstrings;squat;dumbbell;intermediate;knee|ankle
+agachamento-bulgaro;Agachamento búlgaro;quadriceps;glutes;squat;dumbbell|bench;intermediate;knee|ankle
+subida-banco;Subida no banco (step-up);quadriceps;glutes;squat;dumbbell|bench;beginner;knee|ankle
+cadeira-extensora;Cadeira extensora;quadriceps;;isolation;machine;beginner;knee
+agachamento-dividido-halteres;Agachamento dividido com halteres;quadriceps;glutes;squat;dumbbell;beginner;knee|ankle
+afundo-reverso;Afundo reverso;quadriceps;glutes;squat;;beginner;knee
+afundo-lateral;Afundo lateral;quadriceps;glutes|adductors;squat;;beginner;knee|hip
+agachamento-parede;Agachamento isométrico na parede;quadriceps;glutes;squat;;beginner;knee
+cadeira-adutora;Cadeira adutora;adductors;;isolation;machine;beginner;hip
+cadeira-abdutora;Cadeira abdutora;glutes;;isolation;machine;beginner;hip
+levantamento-terra;Levantamento terra;glutes;hamstrings|lower_back|back|forearms;hinge;barbell;advanced;lower_back|hip|knee
+stiff-barra;Stiff com barra;hamstrings;glutes|lower_back;hinge;barbell;intermediate;lower_back
+stiff-halteres;Stiff com halteres;hamstrings;glutes|lower_back;hinge;dumbbell;beginner;lower_back
+stiff-unilateral;Stiff unilateral com halter;hamstrings;glutes;hinge;dumbbell;intermediate;lower_back|ankle
+stiff-kettlebell;Stiff com kettlebell;hamstrings;glutes|lower_back;hinge;kettlebell;beginner;lower_back
+swing-kettlebell;Swing com kettlebell;glutes;hamstrings|lower_back;hinge;kettlebell;intermediate;lower_back
+elevacao-pelvica-barra;Elevação pélvica com barra;glutes;hamstrings;hinge;barbell|bench;intermediate;hip
+elevacao-pelvica-halter;Elevação pélvica com halter;glutes;hamstrings;hinge;dumbbell|bench;beginner;hip
+ponte-gluteo;Ponte de glúteo;glutes;hamstrings;hinge;;beginner;
+ponte-gluteo-unilateral;Ponte de glúteo unilateral;glutes;hamstrings;hinge;;intermediate;
+hiperextensao;Hiperextensão no banco romano;lower_back;glutes|hamstrings;hinge;machine;beginner;lower_back
+mesa-flexora;Mesa flexora;hamstrings;calves;isolation;machine;beginner;knee
+cadeira-flexora;Cadeira flexora;hamstrings;;isolation;machine;beginner;knee
+bom-dia-barra;Bom dia com barra (good morning);hamstrings;glutes|lower_back;hinge;barbell;intermediate;lower_back
+gluteo-polia;Glúteo na polia (coice);glutes;hamstrings;isolation;cable;beginner;lower_back
+gluteo-quatro-apoios;Glúteo em quatro apoios;glutes;hamstrings;isolation;;beginner;knee|wrist
+abducao-elastico;Abdução de quadril com elástico;glutes;;isolation;band;beginner;hip
+levantamento-terra-sumo;Levantamento terra sumô;glutes;hamstrings|quadriceps|adductors|lower_back;hinge;barbell;advanced;lower_back|hip|knee
+elevacao-pelvica-maquina;Elevação pélvica na máquina;glutes;hamstrings;hinge;machine;beginner;hip
+pull-through-polia;Pull-through na polia;glutes;hamstrings;hinge;cable;beginner;lower_back
+coice-gluteo-maquina;Coice de glúteo na máquina;glutes;hamstrings;isolation;machine;beginner;lower_back
+abducao-polia;Abdução de quadril na polia;glutes;;isolation;cable;beginner;hip
+abducao-quatro-apoios;Abdução de quadril em quatro apoios;glutes;;isolation;;beginner;knee|wrist
+ostra;Ostra (clamshell);glutes;;isolation;;beginner;hip
+caminhada-lateral-elastico;Caminhada lateral com elástico;glutes;quadriceps;isolation;band;beginner;knee|hip
+panturrilha-em-pe-maquina;Panturrilha em pé na máquina;calves;;isolation;machine;beginner;ankle
+panturrilha-sentado;Panturrilha sentado na máquina;calves;;isolation;machine;beginner;ankle
+panturrilha-leg-press;Panturrilha no leg press;calves;;isolation;machine;beginner;ankle
+panturrilha-halter;Panturrilha em pé com halter;calves;;isolation;dumbbell;beginner;ankle
+panturrilha-peso-corpo;Panturrilha em pé com peso do corpo;calves;;isolation;;beginner;ankle
+prancha;Prancha;abs;shoulders|lower_back;core;;beginner;
+prancha-lateral;Prancha lateral;abs;shoulders;core;;beginner;shoulder
+abdominal-supra;Abdominal supra (crunch);abs;;core;;beginner;neck
+elevacao-pernas-deitado;Elevação de pernas deitado;abs;;core;;beginner;lower_back
+abdominal-bicicleta;Abdominal bicicleta;abs;;core;;beginner;neck|lower_back
+dead-bug;Dead bug;abs;;core;;beginner;
+perdigueiro;Perdigueiro (bird dog);lower_back;abs|glutes;core;;beginner;knee|wrist
+escalador;Escalador (mountain climber);abs;shoulders|quadriceps;core;;beginner;shoulder|wrist
+elevacao-pernas-barra;Elevação de pernas na barra fixa;abs;forearms;core;pull_up_bar;advanced;shoulder|lower_back
+abdominal-polia;Abdominal na polia (ajoelhado);abs;;core;cable;intermediate;neck|lower_back
+pallof-polia;Pallof press na polia;abs;;core;cable;intermediate;
+pallof-elastico;Pallof press com elástico;abs;;core;band;beginner;
+abdominal-reverso;Abdominal reverso;abs;;core;;beginner;lower_back
+abdominal-maquina;Abdominal na máquina;abs;;core;machine;beginner;
+hollow-body;Hollow body (canoinha);abs;;core;;intermediate;lower_back
+rotacao-russa;Rotação russa (russian twist);abs;;core;;intermediate;lower_back
+lenhador-polia;Lenhador na polia (wood chop);abs;shoulders;core;cable;intermediate;lower_back
+flexao-lateral-halter;Flexão lateral com halter;abs;;core;dumbbell;beginner;lower_back
+caminhada-peso-unilateral;Caminhada com peso de um lado (suitcase carry);abs;forearms;core;dumbbell;beginner;lower_back

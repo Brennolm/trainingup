@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\AlertController;
+use App\Http\Controllers\Admin\ExerciseController as AdminExerciseController;
 use App\Http\Controllers\Admin\MetricsController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -12,6 +13,8 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\TwoFactorChallengeController;
 use App\Http\Controllers\ConsentController;
+use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\ExerciseMediaController;
 use App\Http\Controllers\ImpersonationController;
 use App\Http\Controllers\MeController;
 use App\Http\Controllers\PasswordController;
@@ -45,6 +48,9 @@ Route::prefix('auth')->group(function () {
     });
 });
 
+// Example image of an exercise (public: loaded by <img>, no personal data).
+Route::get('/exercise-media/{file}', ExerciseMediaController::class);
+
 // Who is signed in (data: null for guests). Works before e-mail verification so the SPA knows
 // where to send the user.
 Route::get('/user', MeController::class);
@@ -70,6 +76,11 @@ Route::middleware(['auth:sanctum', 'verified.email', 'admin'])->prefix('admin')-
     Route::post('/alerts/{alert}/resolve', [AlertController::class, 'resolve']);
     Route::get('/settings', [SettingsController::class, 'index']);
     Route::put('/settings', [SettingsController::class, 'update']);
+    Route::get('/exercises', [AdminExerciseController::class, 'index']);
+    Route::post('/exercises', [AdminExerciseController::class, 'store']);
+    Route::put('/exercises/{exercise}', [AdminExerciseController::class, 'update']);
+    Route::post('/exercises/{exercise}/image', [AdminExerciseController::class, 'storeImage']);
+    Route::delete('/exercises/{exercise}/image', [AdminExerciseController::class, 'destroyImage']);
 });
 
 // The app itself: signed in and e-mail confirmed.
@@ -85,6 +96,9 @@ Route::middleware(['auth:sanctum', 'verified.email'])->group(function () {
     Route::post('/questionnaire', [QuestionnaireController::class, 'store']);
     Route::put('/questionnaire/sections/{section}', [QuestionnaireController::class, 'update']);
     Route::post('/questionnaire/complete', [QuestionnaireController::class, 'complete']);
+
+    // Training (SPEC 5.5, 6.4).
+    Route::get('/exercises', [ExerciseController::class, 'index']);
 
     Route::middleware('throttle:two-factor')->group(function () {
         Route::post('/profile/two-factor', [TwoFactorController::class, 'store']);

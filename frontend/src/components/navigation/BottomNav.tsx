@@ -16,7 +16,11 @@ export function BottomNav({ items, className }: Props) {
         className,
       )}
     >
-      <ul className="mx-auto grid max-w-lg grid-cols-5">
+      {/* One column per item: the app has 5, the admin panel 6. */}
+      <ul
+        className="mx-auto grid max-w-lg"
+        style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` }}
+      >
         {items.map(({ to, labelKey, icon: Icon, end }) => (
           <li key={to}>
             <NavLink

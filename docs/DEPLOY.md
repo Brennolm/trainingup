@@ -64,13 +64,21 @@ Conta compartilhada `u501993331` (mesmo usuário dos outros sites).
 - `.env`: `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET` (o redirect sai de `APP_URL` + `/auth/google/callback`).
 - Enquanto o app estiver "Em teste" no Google, só os usuários de teste cadastrados lá conseguem entrar; publicar o app libera para todos.
 
+## Imagens dos exercícios
+
+- Ficam no próprio servidor da API, em `api/storage/app/private/exercises/` (preservada entre deploys), servidas por `/api/exercise-media/{arquivo}` com cache de 1 ano.
+- As imagens geradas vão no repositório, em `backend/database/data/exercise-images/{slug}.jpg`. A cada deploy, o `deploy:finalize` roda `php artisan exercises:images`, que copia as novas ou alteradas e liga ao exercício. Uma imagem enviada pelo admin de produção nunca é sobrescrita.
+- Não entram no backup diário do banco: as do repositório já estão no Git; as enviadas só pelo admin de produção ficam apenas no servidor.
+- Não usa S3. O bucket `trainingup-media` e o usuário IAM `trainingup-app` criados antes podem ser apagados na AWS, e as variáveis `AWS_*` e `EXERCISE_MEDIA_DISK` podem sair do `.env`.
+- Geração das imagens: só no ambiente local, com `OPENAI_API_KEY` no `.env` local (nunca no servidor). Detalhes em `docs/data/producao-midias.md`.
+
 ## Agendador (cron)
 
 A hospedagem compartilhada não tem processo contínuo; tudo roda pelo `schedule:run` (ver `backend/routes/console.php`):
 
 | Tarefa | Quando | O que faz |
 |---|---|---|
-| `deploy:finalize` | a cada minuto | se `DEPLOY_VERSION` mudou: limpa caches, `migrate --force`, recria caches |
+| `deploy:finalize` | a cada minuto | se `DEPLOY_VERSION` mudou: limpa caches, `migrate --force`, liga as imagens dos exercícios (`exercises:images`), recria caches |
 | `queue:work --stop-when-empty` | a cada minuto | processa a fila (e-mails etc.) |
 | `backup:database` | diário, 03:00 (Brasília) | `mysqldump` gzip em `api/storage/app/private/backups`, mantém os 7 mais recentes |
 

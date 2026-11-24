@@ -1,4 +1,5 @@
 import { api } from '../../lib/api'
+import type { Exercise, ExerciseInput } from '../workout/exercisesApi'
 
 export type Metrics = {
   users_total: number
@@ -83,6 +84,20 @@ export const adminApi = {
 
   saveSettings: (values: { key: string; value: number }[]) =>
     api.put<{ data: Setting[]; message: string }>('/api/admin/settings', { values }),
+
+  exercises: async () => (await api.get<{ data: Exercise[] }>('/api/admin/exercises')).data,
+
+  createExercise: (input: ExerciseInput) =>
+    api.post<{ data: Exercise; message: string }>('/api/admin/exercises', input),
+
+  updateExercise: (id: number, input: ExerciseInput) =>
+    api.put<{ data: Exercise; message: string }>(`/api/admin/exercises/${id}`, input),
+
+  uploadExerciseImage: (id: number, file: File) =>
+    api.upload<{ data: Exercise; message: string }>(`/api/admin/exercises/${id}/image`, file),
+
+  removeExerciseImage: (id: number) =>
+    api.delete<{ data: Exercise; message: string }>(`/api/admin/exercises/${id}/image`),
 }
 
 /**

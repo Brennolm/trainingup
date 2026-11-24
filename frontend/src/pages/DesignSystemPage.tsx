@@ -8,10 +8,13 @@ import { Card, CardTitle } from '../components/ui/Card'
 import { ChoiceGroup, MultiChoice } from '../components/ui/ChoiceGroup'
 import { Input } from '../components/ui/Input'
 import { Modal } from '../components/ui/Modal'
+import { Pagination } from '../components/ui/Pagination'
+import { Select } from '../components/ui/Select'
 import { Tabs } from '../components/ui/Tabs'
 import { Textarea } from '../components/ui/Textarea'
 import { ThemeToggle } from '../components/ui/ThemeToggle'
 import { useToast } from '../components/ui/toastContext'
+import { MUSCLES } from '../features/workout/exerciseOptions'
 import { AppShell } from '../layouts/AppShell'
 
 // Internal page to review the design system in both themes. Not linked from the product.
@@ -45,6 +48,7 @@ export function DesignSystemPage() {
   const toast = useToast()
   const [modalOpen, setModalOpen] = useState(false)
   const [done, setDone] = useState(false)
+  const [page, setPage] = useState(2)
   const [goal, setGoal] = useState<string | null>('lose_fat')
   const [days, setDays] = useState<string[]>(['mon', 'wed', 'fri'])
   const nf = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 })
@@ -121,6 +125,11 @@ export function DesignSystemPage() {
               error={t('design.sample.emailError')}
             />
             <Input label={t('design.sample.passwordLabel')} type="password" defaultValue="segredo123" />
+            <Select
+              label={t('workout.library.muscle')}
+              defaultValue="chest"
+              options={MUSCLES.map((m) => ({ value: m, label: t(`exercise.muscles.${m}`) }))}
+            />
             <Textarea
               label={t('design.sample.noteLabel')}
               defaultValue={t('design.sample.noteValue')}
@@ -211,6 +220,10 @@ export function DesignSystemPage() {
               },
             ]}
           />
+        </Section>
+
+        <Section title={t('design.pagination')}>
+          <Pagination page={page} last={5} onChange={setPage} />
         </Section>
 
         <Section title={t('design.feedback')}>

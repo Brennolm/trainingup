@@ -26,4 +26,5 @@ export const ROUTES = {
   adminUsers: '/admin/usuarios',
   adminAlerts: '/admin/alertas',
   adminSettings: '/admin/parametros',
+  adminExercises: '/admin/exercicios',
 } as const

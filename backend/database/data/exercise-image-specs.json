@@ -1,0 +1,1469 @@
+{
+  "supino-reto-barra": {
+    "name": "barbell bench press",
+    "scene": "a flat bench with a loaded barbell on a rack",
+    "view": "three-quarter",
+    "start": "lying on his back on the flat bench, eyes under the bar, feet flat on the floor, gripping the barbell slightly wider than shoulder width, the bar held straight above the shoulders with arms extended",
+    "end": "lowers the bar slowly in a straight line to the middle of the chest, elbows about 45 degrees from the torso",
+    "rule": null,
+    "checks": "Pés no chão, escápulas encaixadas, barra desce no meio do peito, punhos retos, cotovelos ~45° do tronco"
+  },
+  "supino-inclinado-barra": {
+    "name": "incline barbell bench press",
+    "scene": "an incline bench (about 30 degrees) with a loaded barbell on a rack",
+    "view": "three-quarter",
+    "start": "lying on the incline bench, feet flat on the floor, gripping the barbell slightly wider than shoulder width, arms extended above the upper chest",
+    "end": "lowers the bar slowly to the upper chest, just below the collarbones",
+    "rule": null,
+    "checks": "Banco ~30°, barra desce na parte alta do peito, punhos retos, sem tirar o quadril do banco"
+  },
+  "supino-declinado-barra": {
+    "name": "decline barbell bench press",
+    "scene": "a decline bench with a loaded barbell on a rack",
+    "view": "three-quarter",
+    "start": "lying on the decline bench with the legs hooked under the pads, gripping the barbell slightly wider than shoulder width, arms extended above the lower chest",
+    "end": "lowers the bar slowly to the lower chest",
+    "rule": null,
+    "checks": "Pernas presas, barra desce na parte baixa do peito, movimento controlado"
+  },
+  "supino-reto-halteres": {
+    "name": "flat dumbbell bench press",
+    "scene": "an adjustable bench, flat",
+    "view": "three-quarter",
+    "start": "lying on his back on the flat bench, feet flat on the floor, a dumbbell in each hand held above the chest with arms extended, palms facing his feet",
+    "end": "lowers both dumbbells slowly to the sides of the chest, elbows about 45 degrees from the torso",
+    "rule": null,
+    "checks": "Halteres descem na linha do peito, cotovelos ~45°, sem bater os halteres em cima"
+  },
+  "supino-inclinado-halteres": {
+    "name": "incline dumbbell bench press",
+    "scene": "an adjustable bench, inclined about 30 degrees",
+    "view": "three-quarter",
+    "start": "lying on the incline bench, feet flat on the floor, a dumbbell in each hand above the upper chest with arms extended",
+    "end": "lowers both dumbbells slowly to the sides of the upper chest",
+    "rule": null,
+    "checks": "Banco ~30°, descida controlada até a linha do peito, punhos retos"
+  },
+  "supino-maquina": {
+    "name": "machine chest press",
+    "scene": "a seated chest press machine",
+    "view": "three-quarter",
+    "start": "seated on the chest press machine, back flat against the pad, feet on the floor, hands on the handles at chest height, elbows bent",
+    "end": "pushes both handles forward until the arms are almost straight, without locking the elbows",
+    "rule": null,
+    "checks": "Costas apoiadas, pegadores na altura do peito, sem travar os cotovelos"
+  },
+  "supino-elastico": {
+    "name": "standing resistance band chest press",
+    "scene": "a resistance band anchored at chest height to the frame behind him",
+    "view": "three-quarter",
+    "start": "standing in a split stance, one foot forward, holding a handle of the band in each hand beside the chest, elbows bent, the band coming from behind",
+    "end": "presses both hands straight forward at chest height until the arms are extended",
+    "rule": null,
+    "checks": "Tronco firme, um pé à frente, empurra na altura do peito, volta controlando o elástico"
+  },
+  "flexao": {
+    "name": "push-up",
+    "scene": null,
+    "view": "side",
+    "start": "in a high plank on the floor, hands slightly wider than the shoulders, arms straight, body in one straight line from head to heels",
+    "end": "bends the elbows and lowers the whole body as one piece until the chest is close to the floor, elbows about 45 degrees from the torso",
+    "rule": "The hips never sag or pike; the body moves as one rigid plank.",
+    "checks": "Corpo alinhado (sem quadril caído ou empinado), cotovelos ~45°, peito perto do chão"
+  },
+  "flexao-joelhos": {
+    "name": "knee push-up",
+    "scene": null,
+    "view": "side",
+    "start": "hands on the floor slightly wider than the shoulders, arms straight, knees on the floor, feet lifted, body straight from head to knees",
+    "end": "bends the elbows and lowers the chest toward the floor, body straight from head to knees",
+    "rule": null,
+    "checks": "Linha reta da cabeça aos joelhos, cotovelos ~45°"
+  },
+  "flexao-inclinada": {
+    "name": "incline push-up with hands on a bench",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "hands on the edge of the bench shoulder-width apart, arms straight, feet on the floor behind him, body in one straight line",
+    "end": "bends the elbows and lowers the chest to the edge of the bench, body straight",
+    "rule": null,
+    "checks": "Corpo alinhado, peito vai até o banco, cotovelos ~45°"
+  },
+  "flexao-declinada": {
+    "name": "decline push-up with feet on a bench",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "feet on the bench, hands on the floor slightly wider than the shoulders, arms straight, body in one straight line angled downward",
+    "end": "bends the elbows and lowers the chest toward the floor, body straight",
+    "rule": null,
+    "checks": "Corpo alinhado, sem arquear a lombar, descida controlada"
+  },
+  "mergulho-paralelas": {
+    "name": "parallel bar dips",
+    "scene": "a parallel bar dip station",
+    "view": "side",
+    "start": "supported on straight arms on the parallel bars, feet off the floor, knees slightly bent, torso leaning slightly forward",
+    "end": "bends the elbows and lowers the body until the elbows reach about 90 degrees",
+    "rule": null,
+    "checks": "Tronco levemente inclinado, desce até ~90° de cotovelo, ombros longe das orelhas"
+  },
+  "crucifixo-halteres": {
+    "name": "flat dumbbell fly",
+    "scene": "an adjustable bench, flat",
+    "view": "three-quarter",
+    "start": "lying on his back on the flat bench, feet on the floor, dumbbells together above the chest, palms facing each other, elbows slightly bent",
+    "end": "opens both arms in a wide arc out to the sides, elbows kept slightly bent, until the dumbbells reach chest level",
+    "rule": null,
+    "checks": "Cotovelos levemente flexionados e fixos, abre até a linha do peito, sem descer demais"
+  },
+  "crucifixo-inclinado-halteres": {
+    "name": "incline dumbbell fly",
+    "scene": "an adjustable bench, inclined about 30 degrees",
+    "view": "three-quarter",
+    "start": "lying on the incline bench, dumbbells together above the upper chest, palms facing each other, elbows slightly bent",
+    "end": "opens both arms in a wide arc out to the sides, elbows slightly bent",
+    "rule": null,
+    "checks": "Cotovelos fixos levemente flexionados, amplitude confortável para o ombro"
+  },
+  "voador": {
+    "name": "pec deck machine fly",
+    "scene": "a pec deck machine",
+    "view": "front",
+    "start": "seated on the pec deck facing the camera, back against the pad, arms open to the sides holding the handles at chest height, elbows slightly bent",
+    "end": "brings both handles together in front of the chest in a wide arc",
+    "rule": null,
+    "checks": "Costas apoiadas, cotovelos na altura do peito, volta controlada"
+  },
+  "crossover-polia": {
+    "name": "cable crossover",
+    "scene": "a dual cable crossover station, handles at the top on both sides",
+    "view": "front",
+    "start": "standing in the middle of the station facing the camera, one foot forward, torso leaning slightly forward, holding a high handle in each hand with the arms open to the sides, elbows slightly bent",
+    "end": "brings both hands down and together in a wide arc until they meet in front of the hips",
+    "rule": null,
+    "checks": "Tronco levemente inclinado, cotovelos levemente flexionados, movimento em arco"
+  },
+  "supino-inclinado-maquina": {
+    "name": "incline machine chest press",
+    "scene": "an incline chest press machine",
+    "view": "side",
+    "start": "seated on the incline chest press machine, back flat against the inclined pad, feet on the floor, hands on the handles at upper chest height, elbows bent",
+    "end": "pushes both handles up and forward until the arms are almost straight, without locking the elbows",
+    "rule": null,
+    "checks": "Costas apoiadas, pegadores na altura da parte alta do peito, sem travar os cotovelos"
+  },
+  "supino-smith": {
+    "name": "Smith machine bench press",
+    "scene": "a Smith machine with a flat bench under the bar",
+    "view": "three-quarter",
+    "start": "lying on his back on the flat bench under the Smith machine bar, feet flat on the floor, gripping the bar slightly wider than shoulder width, arms extended above the chest",
+    "end": "lowers the bar along the guide rails to the middle of the chest, elbows about 45 degrees from the torso",
+    "rule": null,
+    "checks": "Barra desce no meio do peito, cotovelos ~45° do tronco, punhos retos, pés no chão"
+  },
+  "supino-chao-halteres": {
+    "name": "dumbbell floor press",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, knees bent with feet flat, a dumbbell in each hand held above the chest with arms extended, palms facing his feet",
+    "end": "lowers both dumbbells until the upper arms lightly touch the floor, elbows about 45 degrees from the torso, forearms vertical",
+    "rule": "The upper arms stop on the floor; the dumbbells never go lower than that.",
+    "checks": "Braços encostam no chão e param, cotovelos ~45°, punhos retos"
+  },
+  "mergulho-assistido": {
+    "name": "assisted dip on an assisted dip machine",
+    "scene": "an assisted pull-up and dip machine with a knee pad",
+    "view": "side",
+    "start": "kneeling on the assistance pad of the machine, hands on the dip handles, arms straight supporting the body, torso slightly leaning forward",
+    "end": "bends the elbows and lowers the body until the elbows reach about 90 degrees, knees staying on the pad",
+    "rule": null,
+    "checks": "Joelhos no apoio, desce até ~90° de cotovelo, ombros longe das orelhas"
+  },
+  "puxada-frontal": {
+    "name": "lat pulldown",
+    "scene": "a lat pulldown machine",
+    "view": "three-quarter",
+    "start": "seated at the lat pulldown, thighs under the pads, torso upright and slightly leaning back, gripping the long bar overhead wider than the shoulders, arms straight",
+    "end": "pulls the bar down in front of the face to the upper chest, elbows driving down and back, chest lifted",
+    "rule": null,
+    "checks": "Peito aberto, puxa até a parte alta do peito, sem jogar o tronco para trás"
+  },
+  "puxada-supinada": {
+    "name": "underhand lat pulldown",
+    "scene": "a lat pulldown machine",
+    "view": "three-quarter",
+    "start": "seated at the lat pulldown, thighs under the pads, holding the bar overhead with palms facing him, hands shoulder-width apart, arms straight",
+    "end": "pulls the bar down to the upper chest, elbows moving down close to the body",
+    "rule": null,
+    "checks": "Pegada supinada, cotovelos descem junto ao corpo, volta controlada"
+  },
+  "puxada-triangulo": {
+    "name": "close-grip lat pulldown with V-handle",
+    "scene": "a lat pulldown machine with a V-handle attached",
+    "view": "three-quarter",
+    "start": "seated at the lat pulldown, thighs under the pads, holding the V-handle overhead with both hands, arms straight",
+    "end": "pulls the handle down to the upper chest, elbows close to the body",
+    "rule": null,
+    "checks": "Tronco firme, puxa até o peito, sem embalo"
+  },
+  "puxada-elastico": {
+    "name": "resistance band lat pulldown",
+    "scene": "a resistance band anchored high on the frame above him",
+    "view": "front",
+    "start": "kneeling on the floor facing the camera, holding a handle of the band in each hand with the arms extended overhead in a V",
+    "end": "pulls both elbows down and out until the hands are beside the shoulders",
+    "rule": null,
+    "checks": "Cotovelos descem para o lado do corpo, peito aberto, volta controlada"
+  },
+  "barra-fixa": {
+    "name": "pull-up",
+    "scene": "a pull-up bar",
+    "view": "front",
+    "start": "hanging from the pull-up bar with an overhand grip slightly wider than the shoulders, arms straight, feet off the floor, legs still",
+    "end": "pulls the body straight up until the chin passes over the bar, without swinging",
+    "rule": "No swinging and no kicking: the legs stay still.",
+    "checks": "Sem balanço, sobe até o queixo passar a barra, desce até estender os braços"
+  },
+  "barra-fixa-supinada": {
+    "name": "chin-up",
+    "scene": "a pull-up bar",
+    "view": "front",
+    "start": "hanging from the pull-up bar with an underhand grip, palms facing him, hands shoulder-width apart, arms straight, legs still",
+    "end": "pulls the body straight up until the chin passes over the bar, without swinging",
+    "rule": "No swinging and no kicking: the legs stay still.",
+    "checks": "Sem balanço, pegada supinada, descida controlada"
+  },
+  "barra-fixa-negativa": {
+    "name": "negative pull-up",
+    "scene": "a pull-up bar",
+    "view": "front",
+    "start": "holding himself at the top of a pull-up, chin above the bar, overhand grip, legs still",
+    "end": "lowers the body very slowly, the arms straightening little by little",
+    "rule": "Only the lowering phase: he does not pull back up.",
+    "checks": "Descida lenta (~4 s), corpo firme, sem soltar de uma vez"
+  },
+  "remada-curvada-barra": {
+    "name": "bent-over barbell row",
+    "scene": "a loaded barbell",
+    "view": "side",
+    "start": "standing with knees slightly bent, hips pushed back, torso leaning forward about 45 degrees with a flat back, holding the barbell with an overhand grip, arms hanging straight",
+    "end": "pulls the bar to the lower ribs, elbows driving back past the torso",
+    "rule": "The torso angle never changes; only the arms move.",
+    "checks": "Coluna neutra, tronco ~45°, puxa a barra até o abdômen, sem dar tranco"
+  },
+  "remada-cavalinho": {
+    "name": "T-bar row",
+    "scene": "a T-bar row station",
+    "view": "side",
+    "start": "straddling the T-bar, knees bent, torso leaning forward with a flat back, holding the handle with arms straight",
+    "end": "pulls the handle up to the chest, elbows driving back",
+    "rule": null,
+    "checks": "Coluna neutra, tronco firme, puxa com as costas, não com a lombar"
+  },
+  "remada-unilateral-halter": {
+    "name": "one-arm dumbbell row",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "left knee and left hand on the bench, right foot on the floor, back flat and parallel to the floor, a dumbbell in the right hand with the arm hanging straight",
+    "end": "pulls the dumbbell up toward the hip, elbow close to the body, then lowers it slowly",
+    "rule": null,
+    "checks": "Costas retas paralelas ao chão, puxa o halter em direção ao quadril, sem girar o tronco"
+  },
+  "remada-halteres-banco-inclinado": {
+    "name": "chest-supported dumbbell row",
+    "scene": "an adjustable bench, inclined about 30 degrees",
+    "view": "side",
+    "start": "lying face down on the incline bench, chest on the pad, feet on the floor, a dumbbell in each hand with the arms hanging straight down",
+    "end": "pulls both dumbbells up to the sides of the ribs, elbows close to the body",
+    "rule": null,
+    "checks": "Peito apoiado no banco, cotovelos sobem rente ao corpo, volta controlada"
+  },
+  "remada-baixa-polia": {
+    "name": "seated cable row",
+    "scene": "a seated low cable row station",
+    "view": "side",
+    "start": "seated at the low cable row, feet on the platform, knees slightly bent, torso upright, holding the V-handle with arms extended forward",
+    "end": "pulls the handle to the belly, elbows close to the body, chest up",
+    "rule": null,
+    "checks": "Tronco ereto, sem balançar para trás, puxa até o abdômen"
+  },
+  "remada-maquina": {
+    "name": "chest-supported machine row",
+    "scene": "a chest-supported row machine",
+    "view": "side",
+    "start": "seated with the chest against the pad, holding the handles with arms extended forward",
+    "end": "pulls the handles back, elbows close to the body",
+    "rule": null,
+    "checks": "Peito no apoio, ombros para trás no fim, volta controlada"
+  },
+  "remada-elastico": {
+    "name": "seated resistance band row",
+    "scene": null,
+    "view": "side",
+    "start": "seated on the floor, legs extended forward, a resistance band looped around the soles of the feet, a handle in each hand with arms extended, torso upright",
+    "end": "pulls both handles to the belly, elbows close to the body",
+    "rule": null,
+    "checks": "Tronco ereto, cotovelos rente ao corpo, volta controlando o elástico"
+  },
+  "remada-kettlebell": {
+    "name": "bent-over kettlebell row",
+    "scene": null,
+    "view": "side",
+    "start": "standing in a staggered stance, left foot forward, left hand on the left thigh, hips back, torso leaning forward with a flat back, a kettlebell in the right hand with the arm hanging straight",
+    "end": "pulls the kettlebell up toward the hip with the right arm, then lowers it slowly",
+    "rule": null,
+    "checks": "Coluna neutra, puxa até o quadril, sem girar o tronco"
+  },
+  "remada-invertida": {
+    "name": "inverted row",
+    "scene": "a barbell set at hip height on a rack",
+    "view": "side",
+    "start": "hanging under the bar, gripping it with arms straight, body in one straight line, heels on the floor",
+    "end": "pulls the chest up to the bar, body straight",
+    "rule": null,
+    "checks": "Corpo em linha reta, peito vai até a barra, sem quadril caído"
+  },
+  "pulldown-bracos-estendidos": {
+    "name": "straight-arm cable pulldown",
+    "scene": "a cable station with a straight bar at the top",
+    "view": "side",
+    "start": "standing facing the cable, slightly hinged forward, holding the bar at head height with straight arms",
+    "end": "pulls the bar down in an arc to the thighs, keeping the arms straight",
+    "rule": null,
+    "checks": "Braços estendidos o tempo todo, movimento vem do ombro, tronco fixo"
+  },
+  "pullover-halter": {
+    "name": "dumbbell pullover",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "lying on his back on the bench, feet on the floor, holding one dumbbell with both hands above the chest, elbows slightly bent",
+    "end": "lowers the dumbbell slowly behind the head in an arc, elbows keeping the same bend",
+    "rule": null,
+    "checks": "Cotovelos levemente flexionados e fixos, amplitude confortável para o ombro"
+  },
+  "encolhimento-halteres": {
+    "name": "dumbbell shrug",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, a dumbbell in each hand at the sides, arms straight",
+    "end": "lifts both shoulders straight up toward the ears",
+    "rule": "The arms stay straight; only the shoulders move.",
+    "checks": "Sobe os ombros na vertical, sem girar, braços relaxados"
+  },
+  "barra-fixa-assistida": {
+    "name": "assisted pull-up on an assisted pull-up machine",
+    "scene": "an assisted pull-up and dip machine with a knee pad",
+    "view": "side",
+    "start": "kneeling on the assistance pad of the machine, hands gripping the top handles wider than the shoulders, arms straight overhead",
+    "end": "pulls the body up until the chin is above the handles, elbows driving down, knees staying on the pad",
+    "rule": null,
+    "checks": "Joelhos no apoio, puxa até o queixo passar a barra, desce controlado até estender os braços"
+  },
+  "puxada-unilateral-polia": {
+    "name": "single-arm cable lat pulldown",
+    "scene": "a high cable station with a single handle",
+    "view": "side",
+    "start": "kneeling on one knee facing the high cable station, torso upright, one hand holding the single handle overhead with the arm straight, the other hand on the hip",
+    "end": "pulls the handle down to the side of the chest, the elbow driving down toward the hip, torso staying upright",
+    "rule": "Only one arm works; the torso does not twist.",
+    "checks": "Tronco firme sem girar, cotovelo desce em direção ao quadril, volta até estender o braço"
+  },
+  "remada-unilateral-polia": {
+    "name": "single-arm seated cable row",
+    "scene": "a low cable station with a single handle",
+    "view": "side",
+    "start": "standing in a split stance facing the low cable station, torso slightly leaning forward and straight, one hand holding the single handle with the arm extended in front, the other hand on the hip",
+    "end": "pulls the handle to the side of the waist, elbow close to the body, shoulder blade squeezed back, torso still",
+    "rule": "Only one arm works; the torso does not twist.",
+    "checks": "Coluna neutra, cotovelo junto ao corpo, puxa até a cintura sem girar o tronco"
+  },
+  "encolhimento-barra": {
+    "name": "barbell shrug",
+    "scene": "a barbell on a rack",
+    "view": "front",
+    "start": "standing tall facing the camera, holding a barbell in front of the thighs with straight arms, hands shoulder-width apart, shoulders relaxed down",
+    "end": "lifts the shoulders straight up toward the ears as high as possible, arms staying straight",
+    "rule": "The arms stay straight; only the shoulders move up and down, no rolling.",
+    "checks": "Braços estendidos, sobe os ombros reto em direção às orelhas, sem girar"
+  },
+  "desenvolvimento-halteres": {
+    "name": "seated dumbbell shoulder press",
+    "scene": "an adjustable bench, upright",
+    "view": "front",
+    "start": "seated on the upright bench facing the camera, back against the pad, dumbbells at shoulder height, palms facing forward, elbows under the wrists",
+    "end": "presses both dumbbells straight overhead until the arms are extended",
+    "rule": null,
+    "checks": "Costas apoiadas, punhos acima dos cotovelos, sem arquear a lombar"
+  },
+  "desenvolvimento-barra": {
+    "name": "standing barbell overhead press",
+    "scene": "a barbell rack",
+    "view": "front",
+    "start": "standing facing the camera, feet hip-width apart, holding a barbell at the front of the shoulders, elbows slightly in front of the bar",
+    "end": "presses the bar straight overhead, moving the head slightly back to let it pass, until the arms are straight",
+    "rule": null,
+    "checks": "Abdômen e glúteos firmes, sem arquear a lombar, barra sobe em linha reta"
+  },
+  "desenvolvimento-maquina": {
+    "name": "machine shoulder press",
+    "scene": "a shoulder press machine",
+    "view": "front",
+    "start": "seated in the shoulder press machine facing the camera, back against the pad, hands on the handles at shoulder height",
+    "end": "presses the handles overhead until the arms are almost straight",
+    "rule": null,
+    "checks": "Costas apoiadas, sem travar os cotovelos, descida controlada"
+  },
+  "desenvolvimento-arnold": {
+    "name": "Arnold press",
+    "scene": "an adjustable bench, upright",
+    "view": "front",
+    "start": "seated on the upright bench facing the camera, dumbbells in front of the shoulders, palms facing his body, elbows in front",
+    "end": "presses the dumbbells up while rotating the palms to face forward",
+    "rule": null,
+    "checks": "Rotação suave durante a subida, costas apoiadas, movimento controlado"
+  },
+  "desenvolvimento-elastico": {
+    "name": "resistance band shoulder press",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera with both feet on the middle of a resistance band, a handle in each hand at shoulder height, palms forward",
+    "end": "presses both handles straight overhead until the arms are extended",
+    "rule": null,
+    "checks": "Tronco firme, sem arquear a lombar"
+  },
+  "desenvolvimento-kettlebell": {
+    "name": "kettlebell overhead press",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera, a kettlebell in the right hand resting at the right shoulder, the bell on the outside of the forearm",
+    "end": "presses the kettlebell straight overhead with the right arm, then lowers it back to the shoulder",
+    "rule": null,
+    "checks": "Abdômen firme, punho reto, braço estende em cima da cabeça"
+  },
+  "flexao-pike": {
+    "name": "pike push-up",
+    "scene": null,
+    "view": "side",
+    "start": "in an inverted V on the floor: hands and feet on the floor, hips high, legs and arms straight, head between the arms",
+    "end": "bends the elbows to lower the top of the head toward the floor between the hands",
+    "rule": null,
+    "checks": "Quadril alto, cabeça desce entre as mãos, cotovelos não abrem demais"
+  },
+  "elevacao-lateral-halteres": {
+    "name": "dumbbell lateral raise",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, a dumbbell in each hand at the sides, palms facing the body, elbows slightly bent",
+    "end": "raises both arms out to the sides until the hands reach shoulder height, elbows slightly bent",
+    "rule": "No swinging of the torso; the arms rise only to shoulder height.",
+    "checks": "Sobe até a altura do ombro, sem embalo, cotovelos levemente flexionados"
+  },
+  "elevacao-lateral-polia": {
+    "name": "cable lateral raise",
+    "scene": "a cable station with a handle at the bottom",
+    "view": "front",
+    "start": "standing with the left side next to the low cable, holding the handle with the right hand in front of the left hip, cable crossing in front of the body",
+    "end": "raises the right arm out to the side to shoulder height, elbow slightly bent, then lowers it slowly",
+    "rule": null,
+    "checks": "Sobe até a altura do ombro, tronco fixo, volta controlada"
+  },
+  "elevacao-lateral-elastico": {
+    "name": "resistance band lateral raise",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera with both feet on the middle of a resistance band, a handle in each hand at the sides",
+    "end": "raises both arms out to the sides to shoulder height, elbows slightly bent",
+    "rule": null,
+    "checks": "Sobe até a altura do ombro, sem encolher os ombros"
+  },
+  "elevacao-frontal-halteres": {
+    "name": "dumbbell front raise",
+    "scene": null,
+    "view": "three-quarter",
+    "start": "standing tall, a dumbbell in each hand in front of the thighs, palms facing the thighs, arms straight",
+    "end": "raises both arms straight forward until the hands reach shoulder height",
+    "rule": null,
+    "checks": "Sobe até a altura do ombro, sem jogar o tronco para trás"
+  },
+  "crucifixo-invertido-halteres": {
+    "name": "bent-over dumbbell reverse fly",
+    "scene": null,
+    "view": "side",
+    "start": "standing with knees slightly bent, hinged forward at the hips with a flat back, torso almost parallel to the floor, dumbbells hanging below the chest, palms facing each other",
+    "end": "raises both arms out to the sides, elbows slightly bent, squeezing the shoulder blades together",
+    "rule": null,
+    "checks": "Coluna neutra, cotovelos levemente flexionados, abre até a linha dos ombros"
+  },
+  "crucifixo-invertido-maquina": {
+    "name": "reverse pec deck",
+    "scene": "a pec deck machine",
+    "view": "three-quarter",
+    "start": "seated facing the pec deck pad, chest against it, arms extended forward holding the handles at shoulder height",
+    "end": "opens both arms back to the sides until they line up with the shoulders",
+    "rule": null,
+    "checks": "Peito no apoio, abre até a linha dos ombros, sem encolher"
+  },
+  "face-pull": {
+    "name": "cable face pull",
+    "scene": "a cable station with a rope at face height",
+    "view": "side",
+    "start": "standing facing the cable, holding both ends of the rope at face height with arms extended, palms facing each other",
+    "end": "pulls the rope toward the face, elbows high and wide, separating the rope ends beside the ears",
+    "rule": null,
+    "checks": "Cotovelos altos, puxa em direção ao rosto, abre as mãos no fim"
+  },
+  "face-pull-elastico": {
+    "name": "resistance band face pull",
+    "scene": "a resistance band anchored at face height on the frame",
+    "view": "side",
+    "start": "standing facing the anchor, holding the band with both hands at face height, arms extended",
+    "end": "pulls the band toward the face, elbows high and wide",
+    "rule": null,
+    "checks": "Cotovelos altos, escápulas se aproximam, volta controlada"
+  },
+  "elevacao-lateral-maquina": {
+    "name": "machine lateral raise",
+    "scene": "a seated lateral raise machine",
+    "view": "front",
+    "start": "seated on the lateral raise machine facing the camera, chest against the pad, arms at the sides with the elbows against the arm pads",
+    "end": "raises both arms out to the sides until the elbows reach shoulder height",
+    "rule": null,
+    "checks": "Sobe até a altura do ombro, tronco apoiado, volta controlada"
+  },
+  "crucifixo-invertido-polia": {
+    "name": "cable reverse fly",
+    "scene": "a dual cable crossover station with the pulleys at shoulder height",
+    "view": "front",
+    "start": "standing in the middle of the cable station facing the camera, arms crossed in front of the chest at shoulder height, each hand holding the cable from the opposite side, elbows slightly bent",
+    "end": "opens both arms wide out to the sides at shoulder height until they form a T, elbows slightly bent",
+    "rule": null,
+    "checks": "Braços na altura dos ombros, cotovelos levemente flexionados, aproxima as escápulas"
+  },
+  "abertura-elastico": {
+    "name": "resistance band pull-apart",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, holding a resistance band in front of the chest at shoulder height with both hands, arms straight",
+    "end": "pulls the band apart by opening both straight arms out to the sides until the band touches the chest",
+    "rule": "The arms stay straight and at shoulder height.",
+    "checks": "Braços estendidos na altura dos ombros, aproxima as escápulas, sem subir os ombros"
+  },
+  "rotacao-externa-polia": {
+    "name": "cable shoulder external rotation",
+    "scene": "a cable station with a single handle at elbow height",
+    "view": "front",
+    "start": "standing facing the camera with the cable station to his left, right elbow bent at 90 degrees and pinned to the side, right hand holding the handle in front of the belly",
+    "end": "rotates the right forearm outward away from the body, the elbow staying pinned to the side and bent at 90 degrees",
+    "rule": "The elbow stays glued to the side of the body; only the forearm swings outward like a door.",
+    "checks": "Cotovelo colado no corpo a 90°, só o antebraço gira para fora, carga leve"
+  },
+  "remada-alta-barra": {
+    "name": "barbell upright row",
+    "scene": "a barbell on a rack",
+    "view": "front",
+    "start": "standing tall facing the camera, holding a barbell in front of the thighs with straight arms, hands slightly wider than shoulder width",
+    "end": "pulls the bar straight up close to the body until it reaches the lower chest, elbows leading and rising out to the sides up to shoulder height",
+    "rule": "The elbows go no higher than the shoulders.",
+    "checks": "Pegada na largura dos ombros ou mais, barra sobe colada ao corpo, cotovelos no máximo na altura dos ombros"
+  },
+  "desenvolvimento-landmine": {
+    "name": "single-arm landmine press",
+    "scene": "a barbell with one end anchored in a landmine attachment on the floor",
+    "view": "side",
+    "start": "standing in a split stance facing the anchored barbell, holding the free end of the bar with one hand at the front of the shoulder, elbow bent and pointing down",
+    "end": "presses the bar up and forward until the arm is straight, the torso staying still and leaning slightly forward",
+    "rule": "Only one arm presses; the torso does not twist or lean back.",
+    "checks": "Tronco firme sem arquear a lombar, empurra para cima e à frente, volta controlado ao ombro"
+  },
+  "rosca-direta-barra": {
+    "name": "barbell biceps curl",
+    "scene": "a barbell on a rack",
+    "view": "three-quarter",
+    "start": "standing tall, holding a barbell with an underhand grip at shoulder width, arms straight, bar in front of the thighs, elbows at the sides",
+    "end": "curls the bar up to shoulder height, elbows staying at the sides",
+    "rule": "The elbows and torso stay still; only the forearms move.",
+    "checks": "Cotovelos colados ao corpo, sem balançar o tronco, desce até estender"
+  },
+  "rosca-alternada-halteres": {
+    "name": "alternating dumbbell curl",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, a dumbbell in each hand at the sides, palms facing in, elbows at the sides",
+    "end": "curls the right dumbbell up to the shoulder, turning the palm up, while the left arm stays down",
+    "rule": "Only one arm moves at a time.",
+    "checks": "Cotovelos fixos, sem embalo, alterna os braços"
+  },
+  "rosca-martelo": {
+    "name": "hammer curl",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, a dumbbell in each hand at the sides, palms facing each other, elbows at the sides",
+    "end": "curls both dumbbells up to the shoulders, palms still facing each other",
+    "rule": null,
+    "checks": "Pegada neutra o tempo todo, cotovelos fixos"
+  },
+  "rosca-scott": {
+    "name": "machine preacher curl",
+    "scene": "a preacher curl machine",
+    "view": "three-quarter",
+    "start": "seated at the preacher curl, upper arms resting on the angled pad, holding the handles with arms almost straight",
+    "end": "curls the handles up toward the shoulders, upper arms staying on the pad",
+    "rule": null,
+    "checks": "Braços apoiados, desce sem estender totalmente de forma brusca"
+  },
+  "rosca-polia": {
+    "name": "cable biceps curl",
+    "scene": "a cable station with a straight bar at the bottom",
+    "view": "three-quarter",
+    "start": "standing facing the low cable, holding the bar with an underhand grip, arms straight, elbows at the sides",
+    "end": "curls the bar up to shoulder height, elbows at the sides",
+    "rule": null,
+    "checks": "Cotovelos fixos, tronco parado"
+  },
+  "rosca-concentrada": {
+    "name": "concentration curl",
+    "scene": "an adjustable bench, flat",
+    "view": "three-quarter",
+    "start": "seated on the end of the bench, legs apart, leaning forward, the back of the right upper arm braced against the inside of the right thigh, a dumbbell in the right hand with the arm straight",
+    "end": "curls the dumbbell up toward the shoulder with the right arm, then lowers it slowly",
+    "rule": null,
+    "checks": "Cotovelo apoiado na coxa, só o antebraço se move"
+  },
+  "rosca-inclinada-halteres": {
+    "name": "incline dumbbell curl",
+    "scene": "an adjustable bench, inclined about 45 degrees",
+    "view": "three-quarter",
+    "start": "lying back on the incline bench, arms hanging straight down behind the torso, a dumbbell in each hand, palms forward",
+    "end": "curls both dumbbells up toward the shoulders, upper arms staying vertical",
+    "rule": null,
+    "checks": "Braços pendurados atrás do tronco, cotovelos fixos"
+  },
+  "rosca-elastico": {
+    "name": "resistance band curl",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera with both feet on the middle of a resistance band, a handle in each hand, arms straight, palms forward",
+    "end": "curls both handles up to the shoulders, elbows at the sides",
+    "rule": null,
+    "checks": "Cotovelos fixos, volta controlando o elástico"
+  },
+  "rosca-kettlebell": {
+    "name": "kettlebell curl",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera, holding a kettlebell by the horns with both hands, arms straight, elbows at the sides",
+    "end": "curls the kettlebell up to chest height",
+    "rule": null,
+    "checks": "Cotovelos colados ao corpo, sem embalo"
+  },
+  "rosca-direta-halteres": {
+    "name": "standing dumbbell biceps curl",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, a dumbbell in each hand at the sides, palms facing forward, elbows at the sides",
+    "end": "curls both dumbbells up to the shoulders at the same time, elbows staying at the sides",
+    "rule": "The elbows and torso stay still; only the forearms move.",
+    "checks": "Cotovelos fixos ao lado do corpo, sem embalo do tronco, sobe os dois juntos"
+  },
+  "rosca-barra-w": {
+    "name": "EZ-bar biceps curl",
+    "scene": "an EZ curl bar (the zigzag-shaped bar) on a rack",
+    "view": "side",
+    "start": "standing tall, holding the EZ curl bar on its angled grips in front of the thighs with straight arms, palms angled forward, elbows at the sides",
+    "end": "curls the bar up to the upper chest, elbows staying at the sides",
+    "rule": "The elbows and torso stay still; only the forearms move.",
+    "checks": "Cotovelos fixos, sem embalo do tronco, punhos firmes"
+  },
+  "rosca-scott-barra": {
+    "name": "EZ-bar preacher curl",
+    "scene": "a preacher curl bench and an EZ curl bar (the zigzag-shaped bar)",
+    "view": "side",
+    "start": "seated at the preacher curl bench, the back of the upper arms resting on the angled pad, holding the EZ curl bar with the arms almost straight",
+    "end": "curls the bar up toward the shoulders, the upper arms staying on the pad",
+    "rule": "The upper arms never leave the pad.",
+    "checks": "Braço todo apoiado no banco Scott, não estende totalmente embaixo, volta controlada"
+  },
+  "triceps-polia-barra": {
+    "name": "cable triceps pushdown with bar",
+    "scene": "a cable station with a straight bar at the top",
+    "view": "three-quarter",
+    "start": "standing facing the high cable, elbows tucked at the sides, holding the bar at chest height with an overhand grip",
+    "end": "pushes the bar down until the arms are straight against the thighs, elbows fixed at the sides",
+    "rule": "The elbows stay pinned at the sides; only the forearms move.",
+    "checks": "Cotovelos colados ao corpo e fixos, só o antebraço se move"
+  },
+  "triceps-corda": {
+    "name": "cable rope triceps pushdown",
+    "scene": "a cable station with a rope at the top",
+    "view": "three-quarter",
+    "start": "standing facing the high cable, elbows tucked at the sides, holding the rope ends at chest height",
+    "end": "pushes the rope down and separates the ends beside the thighs, arms straight",
+    "rule": "The elbows stay pinned at the sides; only the forearms move.",
+    "checks": "Cotovelos fixos, abre a corda no fim, volta controlada"
+  },
+  "triceps-testa": {
+    "name": "barbell skull crusher",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "lying on his back on the bench, holding a barbell with an overhand grip, arms straight above the chest",
+    "end": "bends only the elbows to lower the bar slowly toward the forehead, upper arms still",
+    "rule": null,
+    "checks": "Cotovelos apontados para cima e fixos, descida lenta"
+  },
+  "triceps-frances-halter": {
+    "name": "overhead dumbbell triceps extension",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall, holding one dumbbell with both hands under the top plate, arms straight overhead",
+    "end": "bends the elbows to lower the dumbbell behind the head, elbows pointing up",
+    "rule": null,
+    "checks": "Cotovelos apontados para frente/cima, abdômen firme, sem arquear a lombar"
+  },
+  "triceps-coice": {
+    "name": "dumbbell triceps kickback",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "left knee and left hand on the bench, back flat, right upper arm parallel to the floor and close to the body, elbow bent at 90 degrees, a dumbbell in the right hand",
+    "end": "extends the right elbow back until the arm is straight, then bends it back slowly",
+    "rule": null,
+    "checks": "Braço fixo paralelo ao chão, só o antebraço se move"
+  },
+  "triceps-elastico": {
+    "name": "resistance band triceps pushdown",
+    "scene": "a resistance band anchored high on the frame",
+    "view": "three-quarter",
+    "start": "standing facing the anchor, elbows tucked at the sides, holding the band at chest height",
+    "end": "pushes the band down until the arms are straight, elbows fixed",
+    "rule": null,
+    "checks": "Cotovelos fixos ao lado do corpo"
+  },
+  "mergulho-banco": {
+    "name": "bench dip",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "hands on the edge of the bench behind him, fingers forward, legs extended with heels on the floor, arms straight, hips just in front of the bench",
+    "end": "bends the elbows to lower the hips toward the floor until the elbows reach about 90 degrees",
+    "rule": null,
+    "checks": "Desce até ~90° de cotovelo, costas perto do banco, ombros longe das orelhas"
+  },
+  "supino-fechado": {
+    "name": "close-grip barbell bench press",
+    "scene": "a flat bench with a loaded barbell on a rack",
+    "view": "three-quarter",
+    "start": "lying on the bench, feet on the floor, gripping the barbell at shoulder width, arms straight above the chest",
+    "end": "lowers the bar to the lower chest, elbows close to the body",
+    "rule": null,
+    "checks": "Pegada na largura dos ombros, cotovelos rente ao corpo, punhos retos"
+  },
+  "flexao-diamante": {
+    "name": "diamond push-up",
+    "scene": null,
+    "view": "side",
+    "start": "in a high plank on the floor, hands together under the chest with thumbs and index fingers forming a diamond, body straight",
+    "end": "lowers the chest to the hands, elbows close to the body",
+    "rule": null,
+    "checks": "Corpo alinhado, cotovelos rente ao corpo"
+  },
+  "triceps-unilateral-polia": {
+    "name": "single-arm cable triceps pushdown",
+    "scene": "a high cable station with a single handle",
+    "view": "side",
+    "start": "standing tall facing the high cable station, one hand holding the single handle at chest height, elbow bent and pinned to the side",
+    "end": "pushes the handle down until the arm is straight beside the thigh, the elbow staying pinned to the side",
+    "rule": "The elbow stays pinned at the side; only the forearm moves.",
+    "checks": "Cotovelo colado ao corpo, estende todo o braço, volta até ~90° sem subir o cotovelo"
+  },
+  "triceps-frances-polia": {
+    "name": "overhead cable triceps extension with a rope",
+    "scene": "a cable station with a rope attached to the low pulley",
+    "view": "side",
+    "start": "standing in a split stance facing away from the low cable station, holding the rope behind the head with both hands, elbows bent and pointing up beside the head",
+    "end": "extends both arms straight up overhead, the elbows staying close to the head",
+    "rule": "The elbows stay pointing up next to the head; only the forearms move.",
+    "checks": "Cotovelos apontados para cima perto da cabeça, abdômen firme, estende todo o braço"
+  },
+  "mergulho-maquina": {
+    "name": "seated machine triceps dip",
+    "scene": "a seated dip machine",
+    "view": "side",
+    "start": "seated on the dip machine, back against the pad, hands on the handles beside the ribs, elbows bent behind him",
+    "end": "pushes the handles down until the arms are straight beside the body",
+    "rule": null,
+    "checks": "Costas apoiadas, cotovelos apontando para trás, estende sem travar"
+  },
+  "rosca-punho": {
+    "name": "dumbbell wrist curl",
+    "scene": "an adjustable bench, flat",
+    "view": "three-quarter",
+    "start": "seated on the bench, forearms resting on the thighs, wrists just past the knees, palms up holding a light dumbbell in each hand",
+    "end": "curls only the wrists up",
+    "rule": "The forearms stay on the thighs; only the wrists move.",
+    "checks": "Antebraço apoiado, só o punho se move, carga leve"
+  },
+  "caminhada-fazendeiro": {
+    "name": "farmer walk",
+    "scene": null,
+    "view": "three-quarter",
+    "start": "standing tall, a heavy dumbbell in each hand at the sides, shoulders back",
+    "end": "walks slowly forward with short, firm steps, upright posture, arms straight",
+    "rule": null,
+    "checks": "Postura ereta, ombros para trás, passos curtos e firmes"
+  },
+  "rosca-inversa": {
+    "name": "reverse-grip barbell curl",
+    "scene": "a barbell on a rack",
+    "view": "side",
+    "start": "standing tall, holding a barbell in front of the thighs with an overhand grip (palms facing back), arms straight, elbows at the sides",
+    "end": "curls the bar up to the upper chest keeping the overhand grip, elbows staying at the sides",
+    "rule": "Palms face down the whole time; the elbows stay at the sides.",
+    "checks": "Pegada pronada (palmas para baixo), cotovelos fixos, punhos retos"
+  },
+  "suspensao-barra": {
+    "name": "dead hang from a pull-up bar",
+    "scene": "a pull-up bar",
+    "view": "side",
+    "start": "standing under the pull-up bar reaching up and gripping it with both hands shoulder-width apart, feet still on the floor",
+    "end": "hangs from the bar with straight arms and feet off the floor, body still and vertical, shoulders active",
+    "rule": "No swinging; he just hangs still.",
+    "checks": "Braços estendidos, corpo parado sem balançar, segura o tempo indicado"
+  },
+  "agachamento-livre": {
+    "name": "barbell back squat",
+    "scene": "a squat rack with a loaded barbell",
+    "view": "three-quarter",
+    "start": "standing with the barbell resting on the upper back, hands gripping it outside the shoulders, feet shoulder-width apart, toes slightly out",
+    "end": "pushes the hips back and bends the knees, lowering until the thighs are about parallel to the floor, chest up, heels down",
+    "rule": null,
+    "checks": "Coluna neutra, joelhos na direção dos pés, calcanhares no chão, desce até ~paralelo"
+  },
+  "agachamento-frontal": {
+    "name": "barbell front squat",
+    "scene": "a squat rack with a loaded barbell",
+    "view": "three-quarter",
+    "start": "standing with the barbell resting on the front of the shoulders, elbows high and pointing forward, feet shoulder-width apart",
+    "end": "squats down keeping the torso upright and elbows high, until the thighs are about parallel",
+    "rule": null,
+    "checks": "Cotovelos altos, tronco ereto, joelhos na direção dos pés"
+  },
+  "agachamento-smith": {
+    "name": "Smith machine squat",
+    "scene": "a Smith machine",
+    "view": "three-quarter",
+    "start": "standing under the Smith machine bar resting on the upper back, feet slightly in front of the body, shoulder-width apart",
+    "end": "squats down until the thighs are about parallel to the floor",
+    "rule": null,
+    "checks": "Pés levemente à frente, joelhos na direção dos pés, coluna neutra"
+  },
+  "agachamento-goblet": {
+    "name": "goblet squat",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, feet shoulder-width apart, holding one dumbbell vertically against the chest with both hands",
+    "end": "pushes the hips back and bends the knees, lowering until the thighs are about parallel to the floor, chest up, dumbbell against the chest",
+    "rule": null,
+    "checks": "Halter junto ao peito, joelhos na direção dos pés, calcanhares no chão, costas retas"
+  },
+  "agachamento-goblet-kettlebell": {
+    "name": "kettlebell goblet squat",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, feet shoulder-width apart, holding a kettlebell by the horns against the chest",
+    "end": "squats down until the thighs are about parallel, chest up, kettlebell against the chest",
+    "rule": null,
+    "checks": "Kettlebell junto ao peito, joelhos na direção dos pés, calcanhares no chão"
+  },
+  "agachamento-peso-corpo": {
+    "name": "bodyweight squat",
+    "scene": null,
+    "view": "three-quarter",
+    "start": "standing tall, feet shoulder-width apart, arms extended forward at shoulder height",
+    "end": "pushes the hips back and bends the knees, lowering until the thighs are about parallel to the floor, heels down",
+    "rule": null,
+    "checks": "Joelhos na direção dos pés, calcanhares no chão, peito aberto"
+  },
+  "agachamento-elastico": {
+    "name": "resistance band squat",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera with both feet on a resistance band, holding the handles at the shoulders",
+    "end": "squats down until the thighs are about parallel",
+    "rule": null,
+    "checks": "Joelhos na direção dos pés, tronco firme"
+  },
+  "agachamento-sumo-halter": {
+    "name": "dumbbell sumo squat",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera with a wide stance, toes turned out, holding one dumbbell vertically with both hands between the legs",
+    "end": "squats straight down, knees opening in line with the toes, torso upright",
+    "rule": null,
+    "checks": "Base larga, joelhos abrem na direção dos pés, tronco ereto"
+  },
+  "leg-press": {
+    "name": "45-degree leg press",
+    "scene": "a 45-degree leg press machine",
+    "view": "side",
+    "start": "seated in the leg press, back and hips against the seat, feet shoulder-width on the platform, legs nearly straight",
+    "end": "bends the knees to lower the platform until the knees reach about 90 degrees",
+    "rule": null,
+    "checks": "Lombar apoiada no encosto, joelhos na direção dos pés, sem travar os joelhos"
+  },
+  "agachamento-hack": {
+    "name": "hack squat machine",
+    "scene": "a hack squat machine",
+    "view": "side",
+    "start": "standing in the hack squat machine, back against the pad, shoulders under the pads, feet shoulder-width on the platform",
+    "end": "squats down until the thighs are about parallel",
+    "rule": null,
+    "checks": "Costas no encosto, joelhos na direção dos pés, descida controlada"
+  },
+  "afundo-halteres": {
+    "name": "dumbbell lunge",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall, feet together, a dumbbell in each hand at the sides",
+    "end": "steps forward with the right leg and lowers until both knees are at about 90 degrees, the back knee near the floor, then pushes back to standing",
+    "rule": null,
+    "checks": "Tronco ereto, joelho da frente sobre o pé, joelho de trás quase toca o chão"
+  },
+  "afundo-peso-corpo": {
+    "name": "bodyweight lunge",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall, feet together, hands on the hips",
+    "end": "steps forward with the right leg and lowers until both knees are at about 90 degrees, then pushes back to standing",
+    "rule": null,
+    "checks": "Tronco ereto, joelho da frente alinhado ao pé"
+  },
+  "avanco-caminhando": {
+    "name": "walking dumbbell lunge",
+    "scene": null,
+    "view": "three-quarter",
+    "start": "standing tall, a dumbbell in each hand at the sides",
+    "end": "steps forward with the right leg into a lunge, back knee near the floor",
+    "rule": null,
+    "checks": "Passos longos, tronco ereto, joelho de trás desce perto do chão"
+  },
+  "agachamento-bulgaro": {
+    "name": "Bulgarian split squat",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "standing about one big step in front of the bench, the top of the left foot resting on the bench behind him, a dumbbell in each hand at the sides",
+    "end": "lowers straight down on the right leg until the right thigh is about parallel to the floor, then stands up",
+    "rule": null,
+    "checks": "Joelho da frente alinhado ao pé, tronco levemente inclinado, descida controlada"
+  },
+  "subida-banco": {
+    "name": "dumbbell step-up",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "standing in front of the bench, a dumbbell in each hand, right foot flat on the bench",
+    "end": "steps up onto the bench pushing through the right foot, then steps back down with control",
+    "rule": null,
+    "checks": "Sobe empurrando com a perna de cima, joelho alinhado ao pé"
+  },
+  "cadeira-extensora": {
+    "name": "leg extension machine",
+    "scene": "a leg extension machine",
+    "view": "side",
+    "start": "seated in the leg extension machine, back against the pad, ankles behind the lower pad, knees bent at 90 degrees",
+    "end": "extends both knees until the legs are straight",
+    "rule": null,
+    "checks": "Costas apoiadas, sobe sem tranco, desce devagar"
+  },
+  "agachamento-dividido-halteres": {
+    "name": "dumbbell split squat",
+    "scene": null,
+    "view": "side",
+    "start": "standing in a long split stance, one foot forward and the other back on the toes, torso upright, a dumbbell in each hand at the sides",
+    "end": "lowers straight down until the back knee almost touches the floor and the front thigh is parallel to the floor, the feet staying in place",
+    "rule": "The feet do not move; the body goes straight down and up.",
+    "checks": "Tronco ereto, joelho da frente alinhado ao pé, joelho de trás quase toca o chão, pés parados"
+  },
+  "afundo-reverso": {
+    "name": "bodyweight reverse lunge",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall with feet hip-width apart, hands on the hips",
+    "end": "steps one foot back and lowers until the back knee almost touches the floor and the front thigh is parallel to the floor, torso upright",
+    "rule": null,
+    "checks": "Passo para trás, tronco ereto, joelho da frente alinhado ao pé, volta empurrando com a perna da frente"
+  },
+  "afundo-lateral": {
+    "name": "bodyweight lateral lunge",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, feet together, hands clasped in front of the chest",
+    "end": "takes a wide step to the right and sits the hips back over the right foot, right knee bent over the right foot, left leg straight, both feet flat",
+    "rule": null,
+    "checks": "Quadril vai para trás, joelho alinhado ao pé, perna de apoio estendida, pés no chão"
+  },
+  "agachamento-parede": {
+    "name": "wall sit",
+    "scene": null,
+    "view": "side",
+    "start": "standing with the back against the wall, feet about two feet in front of the wall, arms at the sides",
+    "end": "slides down the wall until the thighs are parallel to the floor and the knees are bent at 90 degrees over the ankles, back flat on the wall, holding still",
+    "rule": null,
+    "checks": "Costas na parede, joelhos a 90° sobre os tornozelos, segura o tempo indicado"
+  },
+  "cadeira-adutora": {
+    "name": "hip adduction machine",
+    "scene": "a hip adduction machine",
+    "view": "front",
+    "start": "seated in the adductor machine facing the camera, back against the pad, legs open with the inner thighs against the pads",
+    "end": "squeezes both legs together until the pads meet",
+    "rule": null,
+    "checks": "Costas apoiadas, volta controlada"
+  },
+  "cadeira-abdutora": {
+    "name": "hip abduction machine",
+    "scene": "a hip abduction machine",
+    "view": "front",
+    "start": "seated in the abductor machine facing the camera, back against the pad, legs together with the outer thighs against the pads",
+    "end": "pushes both legs apart as far as comfortable",
+    "rule": null,
+    "checks": "Costas apoiadas, volta controlada"
+  },
+  "levantamento-terra": {
+    "name": "barbell deadlift",
+    "scene": "a loaded barbell on the floor",
+    "view": "side",
+    "start": "standing with the barbell over the middle of the feet, hips hinged and knees bent, back flat, arms straight gripping the bar just outside the legs",
+    "end": "lifts the bar by pushing the floor away and extending hips and knees together, the bar sliding close to the legs, until standing tall",
+    "rule": "The back stays flat the whole time, never rounded.",
+    "checks": "Coluna neutra o tempo todo, barra rente às pernas, sobe com quadril e joelhos juntos"
+  },
+  "stiff-barra": {
+    "name": "barbell Romanian deadlift",
+    "scene": "a barbell on a rack",
+    "view": "side",
+    "start": "standing tall holding a barbell in front of the thighs, overhand grip, knees slightly bent",
+    "end": "pushes the hips back, lowering the bar along the legs to just below the knees, back flat, knees keeping the same slight bend",
+    "rule": "The back stays flat the whole time, never rounded.",
+    "checks": "Joelhos levemente flexionados e fixos, coluna neutra, barra rente às pernas"
+  },
+  "stiff-halteres": {
+    "name": "dumbbell Romanian deadlift",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall, a dumbbell in each hand in front of the thighs, knees slightly bent",
+    "end": "pushes the hips back, lowering the dumbbells along the legs to just below the knees, back flat",
+    "rule": "The back stays flat the whole time, never rounded.",
+    "checks": "Coluna neutra, quadril vai para trás, joelhos levemente flexionados"
+  },
+  "stiff-unilateral": {
+    "name": "single-leg dumbbell Romanian deadlift",
+    "scene": null,
+    "view": "side",
+    "start": "standing on the left leg, a dumbbell in the right hand, right foot just off the floor",
+    "end": "hinges forward on the left leg while the right leg extends straight back, until the torso and right leg form a line parallel to the floor, then returns to standing",
+    "rule": null,
+    "checks": "Quadril nivelado, coluna neutra, equilíbrio controlado"
+  },
+  "stiff-kettlebell": {
+    "name": "kettlebell Romanian deadlift",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall, holding a kettlebell with both hands in front of the thighs, knees slightly bent",
+    "end": "pushes the hips back, lowering the kettlebell along the legs to just below the knees, back flat",
+    "rule": null,
+    "checks": "Coluna neutra, quadril para trás, joelhos levemente flexionados"
+  },
+  "swing-kettlebell": {
+    "name": "kettlebell swing",
+    "scene": null,
+    "view": "side",
+    "start": "standing with feet wider than the shoulders, hips hinged back, back flat, holding a kettlebell with both hands between the legs",
+    "end": "snaps the hips forward to stand tall, the straight arms letting the kettlebell float up to chest height",
+    "rule": "This is a hip hinge, not a squat: the arms stay straight and do not lift the weight.",
+    "checks": "Movimento vem do quadril (não dos braços), coluna neutra, glúteos contraem no topo"
+  },
+  "elevacao-pelvica-barra": {
+    "name": "barbell hip thrust",
+    "scene": "an adjustable bench, flat, with a padded barbell on the floor in front of it",
+    "view": "side",
+    "start": "seated on the floor with the upper back against the side of the bench, knees bent, feet flat, a padded barbell resting across the hips, hands holding the bar",
+    "end": "drives the hips up until the body is straight from shoulders to knees, chin slightly tucked",
+    "rule": null,
+    "checks": "Queixo levemente para baixo, sobe até alinhar o tronco, sem arquear a lombar"
+  },
+  "elevacao-pelvica-halter": {
+    "name": "dumbbell hip thrust",
+    "scene": "an adjustable bench, flat",
+    "view": "side",
+    "start": "seated on the floor with the upper back against the side of the bench, knees bent, feet flat, a dumbbell held on the hips",
+    "end": "drives the hips up until the body is straight from shoulders to knees",
+    "rule": null,
+    "checks": "Sobe até alinhar o tronco, contrai os glúteos no topo"
+  },
+  "ponte-gluteo": {
+    "name": "glute bridge",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, knees bent, feet flat and hip-width apart, arms on the floor by the sides",
+    "end": "lifts the hips until the body is straight from shoulders to knees",
+    "rule": null,
+    "checks": "Sobe contraindo os glúteos, sem arquear a lombar"
+  },
+  "ponte-gluteo-unilateral": {
+    "name": "single-leg glute bridge",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, left knee bent with the foot flat, right leg extended straight in the air in line with the left thigh",
+    "end": "lifts the hips by pushing through the left foot until the body is straight, then lowers",
+    "rule": null,
+    "checks": "Quadril nivelado, sobe com o glúteo da perna apoiada"
+  },
+  "hiperextensao": {
+    "name": "back extension on a Roman chair",
+    "scene": "a 45-degree back extension bench",
+    "view": "side",
+    "start": "on the 45-degree bench, hips on the pad, heels under the foot pads, body in a straight line, arms crossed on the chest",
+    "end": "bends at the hips to lower the torso slowly toward the floor, back flat",
+    "rule": null,
+    "checks": "Sobe só até alinhar o corpo (sem hiperestender), movimento lento"
+  },
+  "mesa-flexora": {
+    "name": "lying leg curl machine",
+    "scene": "a lying leg curl machine",
+    "view": "side",
+    "start": "lying face down on the leg curl machine, hips on the pad, ankles under the roller, legs straight, holding the handles",
+    "end": "curls the heels toward the glutes",
+    "rule": null,
+    "checks": "Quadril apoiado no banco, sobe sem tranco, desce devagar"
+  },
+  "cadeira-flexora": {
+    "name": "seated leg curl machine",
+    "scene": "a seated leg curl machine",
+    "view": "side",
+    "start": "seated in the leg curl machine, back against the pad, legs straight with the ankles on top of the lower roller",
+    "end": "bends the knees pulling the roller down and back under the seat",
+    "rule": null,
+    "checks": "Costas apoiadas, volta controlada"
+  },
+  "bom-dia-barra": {
+    "name": "barbell good morning",
+    "scene": "a squat rack with a barbell",
+    "view": "side",
+    "start": "standing tall with a barbell resting on the upper back, feet hip-width apart, knees slightly bent, back flat",
+    "end": "hinges at the hips pushing them back, torso lowering until it is almost parallel to the floor, back flat, knees slightly bent",
+    "rule": "This is a hip hinge: the back stays flat and the knees only slightly bent.",
+    "checks": "Coluna neutra, quadril vai para trás, joelhos levemente flexionados, carga leve"
+  },
+  "gluteo-polia": {
+    "name": "cable glute kickback",
+    "scene": "a cable station with an ankle strap at the bottom",
+    "view": "side",
+    "start": "standing facing the cable, holding the frame, ankle strap on the right ankle, torso slightly leaning forward",
+    "end": "kicks the right leg straight back extending the hip, then returns slowly",
+    "rule": null,
+    "checks": "Tronco fixo, sem arquear a lombar, movimento vem do quadril"
+  },
+  "gluteo-quatro-apoios": {
+    "name": "quadruped glute kickback",
+    "scene": null,
+    "view": "side",
+    "start": "on hands and knees on the floor, hands under the shoulders, knees under the hips, back flat",
+    "end": "lifts the right leg, knee bent at 90 degrees, until the thigh is parallel to the floor, then lowers it",
+    "rule": null,
+    "checks": "Coluna neutra, sem girar o quadril, sobe até a linha do tronco"
+  },
+  "abducao-elastico": {
+    "name": "resistance band hip abduction",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, hands on the hips, a mini band around both thighs above the knees",
+    "end": "lifts the right leg out to the side against the band, then returns",
+    "rule": null,
+    "checks": "Tronco ereto, quadril nivelado, volta controlando o elástico"
+  },
+  "levantamento-terra-sumo": {
+    "name": "sumo deadlift",
+    "scene": "a loaded barbell on the floor",
+    "view": "three-quarter",
+    "start": "standing in a very wide stance with toes turned out, shins close to the barbell on the floor, hips down, chest up, back flat, arms straight gripping the bar between the legs",
+    "end": "stands up tall by pushing the floor away, hips and knees extending together, the bar staying close to the legs until he is fully upright",
+    "rule": "The back stays flat the whole time, never rounded.",
+    "checks": "Base bem aberta com pés para fora, coluna neutra, barra colada ao corpo, joelhos acompanham os pés"
+  },
+  "elevacao-pelvica-maquina": {
+    "name": "machine hip thrust",
+    "scene": "a hip thrust machine",
+    "view": "side",
+    "start": "seated in the hip thrust machine, upper back against the back pad, the padded belt across the hips, feet flat on the platform, hips low",
+    "end": "drives the hips up until the body is straight from the shoulders to the knees, knees bent at 90 degrees, squeezing the glutes",
+    "rule": null,
+    "checks": "Queixo para baixo, sobe até alinhar ombros, quadril e joelhos, sem arquear a lombar"
+  },
+  "pull-through-polia": {
+    "name": "cable pull-through",
+    "scene": "a cable station with a rope attached to the low pulley",
+    "view": "side",
+    "start": "standing facing away from the low cable station, feet wider than the hips, hinged forward at the hips with a flat back, holding the rope between the legs with straight arms",
+    "end": "drives the hips forward and stands up tall, squeezing the glutes, arms straight with the rope in front of the hips",
+    "rule": "The arms stay straight; the hips do the work.",
+    "checks": "Movimento vem do quadril, coluna neutra, braços estendidos, sem puxar com os braços"
+  },
+  "coice-gluteo-maquina": {
+    "name": "glute kickback machine",
+    "scene": "a glute kickback machine",
+    "view": "side",
+    "start": "positioned on the glute kickback machine with the torso supported on the chest pad, hands on the handles, one foot on the kick plate with the knee bent under the hip",
+    "end": "pushes the plate back with one leg until the hip is fully extended, the back staying flat",
+    "rule": "The lower back does not arch; only the hip moves.",
+    "checks": "Lombar neutra, estende o quadril sem arquear, volta controlada"
+  },
+  "abducao-polia": {
+    "name": "standing cable hip abduction",
+    "scene": "a cable station with an ankle strap on the low pulley",
+    "view": "front",
+    "start": "standing facing the camera with the low cable station to his left, one hand on the frame, the ankle strap on the right ankle, feet together",
+    "end": "lifts the right leg straight out to the side against the cable, torso upright, toes pointing forward",
+    "rule": "The torso stays upright and does not lean to the side.",
+    "checks": "Tronco ereto, perna sobe para o lado sem girar o pé, volta controlada"
+  },
+  "abducao-quatro-apoios": {
+    "name": "fire hydrant",
+    "scene": null,
+    "view": "front",
+    "start": "on hands and knees facing the camera, hands under the shoulders, knees under the hips, back flat",
+    "end": "lifts one bent knee out to the side until the thigh is almost parallel to the floor, keeping the knee bent at 90 degrees and the back flat",
+    "rule": "The torso does not tilt; only the leg moves.",
+    "checks": "Costas retas, joelho dobrado a 90°, abre a perna para o lado sem inclinar o tronco"
+  },
+  "ostra": {
+    "name": "clamshell",
+    "scene": null,
+    "view": "front",
+    "start": "lying on his side on the floor facing the camera, head resting on the lower arm, hips and knees bent at about 45 degrees, knees and feet stacked",
+    "end": "opens the top knee upward like a clamshell while the feet stay together, hips not rolling back",
+    "rule": "The feet stay together and the hips do not roll back.",
+    "checks": "Pés juntos, quadril parado sem rolar para trás, abre o joelho de cima"
+  },
+  "caminhada-lateral-elastico": {
+    "name": "lateral band walk",
+    "scene": null,
+    "view": "front",
+    "start": "standing facing the camera in a quarter squat, a mini resistance band around both legs just above the knees, feet hip-width apart, hands on the hips",
+    "end": "steps wide to the side with one foot, keeping the band taut and the quarter squat, knees pushed out",
+    "rule": null,
+    "checks": "Meio agachamento o tempo todo, joelhos para fora, elástico sempre esticado"
+  },
+  "panturrilha-em-pe-maquina": {
+    "name": "standing calf raise machine",
+    "scene": "a standing calf raise machine",
+    "view": "side",
+    "start": "standing in the calf raise machine, shoulders under the pads, balls of the feet on the step, heels lowered below the step, knees straight",
+    "end": "rises onto the toes as high as possible",
+    "rule": null,
+    "checks": "Amplitude completa, pausa no topo, joelhos estendidos"
+  },
+  "panturrilha-sentado": {
+    "name": "seated calf raise machine",
+    "scene": "a seated calf raise machine",
+    "view": "side",
+    "start": "seated in the calf raise machine, knees under the pad, balls of the feet on the step, heels low",
+    "end": "raises the heels as high as possible",
+    "rule": null,
+    "checks": "Amplitude completa, pausa no topo"
+  },
+  "panturrilha-leg-press": {
+    "name": "leg press calf raise",
+    "scene": "a 45-degree leg press machine",
+    "view": "side",
+    "start": "seated in the leg press, legs straight but not locked, only the balls of the feet on the bottom edge of the platform",
+    "end": "pushes the platform by pointing the toes, ankles extending",
+    "rule": "The knees stay straight; only the ankles move.",
+    "checks": "Joelhos estendidos (sem travar), amplitude completa"
+  },
+  "panturrilha-halter": {
+    "name": "standing dumbbell calf raise",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall, a dumbbell in each hand at the sides, feet hip-width apart",
+    "end": "rises onto the toes as high as possible",
+    "rule": null,
+    "checks": "Sobe o máximo, desce devagar, tronco ereto"
+  },
+  "panturrilha-peso-corpo": {
+    "name": "bodyweight calf raise",
+    "scene": null,
+    "view": "side",
+    "start": "standing tall, hands on the hips, feet hip-width apart",
+    "end": "rises onto the toes as high as possible",
+    "rule": null,
+    "checks": "Amplitude completa, sem pressa"
+  },
+  "prancha": {
+    "name": "forearm plank",
+    "scene": null,
+    "view": "side",
+    "start": "in a forearm plank on the floor, elbows under the shoulders, forearms parallel, body in one straight line from head to heels",
+    "end": "holds the position completely steady, breathing calmly, with only subtle breathing movement",
+    "rule": "He does not move from the position: no push-ups, no hip movement.",
+    "checks": "Corpo alinhado, abdômen e glúteos contraídos, sem quadril caído"
+  },
+  "prancha-lateral": {
+    "name": "side plank",
+    "scene": null,
+    "view": "front",
+    "start": "in a side plank facing the camera, on the right forearm with the elbow under the shoulder, feet stacked, hips lifted, body in one straight line, left hand on the hip",
+    "end": "holds the position steady for a moment",
+    "rule": null,
+    "checks": "Quadril alto, corpo em linha reta, cotovelo sob o ombro"
+  },
+  "abdominal-supra": {
+    "name": "crunch",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, knees bent, feet flat, fingertips lightly behind the ears, elbows wide",
+    "end": "curls the head and shoulder blades off the floor, bringing the ribs toward the pelvis, lower back on the floor",
+    "rule": "He does not sit all the way up; only the shoulder blades lift.",
+    "checks": "Não puxa o pescoço, sobe só as escápulas, movimento curto"
+  },
+  "elevacao-pernas-deitado": {
+    "name": "lying leg raise",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, legs straight together, hands flat under the hips, heels just above the floor",
+    "end": "raises both straight legs together until they point at the ceiling",
+    "rule": null,
+    "checks": "Lombar encostada no chão, descida lenta"
+  },
+  "abdominal-bicicleta": {
+    "name": "bicycle crunch",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, head and shoulders slightly lifted, fingertips lightly behind the ears, elbows wide, both knees bent at 90 degrees above the hips, lower back pressed to the floor",
+    "end": "his RIGHT leg extends straight out low above the floor while his LEFT knee pulls in toward the chest; at the same time he rotates the shoulders so the RIGHT elbow moves toward the LEFT knee",
+    "rule": "The legs move in opposite directions like pedaling, never together and never to the same side. The hips stay still; only the shoulders rotate.",
+    "checks": "Movimento controlado, sem puxar o pescoço"
+  },
+  "dead-bug": {
+    "name": "dead bug",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, arms pointing straight up at the ceiling, knees bent at 90 degrees above the hips, lower back pressed to the floor",
+    "end": "lowers the RIGHT arm back over the head toward the floor while the LEFT leg extends straight out low above the floor, then brings both back to the start",
+    "rule": "Always the opposite arm and leg together; the other arm and leg stay still.",
+    "checks": "Lombar colada no chão, movimento lento"
+  },
+  "perdigueiro": {
+    "name": "bird dog",
+    "scene": null,
+    "view": "side",
+    "start": "on hands and knees on the floor, hands under the shoulders, knees under the hips, back flat",
+    "end": "extends the RIGHT arm straight forward and the LEFT leg straight back at the same time, both parallel to the floor, holds briefly, then returns",
+    "rule": "Always the opposite arm and leg together; the hips stay level.",
+    "checks": "Coluna neutra, quadril nivelado, sem girar o tronco"
+  },
+  "escalador": {
+    "name": "mountain climber",
+    "scene": null,
+    "view": "side",
+    "start": "in a high plank on the floor, hands under the shoulders, arms straight, body straight",
+    "end": "drives the RIGHT knee toward the chest, then returns the foot back",
+    "rule": "The legs alternate one at a time; the hips stay low and the hands stay planted.",
+    "checks": "Quadril baixo, mãos sob os ombros, ritmo constante"
+  },
+  "elevacao-pernas-barra": {
+    "name": "hanging leg raise",
+    "scene": "a pull-up bar",
+    "view": "front",
+    "start": "hanging from the pull-up bar with straight arms, legs straight and together, body still",
+    "end": "raises both straight legs together in front until they reach hip height",
+    "rule": "No swinging of the body.",
+    "checks": "Sem balanço, descida controlada"
+  },
+  "abdominal-polia": {
+    "name": "kneeling cable crunch",
+    "scene": "a tall cable station with the weight stack on the right side of the frame, fully visible, with a rope attached to its high pulley",
+    "view": "side",
+    "start": "kneeling on both knees on the left side of the frame, FACING RIGHT toward the cable station, about one arm length from it, thighs vertical, torso leaning FORWARD toward the machine about 45 degrees; both hands hold the rope ends beside his head at the ears, elbows bent and pointing down; the cable comes down from the high pulley in front of him to his hands",
+    "end": "curls forward and down: the ribs move toward the pelvis, the upper and middle back round, the elbows go down toward the knees and the head moves down toward the floor in front of the knees; the hips stay in place above the knees",
+    "rule": "He always faces the machine and leans toward it; he never leans backward or sits on his heels. The hips do not move: the movement is the spine curling, not a hip hinge. The hands stay beside the head the whole time; the arms do not pull.",
+    "checks": "Costelas em direção à pelve, quadril parado, as mãos só seguram a corda (não puxa com os braços), volta controlada sem soltar o peso"
+  },
+  "pallof-polia": {
+    "name": "cable Pallof press",
+    "scene": "a cable station with a handle at chest height",
+    "view": "front",
+    "start": "standing facing the camera with the cable to his right side, feet shoulder-width apart, holding the handle at the chest with both hands",
+    "end": "presses the handle straight forward until the arms are extended, torso not rotating",
+    "rule": "The torso never rotates toward the cable.",
+    "checks": "Tronco não gira, abdômen firme, braços estendem na frente do peito"
+  },
+  "pallof-elastico": {
+    "name": "resistance band Pallof press",
+    "scene": "a resistance band anchored at chest height on the frame to his side",
+    "view": "front",
+    "start": "standing facing the camera with the band anchored to his right side, holding it at the chest with both hands",
+    "end": "presses the band straight forward until the arms are extended, torso not rotating",
+    "rule": "The torso never rotates toward the anchor.",
+    "checks": "Tronco não gira, abdômen firme"
+  },
+  "abdominal-reverso": {
+    "name": "reverse crunch",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, arms by the sides with palms down, knees bent at 90 degrees above the hips",
+    "end": "curls the hips off the floor bringing the knees toward the chest, lower back rolling up, shoulders staying on the floor",
+    "rule": "The knees move toward the chest; the legs do not swing.",
+    "checks": "Enrola o quadril para cima, sem embalo das pernas, desce devagar"
+  },
+  "abdominal-maquina": {
+    "name": "seated machine crunch",
+    "scene": "a seated abdominal crunch machine",
+    "view": "side",
+    "start": "seated in the ab crunch machine, feet hooked under the pads, hands holding the handles beside the head, torso upright",
+    "end": "curls the torso forward and down, ribs moving toward the pelvis, upper back rounding",
+    "rule": "The arms only hold; the abdomen does the work.",
+    "checks": "Costelas em direção à pelve, não puxa com os braços, volta controlada"
+  },
+  "hollow-body": {
+    "name": "hollow body hold",
+    "scene": null,
+    "view": "side",
+    "start": "lying on his back on the floor, arms by the sides, legs straight, lower back pressed to the floor",
+    "end": "lifts the shoulders and the straight legs a few inches off the floor, arms reaching past the head, lower back pressed to the floor, body shaped like a shallow banana, holding still",
+    "rule": "The lower back stays pressed to the floor.",
+    "checks": "Lombar colada no chão, braços e pernas estendidos, segura o tempo indicado"
+  },
+  "rotacao-russa": {
+    "name": "Russian twist",
+    "scene": null,
+    "view": "front",
+    "start": "seated on the floor facing the camera, knees bent, heels on the floor, torso leaning back about 45 degrees with a straight back, hands clasped in front of the chest",
+    "end": "rotates the shoulders to one side bringing the clasped hands beside the hip, torso still leaning back with a straight back",
+    "rule": "The rotation comes from the torso; the knees stay still.",
+    "checks": "Coluna reta, gira o tronco (não só os braços), pés no chão para iniciantes"
+  },
+  "lenhador-polia": {
+    "name": "high-to-low cable wood chop",
+    "scene": "a cable station with a single handle on the high pulley",
+    "view": "front",
+    "start": "standing facing the camera with the high cable station to his right, feet wider than the shoulders, both hands holding the handle above the right shoulder, arms extended",
+    "end": "pulls the handle diagonally down across the body to outside the left knee, rotating the torso and pivoting the right foot, arms extended",
+    "rule": "The arms stay straight; the torso rotates.",
+    "checks": "Braços estendidos, giro vem do tronco, pivota o pé de trás, volta controlada"
+  },
+  "flexao-lateral-halter": {
+    "name": "dumbbell side bend",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, feet hip-width apart, a dumbbell in the right hand at the side, left hand behind the head",
+    "end": "bends the torso straight sideways to the right, the dumbbell sliding down the outside of the right leg, without leaning forward or back",
+    "rule": "He bends only to the side, never forward or back.",
+    "checks": "Inclina só para o lado, sem ir para frente ou para trás, volta usando o lado oposto"
+  },
+  "caminhada-peso-unilateral": {
+    "name": "suitcase carry",
+    "scene": null,
+    "view": "front",
+    "start": "standing tall facing the camera, a heavy dumbbell in the right hand at the side, left arm relaxed",
+    "end": "walks forward with short steps, torso upright and level, not leaning toward the dumbbell",
+    "rule": "The torso stays upright and does not lean toward the weight.",
+    "checks": "Tronco reto sem inclinar para o lado do peso, ombros nivelados, passos curtos"
+  }
+}
