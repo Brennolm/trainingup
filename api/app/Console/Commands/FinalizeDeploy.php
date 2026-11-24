@@ -46,6 +46,8 @@ class FinalizeDeploy extends Command
             $this->call('config:clear');
             $this->call('package:discover');
             $this->call('migrate', ['--force' => true]);
+            // Exercise images that ship with the code (database/data/exercise-images).
+            $this->call('exercises:images');
             if ($useCache) {
                 $this->call('optimize:clear');
                 $this->call('optimize');

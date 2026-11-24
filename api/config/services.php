@@ -35,6 +35,11 @@ return [
         ],
     ],
 
+    // Exercise images generator (php artisan exercises:generate-images). Local only.
+    'openai' => [
+        'key' => env('OPENAI_API_KEY'),
+    ],
+
     // Sign in with Google (Socialite). Redirect URI must match the Google Cloud credentials.
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
